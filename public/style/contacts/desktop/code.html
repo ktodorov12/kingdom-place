@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#735c00",
+              "tertiary": "#bfcdff",
+              "on-primary-container": "#554300",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-fixed-variant": "#574500",
+              "secondary": "#dac58d",
+              "on-primary-fixed": "#241a00",
+              "on-surface-variant": "#d0c5af",
+              "surface-variant": "#353535",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#393939",
+              "primary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#c8b37d",
+              "outline": "#99907c",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#27438a",
+              "surface-dim": "#131313",
+              "on-background": "#e2e2e2",
+              "outline-variant": "#4d4635",
+              "on-secondary": "#3c2f05",
+              "secondary-fixed": "#f7e1a6",
+              "on-secondary-fixed-variant": "#544519",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-container-low": "#1b1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#1f1f1f",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-highest": "#353535",
+              "on-error-container": "#ffdad6",
+              "error": "#ffb4ab",
+              "on-surface": "#e2e2e2",
+              "on-tertiary-container": "#254188",
+              "secondary-container": "#544519",
+              "on-tertiary": "#082b72",
+              "error-container": "#93000a",
+              "primary-container": "#d4af37",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#00174b",
+              "on-primary": "#3c2f00",
+              "primary-fixed": "#ffe088",
+              "tertiary-fixed": "#dbe1ff",
+              "primary": "#f2ca50",
+              "inverse-on-surface": "#303030",
+              "tertiary-container": "#97b0ff",
+              "surface-tint": "#e9c349"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(45deg, #D4AF37 0%, #F2CA50 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #4d4635; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-[#131313]/70 backdrop-blur-md shadow-[0_4px_30px_rgba(226,226,226,0.04)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-none">
+<div class="text-2xl font-bold text-[#F2CA50] tracking-widest font-headline">THE SOVEREIGN</div>
+<div class="hidden md:flex gap-12 font-headline uppercase tracking-tighter">
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">Services</a>
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">Barbers</a>
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">Gallery</a>
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">About</a>
+<a class="text-[#F2CA50] border-b border-[#F2CA50] pb-1" href="#">Contact</a>
+</div>
+<button class="bg-gold-gradient text-on-primary font-bold px-8 py-3 tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#3C2F00] transition-all duration-300 scale-95 active:scale-90">
+                BOOK NOW
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-lowest">
+<img alt="Premium barbershop interior" class="w-full h-full object-cover opacity-40" data-alt="Luxury dark wood barbershop interior with golden lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRfO7PFq0FtZOzQPpeIzBmQmGFjZjxpxsTBciayxf-nsymQT81rbqW0FGzOtYAWOQgcG9PNlrKWIALORGjiWhLx1TK57hN0eKwlthiqUUU6TrjeLRkv9b4nP5Ghc0lB3KYhV_UqjchnPXrmWdqYGHum1juKQfjlJUa-HUr6KOG7twTxA6CxSjMHUBCu7sWWHTnEMLJU9s85Ju1zGM3nRTsrgSruPe5UgyIT_uZSQ5v3CbvOAZKkj-1T6TtN_Y_qLHPP2sdR-eiDJ0"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface/60 to-surface"></div>
+</div>
+<div class="relative z-10 text-center">
+<span class="text-primary font-label text-xs tracking-[0.4em] uppercase mb-4 block">Our Residence</span>
+<h1 class="font-headline text-7xl md:text-9xl text-on-surface font-light tracking-tighter uppercase leading-none">
+                    VISIT THE <span class="italic font-bold text-primary">PALACE</span>
+</h1>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+<!-- Contact Info -->
+<div class="lg:col-span-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline text-5xl mb-12 tracking-tighter">ESTABLISHMENT <br/>DETAILS</h2>
+<div class="space-y-16">
+<!-- Location -->
+<div class="group">
+<label class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4 block opacity-60">Location</label>
+<p class="text-2xl font-body leading-relaxed">
+                                    12 Tsar Shishman St,<br/>
+                                    1000 Sofia Center,<br/>
+                                    Bulgaria
+                                </p>
+</div>
+<!-- Communication -->
+<div class="group">
+<label class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4 block opacity-60">Communication</label>
+<div class="space-y-2">
+<p class="text-2xl font-body hover:text-primary transition-colors cursor-pointer">+359 88 000 0000</p>
+<p class="text-2xl font-body hover:text-primary transition-colors cursor-pointer">concierge@thesovereign.bg</p>
+</div>
+</div>
+<!-- Schedule -->
+<div class="group">
+<label class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4 block opacity-60">Working Hours</label>
+<div class="flex justify-between items-center max-w-xs">
+<span class="text-on-surface-variant font-body">Tue - Sun</span>
+<span class="text-2xl font-headline italic">09:00 - 21:00</span>
+</div>
+<div class="flex justify-between items-center max-w-xs mt-2 opacity-50">
+<span class="text-on-surface-variant font-body">Monday</span>
+<span class="text-xl font-headline italic">Closed</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-outline-variant/30 flex gap-8">
+<a class="text-primary hover:underline underline-offset-8 transition-all" href="#">INSTAGRAM</a>
+<a class="text-primary hover:underline underline-offset-8 transition-all" href="#">FACEBOOK</a>
+</div>
+</div>
+<!-- Form Section -->
+<div class="lg:col-span-7 bg-surface-container-low p-8 md:p-16 border border-outline-variant/10">
+<h3 class="font-headline text-3xl mb-12 tracking-tight">ENQUIRIES</h3>
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary transition-colors placeholder-transparent text-lg" id="name" placeholder=" " type="text"/>
+<label class="absolute left-0 top-4 text-on-surface-variant transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="name">FULL NAME</label>
+</div>
+<div class="relative">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary transition-colors placeholder-transparent text-lg" id="email" placeholder=" " type="email"/>
+<label class="absolute left-0 top-4 text-on-surface-variant transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="email">EMAIL ADDRESS</label>
+</div>
+</div>
+<div class="relative">
+<select class="peer w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary transition-colors text-lg appearance-none" id="service">
+<option class="bg-surface">GENERAL INQUIRY</option>
+<option class="bg-surface">VIP RESERVATION</option>
+<option class="bg-surface">PRIVATE EVENT</option>
+<option class="bg-surface">CAREERS</option>
+</select>
+<label class="absolute left-0 -top-4 text-xs text-primary" for="service">NATURE OF INQUIRY</label>
+</div>
+<div class="relative">
+<textarea class="peer w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary transition-colors placeholder-transparent text-lg resize-none" id="message" placeholder=" " rows="4"></textarea>
+<label class="absolute left-0 top-4 text-on-surface-variant transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="message">YOUR MESSAGE</label>
+</div>
+<div class="pt-6">
+<button class="w-full bg-gold-gradient text-on-primary font-bold py-6 tracking-[0.3em] uppercase hover:brightness-110 transition-all flex items-center justify-center gap-4 group" type="submit">
+                                SEND MESSAGE
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[600px] relative bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 grayscale contrast-[1.2] invert brightness-[0.4] mix-blend-screen opacity-80" data-location="Sofia" style="">
+<img alt="Topographic map style texture" class="w-full h-full object-cover" data-alt="Monochrome dark map of Sofia city center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSE5pV3Oj-iPA2IjKKV_Pam-O35lSna_JcbpzhSVKsqsT0BbeFmv83YaVx0dc8sBhGTiOtregltAsuKnYCCbiQELUz1b_uPrYXZaVF6DHkkufATYCeN1sh4XClYp9-xEgld1reVHDblRXeg5RDxOyD4fTHDWlOm9cbS85zfLlBGAk50AfuGKWv0aLAIuxENMtpX6vP2q5yIYcBI8kpsZWVWJg-PsAkZXodtVgHvynSMlsoHPlQINYcYXpTr2TVrrr3qswpvLjdyyo"/>
+</div>
+<!-- Interactive Map Pin -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full animate-ping scale-150"></div>
+<div class="relative w-12 h-12 bg-primary flex items-center justify-center shadow-[0_0_30px_rgba(242,202,80,0.5)]">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Map Overlay UI -->
+<div class="absolute bottom-12 left-12 p-8 bg-surface-container-high/90 backdrop-blur-xl border border-outline-variant/20 max-w-sm">
+<h4 class="font-headline text-2xl text-primary mb-2">SOFIA CENTER</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our flagship location is situated in the heart of Sofia's aristocratic district, offering privacy and prestige.</p>
+<button class="mt-6 text-xs tracking-widest uppercase border-b border-primary text-primary pb-1 hover:text-on-surface hover:border-on-surface transition-all">Open in Maps</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full border-t border-[#4D4635]/20">
+<div>
+<div class="text-[#F2CA50] font-black text-xl mb-6 font-headline tracking-widest uppercase">THE SOVEREIGN</div>
+<p class="text-[#E2E2E2]/60 font-label text-sm max-w-xs leading-loose">
+                A legacy of precision, style, and uncompromising service. The destination for the modern gentleman.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#F2CA50] text-sm tracking-[0.2em] font-label uppercase mb-4">Navigational</h5>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 font-label text-sm uppercase" href="#">Services</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 font-label text-sm uppercase" href="#">The Barbers</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 font-label text-sm uppercase" href="#">Gallery</a>
+</div>
+<div class="flex flex-col justify-between">
+<div class="flex gap-8 mb-8">
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-all duration-500 font-label text-sm uppercase tracking-[0.2em]" href="#">Instagram</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-all duration-500 font-label text-sm uppercase tracking-[0.2em]" href="#">Facebook</a>
+</div>
+<div class="text-[#E2E2E2]/60 font-label text-[10px] tracking-[0.2em] uppercase">
+                © 2024 THE SOVEREIGN BARBERSHOP. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

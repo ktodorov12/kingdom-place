@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Kingdom Place</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#b4c5ff",
+              "secondary-fixed-dim": "#dac58d",
+              "on-secondary-fixed": "#241a00",
+              "secondary-container": "#544519",
+              "primary": "#f2ca50",
+              "surface-variant": "#353535",
+              "surface-dim": "#131313",
+              "outline": "#99907c",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#f7e1a6",
+              "inverse-surface": "#e2e2e2",
+              "tertiary": "#bfcdff",
+              "surface-bright": "#393939",
+              "on-surface": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-primary-fixed": "#241a00",
+              "surface-tint": "#e9c349",
+              "on-tertiary-fixed": "#00174b",
+              "primary-container": "#d4af37",
+              "on-secondary-container": "#c8b37d",
+              "on-tertiary": "#082b72",
+              "error-container": "#93000a",
+              "outline-variant": "#4d4635",
+              "on-primary": "#3c2f00",
+              "inverse-on-surface": "#303030",
+              "on-primary-container": "#554300",
+              "primary-fixed": "#ffe088",
+              "on-secondary-fixed-variant": "#544519",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0e",
+              "on-background": "#e2e2e2",
+              "secondary": "#dac58d",
+              "tertiary-container": "#97b0ff",
+              "tertiary-fixed": "#dbe1ff",
+              "background": "#131313",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary": "#3c2f05",
+              "on-primary-fixed-variant": "#574500",
+              "inverse-primary": "#735c00",
+              "surface-container-highest": "#353535",
+              "surface": "#131313",
+              "on-surface-variant": "#d0c5af",
+              "on-tertiary-container": "#254188",
+              "surface-container-low": "#1b1b1b",
+              "primary-fixed-dim": "#e9c349",
+              "surface-container": "#1f1f1f",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md flex justify-between items-center px-6 h-20 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#F2CA50]">menu</span>
+<span class="text-2xl font-bold text-[#F2CA50] tracking-tighter font-headline uppercase">Kingdom Place</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#E2E2E2] font-['Newsreader'] uppercase tracking-tight hover:text-[#F2CA50] transition-colors duration-300" href="#">SERVICES</a>
+<a class="text-[#E2E2E2] font-['Newsreader'] uppercase tracking-tight hover:text-[#F2CA50] transition-colors duration-300" href="#">GALLERY</a>
+<a class="text-[#F2CA50] font-bold font-['Newsreader'] uppercase tracking-tight hover:text-[#F2CA50] transition-colors duration-300" href="#">CONTACT</a>
+</nav>
+<button class="bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold px-6 py-2 tracking-widest text-xs uppercase hover:scale-105 active:scale-95 transition-all">
+            BOOK NOW
+        </button>
+</header>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="px-6 md:px-12 lg:px-24 mb-24">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="w-full md:w-2/3">
+<span class="text-primary font-label text-[10px] tracking-[0.4em] uppercase block mb-4">THE ENTRANCE</span>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-headline font-light leading-none tracking-tighter italic">
+                        VISIT THE <br/> <span class="not-italic font-bold">PALACE</span>
+</h1>
+</div>
+<div class="w-full md:w-1/3 pb-4">
+<p class="text-on-surface-variant font-body text-sm leading-relaxed serif-justified opacity-80 uppercase tracking-widest">
+                        ESTABLISHED ON THE PILLARS OF EXCELLENCE, WE INVITE YOU TO EXPERIENCE SOVEREIGN GROOMING IN THE HEART OF SOFIA.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Location & Details Bento Grid -->
+<section class="px-6 md:px-12 lg:px-24 mb-32">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-px bg-outline-variant/20">
+<!-- Map Container -->
+<div class="lg:col-span-8 bg-surface-container-low min-h-[500px] relative overflow-hidden">
+<div class="absolute inset-0 grayscale opacity-40 hover:opacity-60 transition-opacity duration-700 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&amp;fit=crop&amp;q=80&amp;w=2000')] bg-cover bg-center" data-alt="High-contrast dark-mode aerial map of Sofia Bulgaria" data-location="Sofia, Bulgaria" style=""></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 bg-primary animate-ping absolute rounded-full"></div>
+<div class="w-4 h-4 bg-primary relative rounded-full shadow-[0_0_20px_rgba(242,202,80,0.8)]"></div>
+</div>
+</div>
+<!-- Info Column -->
+<div class="lg:col-span-4 flex flex-col divide-y divide-outline-variant/20">
+<!-- Address -->
+<div class="p-10 bg-surface-container-high group hover:bg-surface-container-highest transition-colors">
+<span class="text-primary font-label text-[10px] tracking-[0.3em] uppercase block mb-6">ADDRESS</span>
+<h3 class="text-xl font-headline italic mb-2 text-on-surface uppercase">The Sovereign Ground</h3>
+<p class="text-on-surface-variant text-sm font-body leading-loose">
+                            ул. "Цар Иван Асен II" 12<br/>
+                            София, България
+                        </p>
+</div>
+<!-- Contact Details -->
+<div class="p-10 bg-surface-container-high group hover:bg-surface-container-highest transition-colors">
+<span class="text-primary font-label text-[10px] tracking-[0.3em] uppercase block mb-6">DIGITAL LINES</span>
+<div class="space-y-4">
+<div>
+<span class="text-[10px] text-on-surface-variant/60 block uppercase tracking-tighter">Phone</span>
+<a class="text-lg font-body hover:text-primary transition-colors" href="tel:+359888123456">+359 888 123 456</a>
+</div>
+<div>
+<span class="text-[10px] text-on-surface-variant/60 block uppercase tracking-tighter">Email</span>
+<a class="text-lg font-body hover:text-primary transition-colors" href="mailto:contact@kingdomplace.bg">contact@kingdomplace.bg</a>
+</div>
+</div>
+</div>
+<!-- Working Hours -->
+<div class="p-10 bg-surface-container-high flex-grow">
+<span class="text-primary font-label text-[10px] tracking-[0.3em] uppercase block mb-6">COURT HOURS</span>
+<div class="space-y-3 font-body text-sm">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">TUE — SUN</span>
+<span class="text-primary font-bold">09:00 — 21:00</span>
+</div>
+<div class="flex justify-between items-end pt-2">
+<span class="text-on-surface-variant">MONDAY</span>
+<span class="italic text-on-surface-variant/40">RESERVED FOR ROYALS (CLOSED)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="px-6 md:px-12 lg:px-24 mb-32">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-headline mb-4 italic tracking-tight">Speak with our Court</h2>
+<div class="h-px w-24 bg-primary mx-auto"></div>
+</div>
+<form class="space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="relative group">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant/40 py-4 focus:ring-0 focus:border-primary transition-colors font-body text-lg" id="name" name="name" placeholder=" " type="text"/>
+<label class="absolute top-4 left-0 text-on-surface-variant/60 uppercase text-[10px] tracking-[0.2em] transition-all peer-focus:-top-4 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4" for="name">Your Name</label>
+</div>
+<div class="relative group">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant/40 py-4 focus:ring-0 focus:border-primary transition-colors font-body text-lg" id="email" name="email" placeholder=" " type="email"/>
+<label class="absolute top-4 left-0 text-on-surface-variant/60 uppercase text-[10px] tracking-[0.2em] transition-all peer-focus:-top-4 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4" for="email">Email Address</label>
+</div>
+</div>
+<div class="relative group">
+<textarea class="peer w-full bg-transparent border-0 border-b border-outline-variant/40 py-4 focus:ring-0 focus:border-primary transition-colors font-body text-lg resize-none" id="message" name="message" placeholder=" " rows="4"></textarea>
+<label class="absolute top-4 left-0 text-on-surface-variant/60 uppercase text-[10px] tracking-[0.2em] transition-all peer-focus:-top-4 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4" for="message">Your Inquiry</label>
+</div>
+<div class="flex justify-center pt-8">
+<button class="w-full md:w-auto px-16 py-5 bg-gradient-to-tr from-primary-container to-primary text-on-primary font-bold text-xs uppercase tracking-[0.3em] hover:scale-105 active:scale-95 transition-all shadow-xl" type="submit">
+                            SEND MESSAGE
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-12 border-t border-[#4D4635]/20 flex flex-col items-center gap-8 px-8 w-full">
+<div class="text-[#F2CA50] font-black text-3xl tracking-tighter font-headline uppercase">KINGDOM PLACE</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#E2E2E2]/60 font-['Manrope'] text-[10px] tracking-[0.2em] uppercase hover:text-[#F2CA50] transition-all hover:translate-y-[-2px]" href="#">INSTAGRAM</a>
+<a class="text-[#E2E2E2]/60 font-['Manrope'] text-[10px] tracking-[0.2em] uppercase hover:text-[#F2CA50] transition-all hover:translate-y-[-2px]" href="#">FACEBOOK</a>
+<a class="text-[#E2E2E2]/60 font-['Manrope'] text-[10px] tracking-[0.2em] uppercase hover:text-[#F2CA50] transition-all hover:translate-y-[-2px]" href="#">TWITTER</a>
+<a class="text-[#E2E2E2]/60 font-['Manrope'] text-[10px] tracking-[0.2em] uppercase hover:text-[#F2CA50] transition-all hover:translate-y-[-2px]" href="#">LOCATION</a>
+<a class="text-[#E2E2E2]/60 font-['Manrope'] text-[10px] tracking-[0.2em] uppercase hover:text-[#F2CA50] transition-all hover:translate-y-[-2px]" href="#">PRIVACY</a>
+</div>
+<p class="text-[#F2CA50] font-['Manrope'] text-[10px] tracking-[0.2em] uppercase mt-4">© 2024 KINGDOM PLACE. THE SOVEREIGN STANDARD.</p>
+</footer>
+</body></html>
