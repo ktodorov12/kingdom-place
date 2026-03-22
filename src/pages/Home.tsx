@@ -42,8 +42,6 @@ const heroImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAD5iUYI9WbfUYoGXVSSi5jwp0N9mKIwBxsQ_MrjLAvl48yD3LkFFE0iDQ4eoosDiVvgOWRlscm343iRRSvJpLM9bThPxUQGqrsmKTXj4kuBfE1DPsjIHetLtBSjPgLtc4DpnzzG78DczBqpm7zYJc4HRvB47kekWZutiEQcFvRBySZdJkVJk8RbNjRU9VYXFf5adSNVhRNXCvBGxJ1BPuerxs9veVKvlIl8pfc2m7can1PykjxeMv1qiiAVc_Xi1_XGDPemYVrNoA";
 const teamImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCHNuY4eS0cfJuNXyl8EJh-IczBf9gM1RLsXlKljWkkPEHM7n7e6g4_TLZu-WPKxKcOskkqRuXsRPNFOquSTqqhuXzLQVosyz_zq9s9iBjSkXmZ3FyKAS_nupA3xaslMWqjHDkYQ2YlioCkL6bCZkPF6vFa18-jiZHn9i71I2_gI56hgJ71GTEeIEWUq60vjk62YBZ8jUqv7NOZ8nWPnbsbbNJOPTqL1ej0a_-7oUHa-BEr0L1WyZhjz3HmjFIyDomz3NPM4CmN0G4";
-const mapImage =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCJTCN9sTQBv8DhO4u6GleYZtVnRlsrwG1gKDF34ZBaFP7RuITHcFH_OZO0OdTy5AOh1qBrTvamMRCBmzsbmSCYLb7As30fRXcP7r78qgyJcGVTe10AVva1oJp4SKO7xSX3jLRpGHZ-txcKodbDFnI3HDt0KR6q1YlJdUPbb7rvK_FK-_rdgwk7hGQiDfNnvFEqwjy9XYNN93htbhcPRdtvUoMduGqYAOpkXJ-_uIQDuyF-rhqfTdry0nB4UV72ejx9zUKll5ThP5M";
 
 /* ─── Service data (split EUR + BGN) ─── */
 const hairdressing = [
@@ -447,6 +445,9 @@ function TeamSection() {
 
 /* ═══════════════ CONTACT SECTION ═══════════════ */
 function ContactSection() {
+  const GOOGLE_MAPS_URL =
+    "https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%BE%D1%84%D0%B8%D1%8F,+%D1%83%D0%BB.+%D0%9F%D0%B8%D1%80%D0%BE%D1%82%D1%81%D0%BA%D0%B0+1";
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-8 bg-surface">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
@@ -461,32 +462,36 @@ function ContactSection() {
           <div className="space-y-8 md:space-y-12">
             <Reveal delay={0.1}>
               <div className="flex gap-4 md:gap-6">
-                <MapPin size={28} className="text-primary flex-shrink-0 mt-0.5" />
+                <MapPin size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
                     Location
                   </h4>
-                  <p className="text-on-surface-variant text-base md:text-lg">
-                    ул. "Цар Иван Асен II" 12, София, България
-                  </p>
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-on-surface-variant text-base md:text-lg hover:text-primary transition-colors duration-300">
+                    София, ул. Пиротска 1
+                  </a>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
               <div className="flex gap-4 md:gap-6">
-                <Clock size={28} className="text-primary flex-shrink-0 mt-0.5" />
+                <Clock size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
                     Hours
                   </h4>
                   <p className="text-on-surface-variant text-base md:text-lg">
-                    Tuesday – Sunday
+                    Вторник – Неделя
                     <br />
                     09:00 – 21:00
                   </p>
                   <p className="text-on-surface-variant/40 text-sm mt-2 italic">
-                    Monday: Reserved for Royals (Closed)
+                    Понеделник: Почивен ден
                   </p>
                 </div>
               </div>
@@ -494,37 +499,46 @@ function ContactSection() {
 
             <Reveal delay={0.3}>
               <div className="flex gap-4 md:gap-6">
-                <Phone size={28} className="text-primary flex-shrink-0 mt-0.5" />
+                <Phone size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
                     Inquiries
                   </h4>
-                  <p className="text-on-surface-variant text-base md:text-lg">
+                  <a
+                    href="tel:+359888123456"
+                    className="text-on-surface-variant text-base md:text-lg hover:text-primary transition-colors duration-300">
                     +359 888 123 456
-                  </p>
+                  </a>
                 </div>
               </div>
+            </Reveal>
+
+            <Reveal delay={0.35}>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-2">
+                <span>Повече информация</span>
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
             </Reveal>
           </div>
         </div>
 
-        {/* Map placeholder */}
+        {/* Interactive Map */}
         <Reveal direction="right">
-          <div className="h-[350px] md:h-[500px] bg-surface-container-high relative overflow-hidden group cursor-pointer">
-            <img
-              src={mapImage}
-              alt="Map view of Sofia city center"
-              className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-[2000ms]"
+          <div className="h-[350px] md:h-[500px] bg-surface-container-high relative overflow-hidden">
+            <iframe
+              title="Kingdom Place location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.6!2d23.3194!3d42.6977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa856e2aa4295d%3A0x5bb38ba120108319!2z0YPQuy4g0J_QuNGA0L7RgtGB0LrQsCAxLCDQodC-0YTQuNGP!5e0!3m2!1sen!2sbg!4v1"
+              className="absolute inset-0 w-full h-full grayscale opacity-35"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0 }}
+              allowFullScreen
             />
-            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-14 h-14 md:w-16 md:h-16 bg-primary flex items-center justify-center shadow-[0_0_50px_rgba(242,202,80,0.4)]">
-                <MapPin size={28} className="text-on-primary" />
-              </motion.div>
-            </div>
           </div>
         </Reveal>
       </div>

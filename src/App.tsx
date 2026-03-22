@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Team from "./pages/Team";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
             <Route path="services" element={<Services />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="team" element={<Team />} />
-            <Route path="contact" element={<Home />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
       </BrowserRouter>
