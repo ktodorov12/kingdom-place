@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone } from "lucide-react";
+import { useBookingModal } from "../context/BookingModalContext";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -76,6 +77,8 @@ export default function Home() {
 
 /* ═══════════════ HERO SECTION ═══════════════ */
 function HeroSection() {
+  const { openModal } = useBookingModal();
+
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden">
       {/* Mobile background image (behind content) */}
@@ -133,15 +136,13 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.5 }}
           className="flex flex-col sm:flex-row gap-4 md:gap-6">
-          <motion.a
-            href="https://studio24.bg"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={openModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gold-gradient px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-on-primary text-center text-sm shadow-[0_10px_40px_rgba(242,202,80,0.2)] cursor-pointer hover:brightness-110 transition-all duration-300">
             Book Now
-          </motion.a>
+          </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}

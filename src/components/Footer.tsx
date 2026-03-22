@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Share2, Instagram, CreditCard, Banknote } from "lucide-react";
+import { useBookingModal } from "../context/BookingModalContext";
 
 export default function Footer() {
+  const { openModal } = useBookingModal();
+
   return (
     <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-8 border-t border-outline-variant/20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
@@ -31,13 +34,11 @@ export default function Footer() {
           <h4 className="text-primary font-bold text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
             Navigation
           </h4>
-          <a
-            href="https://studio24.bg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer">
+          <button
+            onClick={openModal}
+            className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer text-left">
             Studio24 Booking
-          </a>
+          </button>
           <Link
             to="/services"
             className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer">
