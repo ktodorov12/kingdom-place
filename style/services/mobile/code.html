@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#735c00",
+              "on-primary-fixed-variant": "#574500",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed-variant": "#544519",
+              "surface-tint": "#e9c349",
+              "surface": "#131313",
+              "on-secondary-fixed": "#241a00",
+              "error-container": "#93000a",
+              "secondary-fixed": "#f7e1a6",
+              "tertiary-fixed": "#dbe1ff",
+              "surface-container": "#1f1f1f",
+              "primary-fixed-dim": "#e9c349",
+              "secondary": "#dac58d",
+              "on-surface": "#e2e2e2",
+              "surface-dim": "#131313",
+              "inverse-surface": "#e2e2e2",
+              "inverse-on-surface": "#303030",
+              "primary": "#f2ca50",
+              "secondary-container": "#544519",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-tertiary-container": "#254188",
+              "on-primary": "#3c2f00",
+              "surface-container-highest": "#353535",
+              "on-error": "#690005",
+              "surface-bright": "#393939",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "secondary-fixed-dim": "#dac58d",
+              "outline": "#99907c",
+              "surface-variant": "#353535",
+              "background": "#131313",
+              "on-secondary-container": "#c8b37d",
+              "on-surface-variant": "#d0c5af",
+              "surface-container-low": "#1b1b1b",
+              "surface-container-high": "#2a2a2a",
+              "on-background": "#e2e2e2",
+              "primary-container": "#d4af37",
+              "error": "#ffb4ab",
+              "on-primary-fixed": "#241a00",
+              "tertiary-container": "#97b0ff",
+              "on-primary-container": "#554300",
+              "on-secondary": "#3c2f05",
+              "tertiary": "#bfcdff",
+              "on-tertiary-fixed": "#00174b",
+              "on-tertiary": "#082b72",
+              "primary-fixed": "#ffe088",
+              "outline-variant": "#4d4635",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .gold-gradient-bg {
+        background: linear-gradient(45deg, #D4AF37 0%, #F2CA50 100%);
+      }
+      .brutal-border {
+        border-bottom: 1px solid rgba(77, 70, 53, 0.2);
+      }
+      .service-card-hover:hover {
+        background-color: #1B1B1B;
+        box-shadow: inset 0 0 20px rgba(242, 202, 80, 0.05);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md shadow-[0_4px_30px_rgba(226,226,226,0.04)] no-border bg-[#1B1B1B]">
+<nav class="flex justify-between items-center px-8 h-24 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer">menu</span>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2">
+<h1 class="font-['Newsreader'] italic text-[#D4AF37] tracking-tight text-3xl font-bold">THE SOVEREIGN</h1>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:flex gap-8 font-label text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#F2CA50] font-bold transition-colors duration-300" href="#">Services</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-colors duration-300" href="#">Artisans</a>
+<a class="text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-colors duration-300" href="#">Journal</a>
+</div>
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer">calendar_today</span>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-8 max-w-7xl mx-auto mb-20">
+<div class="flex flex-col md:flex-row items-end justify-between gap-8 mb-12">
+<div class="max-w-3xl">
+<span class="font-label text-primary text-[10px] uppercase tracking-[0.4em] block mb-4">Exquisite Grooming</span>
+<h2 class="font-headline text-7xl md:text-8xl italic tracking-tighter leading-none mb-8">The Sovereign Menu</h2>
+<p class="text-on-surface-variant font-body text-lg max-w-xl leading-relaxed">
+                        At Kingdom Place, grooming is a sacred dialogue between artisan and gentleman. Our rituals are designed to honor the heritage of barbering while refining the modern silhouette.
+                    </p>
+</div>
+<div class="hidden lg:block w-48 h-px bg-outline-variant/30 mb-4"></div>
+</div>
+<div class="w-full h-[400px] overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="Interior of a luxury barbershop with leather chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvi6GR9BujV9E_-bwCYX0R3mvwyIbTIhWyjZhqoRQjWRLIJ4jy6JVmpUmIKpqT4M79z2a9RroPc5uBLmQwNqeMa-F8FLNjurNoql6j3N-mO-I_2uZ4ZOtae-6WVjMzJVAGFBkA94i-lP2-Yf79pDqHfCa7qm1TnnQDOSRSAS05GpCHcnrk-sXQ8CvYwoM6XS7k_JF0mdVgAK4UjtUqFvIkK8nPdwJ1rdeD_lWphGJD5rVMiAux4aEf6wilKtRUsm5p94rxKYeq4gg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Service Categories Grid -->
+<section class="px-8 max-w-7xl mx-auto space-y-32">
+<!-- Category: Hairdressing -->
+<div>
+<div class="flex items-center gap-6 mb-12">
+<h3 class="font-headline text-4xl tracking-tight">Hairdressing</h3>
+<div class="flex-grow h-px bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20">
+<!-- Item 1 -->
+<div class="bg-background p-10 service-card-hover transition-all duration-300 group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="font-headline text-2xl mb-2">Classic Royal Cut</h4>
+<p class="text-on-surface-variant text-sm font-body max-w-xs uppercase tracking-wider">Precision shear or clipper work, hot lather neck shave, and artisan styling.</p>
+</div>
+<div class="text-right">
+<span class="block text-primary font-headline text-2xl tracking-tighter">13 €</span>
+<span class="block text-on-surface-variant text-[10px] font-label">25,42 BGN</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-primary text-[10px] uppercase tracking-[0.2em] font-bold border-b border-primary/20 pb-1 group-hover:border-primary transition-all duration-300" href="#">
+                            Book Now <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+<!-- Item 2 -->
+<div class="bg-background p-10 service-card-hover transition-all duration-300 group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="font-headline text-2xl mb-2">Kids Haircut</h4>
+<p class="text-on-surface-variant text-sm font-body max-w-xs uppercase tracking-wider">A tailored experience for the next generation of gentlemen.</p>
+</div>
+<div class="text-right">
+<span class="block text-primary font-headline text-2xl tracking-tighter">10 €</span>
+<span class="block text-on-surface-variant text-[10px] font-label">19,56 BGN</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-primary text-[10px] uppercase tracking-[0.2em] font-bold border-b border-primary/20 pb-1 group-hover:border-primary transition-all duration-300" href="#">
+                            Book Now <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category: Beard & Facial -->
+<div>
+<div class="flex items-center gap-6 mb-12">
+<h3 class="font-headline text-4xl tracking-tight">Beard &amp; Facial</h3>
+<div class="flex-grow h-px bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
+<!-- Item 1 -->
+<div class="bg-background p-10 service-card-hover transition-all duration-300 group">
+<div class="mb-8">
+<h4 class="font-headline text-2xl mb-2">Beard Trim</h4>
+<p class="text-on-surface-variant text-sm font-body uppercase tracking-wider">Shape and line refinement.</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-primary font-headline text-2xl tracking-tighter">10 €</div>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 group-hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-sm">add</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-background p-10 service-card-hover transition-all duration-300 group border-x border-outline-variant/10">
+<div class="mb-8">
+<h4 class="font-headline text-2xl mb-2">Beard Sculpting &amp; Steam</h4>
+<p class="text-on-surface-variant text-sm font-body uppercase tracking-wider">Therapeutic steam with premium oils.</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-primary font-headline text-2xl tracking-tighter">20 €</div>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 group-hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-sm">add</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-background p-10 service-card-hover transition-all duration-300 group">
+<div class="mb-8">
+<h4 class="font-headline text-2xl mb-2">Traditional Hot Towel Shave</h4>
+<p class="text-on-surface-variant text-sm font-body uppercase tracking-wider">Classic straight razor ritual.</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-primary font-headline text-2xl tracking-tighter">16 €</div>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 group-hover:border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-sm">add</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Combinations (Premium Bento Style) -->
+<div>
+<div class="flex items-center gap-6 mb-12">
+<h3 class="font-headline text-4xl tracking-tight">Combinations</h3>
+<div class="flex-grow h-px bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- King's Package -->
+<div class="lg:col-span-5 bg-surface-container-low p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10">
+<h4 class="font-headline text-4xl mb-6">The King's Package</h4>
+<p class="text-on-surface-variant font-body mb-12 leading-relaxed">The ultimate synergy of our signature haircut and beard refinement. A masterclass in grooming balance.</p>
+<div class="flex items-end justify-between">
+<div class="font-headline text-5xl text-primary tracking-tighter">25 € <span class="text-xs font-label text-on-surface-variant block mt-1">48,90 BGN</span></div>
+<button class="gold-gradient-bg text-on-primary font-label text-[10px] uppercase font-bold tracking-[0.2em] px-8 py-4">Reserve Suite</button>
+</div>
+</div>
+</div>
+<!-- Royal Ritual -->
+<div class="lg:col-span-7 bg-surface-container p-12 border border-primary/10 relative group">
+<div class="absolute inset-0 border border-primary/20 pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-12 justify-between">
+<div class="flex-1">
+<h4 class="font-headline text-4xl mb-6">The Royal Ritual</h4>
+<ul class="space-y-4 font-label text-[10px] uppercase tracking-widest text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> Bespoke Haircut</li>
+<li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> Sculpting &amp; Shave</li>
+<li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> Eyebrow Grooming</li>
+<li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> Revitalizing Facial Mask</li>
+</ul>
+</div>
+<div class="flex flex-col justify-between items-end md:items-end">
+<div class="text-right">
+<span class="block font-headline text-6xl text-primary tracking-tighter">30 €</span>
+<span class="block text-xs font-label text-on-surface-variant tracking-widest uppercase">58,67 BGN</span>
+</div>
+<button class="mt-8 border border-primary text-primary font-label text-[10px] uppercase font-bold tracking-[0.2em] px-10 py-5 hover:bg-primary hover:text-on-primary transition-all duration-300">Experience Royalty</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Experience Banner -->
+<section class="mt-32 px-8">
+<div class="max-w-7xl mx-auto h-[500px] flex items-center justify-center relative bg-[#0e0e0e] overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="Barber's hands working with professional tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkP_cjfvvxcL02CA2PZUbC8otr8iaMwsHkfCqwPchC5YmvZburCHw0pZH-uACiPdniFpY83KyIWSnCXgStbvJfFBYmjE3KQPrw7Fe1YQk1Nm-vIsSzpyjvC7xbIFd9leGnG2u2V_dMku5NMp7j0ezThxK4InH5nzPq6I1ntMVvIyVsyzuXUWt2RDfPDnrbsit105U_Q4aVr8ULPgAMpZidcPxiNp04yHnOui2dCjTI9Ts0dnUPNPu3qJYkmwCkngtPGeaygimvEoM"/>
+<div class="text-center relative z-10 max-w-2xl px-6">
+<h3 class="font-headline text-5xl mb-8 leading-tight italic">Not just a service, but a restoration of your finest self.</h3>
+<div class="flex justify-center gap-12">
+<div class="text-center">
+<span class="block font-headline text-4xl text-primary mb-2">15</span>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-60">Master Artisans</span>
+</div>
+<div class="text-center">
+<span class="block font-headline text-4xl text-primary mb-2">1892</span>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-60">Heritage Origin</span>
+</div>
+<div class="text-center">
+<span class="block font-headline text-4xl text-primary mb-2">∞</span>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-60">Timeless Style</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer -->
+<footer class="bg-[#131313] w-full py-12 px-8 border-t border-[#4D4635]/20 tonal-shift-from-surface-to-surface-low">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-7xl mx-auto">
+<div class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#E2E2E2]/40">
+                © 2024 THE SOVEREIGN BARBERSHOP. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-12 font-['Manrope'] text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#F2CA50] underline decoration-1 underline-offset-4 hover:tracking-[0.25em] duration-500" href="#">Services</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#F2CA50] transition-all duration-300 hover:tracking-[0.25em] duration-500" href="#">Artisans</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#F2CA50] transition-all duration-300 hover:tracking-[0.25em] duration-500" href="#">Book Appointment</a>
+<a class="text-[#E2E2E2]/40 hover:text-[#F2CA50] transition-all duration-300 hover:tracking-[0.25em] duration-500" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

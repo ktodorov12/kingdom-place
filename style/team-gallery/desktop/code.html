@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72@display&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#735c00",
+              "tertiary": "#bfcdff",
+              "on-primary-container": "#554300",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-fixed-variant": "#574500",
+              "secondary": "#dac58d",
+              "on-primary-fixed": "#241a00",
+              "on-surface-variant": "#d0c5af",
+              "surface-variant": "#353535",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#393939",
+              "primary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#c8b37d",
+              "outline": "#99907c",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#27438a",
+              "surface-dim": "#131313",
+              "on-background": "#e2e2e2",
+              "outline-variant": "#4d4635",
+              "on-secondary": "#3c2f05",
+              "secondary-fixed": "#f7e1a6",
+              "on-secondary-fixed-variant": "#544519",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-container-low": "#1b1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#1f1f1f",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-highest": "#353535",
+              "on-error-container": "#ffdad6",
+              "error": "#ffb4ab",
+              "on-surface": "#e2e2e2",
+              "on-tertiary-container": "#254188",
+              "secondary-container": "#544519",
+              "on-tertiary": "#082b72",
+              "error-container": "#93000a",
+              "primary-container": "#d4af37",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#00174b",
+              "on-primary": "#3c2f00",
+              "primary-fixed": "#ffe088",
+              "tertiary-fixed": "#dbe1ff",
+              "primary": "#f2ca50",
+              "inverse-on-surface": "#303030",
+              "tertiary-container": "#97b0ff",
+              "surface-tint": "#e9c349"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .gold-gradient {
+        background: linear-gradient(45deg, #D4AF37 0%, #F2CA50 100%);
+      }
+      .newsreader-display {
+        font-family: 'Newsreader', serif;
+        letter-spacing: -0.02em;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-[#131313]/70 backdrop-blur-md shadow-[0_4px_30px_rgba(226,226,226,0.04)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-none">
+<div class="text-2xl font-bold text-[#F2CA50] tracking-widest font-headline uppercase">THE SOVEREIGN</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-['Newsreader'] serif tracking-tighter uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">Services</a>
+<a class="font-['Newsreader'] serif tracking-tighter uppercase text-[#F2CA50] border-b border-[#F2CA50] pb-1" href="#">Barbers</a>
+<a class="font-['Newsreader'] serif tracking-tighter uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">Gallery</a>
+<a class="font-['Newsreader'] serif tracking-tighter uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors" href="#">About</a>
+</div>
+<button class="gold-gradient text-[#3C2F00] px-8 py-3 font-label font-bold text-sm tracking-widest uppercase hover:bg-[#D4AF37] transition-all duration-300 active:scale-95">
+                BOOK NOW
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24">
+<!-- Hero Title Section -->
+<header class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-4xl">
+<span class="text-primary font-label text-xs tracking-[0.4em] uppercase mb-4 block">Our Artisans</span>
+<h1 class="newsreader-display text-6xl md:text-8xl lg:text-9xl text-on-surface leading-none">THE MASTER <br/><span class="italic text-primary">COLLECTIVE</span></h1>
+</div>
+<div class="md:w-1/3 text-on-surface-variant font-body text-lg leading-relaxed border-l border-outline-variant pl-8">
+                Crafting excellence through precision and tradition. Meet the hands that define the sovereign standard of grooming.
+            </div>
+</header>
+<!-- Master Barber Featured Section (Asymmetric) -->
+<section class="mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low">
+<div class="lg:col-span-7 relative h-[716px] overflow-hidden group">
+<img alt="Мохамад Алаюби Master Barber" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" data-alt="Close up professional portrait of master barber with classic tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZOF_rVeirqh2Yto4CKbUh5lgiz0IhbovJb5CX_StmoEEo7ym-1pB-TE4-ICVpi4c5-_DV4GOFStX3jnNmrZzHKV20DHjGxQo7y7YRyzptFrGbzo9Nd5qt5goSeJ1q3v8CWuf4ABkPKMI1cVrMkhgdUe7apqtPHQbHSQ8j9qX7YM3zeP0pkJrCFgmIdIJgXLp8HmXMU93yZi1KYBM4ethCoAe43AGzPAGElvxkvKENquMd8_0t2XB4o-gns_wyqxPaWT95tH4-uV4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center p-12 lg:p-20 relative border-l border-outline-variant/20">
+<div class="mb-8">
+<span class="inline-block py-1 px-3 border border-primary text-primary font-label text-[10px] tracking-widest uppercase mb-6">Master Craftsman</span>
+<h2 class="newsreader-display text-5xl md:text-6xl text-on-surface mb-4">Мохамад Алаюби</h2>
+<p class="font-body text-xl text-primary italic mb-8">The Sovereign Founder</p>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed mb-10 text-lg">
+                        With over two decades of international experience, Мохамад brings an architectural precision to classical barbering. His philosophy blends the raw grit of traditional techniques with the refined finish of high-end editorial styling.
+                    </p>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10">
+<div>
+<span class="block text-primary font-label text-xs tracking-widest uppercase mb-2">Specialty</span>
+<span class="text-on-surface font-body">Signature Scissor Cuts</span>
+</div>
+<div>
+<span class="block text-primary font-label text-xs tracking-widest uppercase mb-2">Experience</span>
+<span class="text-on-surface font-body">22+ Years</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Barber Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Barber Card 1 -->
+<article class="bg-surface-container p-8 border border-transparent hover:border-outline-variant/40 transition-all duration-500 group">
+<div class="aspect-[3/4] overflow-hidden mb-8 relative">
+<img alt="Julian V. Senior Barber" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of a male barber in a dark vest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0egE29K4vVJ52weXOGoIrGkRGJUmkF7J0QOpfVbYuGUtivZYXVUpxNJnqYcEtzbR0RmsGupAWc56VoLV1hwPK6vhxblGwXz4m9e4CAVFJrzi1QWZ7YldzHbuV3tSZYTNFmGGMQhT50Cmwqjn47b5TkyHHHVMZlJV5Lrcqs2R2lW9LuVej0qeTzghgWxKWYtmU_hFncmEONaZwtkQxINxotMpTw1IF-BeN-eowCETHOX58Q98RgsVLywEEA-ut94Iwwx3npfCJp74"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-sm p-3 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm">content_cut</span>
+</div>
+</div>
+<h3 class="newsreader-display text-3xl text-on-surface mb-2">Julian Vance</h3>
+<p class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4">Senior Artisan</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    A specialist in skin fades and modern textures. Julian’s chair is where contemporary street style meets traditional luxury.
+                </p>
+</article>
+<!-- Barber Card 2 -->
+<article class="bg-surface-container p-8 border border-transparent hover:border-outline-variant/40 transition-all duration-500 group">
+<div class="aspect-[3/4] overflow-hidden mb-8 relative">
+<img alt="Dimitri K. Head Stylist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a stylist with groomed beard and tattoos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeVeC94t9q_m58n7hndNEHTgt0enhvtkJyAsKSQXmZc1Zg8o81kIgKe2b0nD55x7GQXo8NPDjotZBsLS0_WQyaVHgMaXUrm9UmOawg8sb9n0jG2YZjWPG5tQ_3z-tMeqCoMfP4RJMktaH4xu4DN72D-Du7vzwW0uNlizirResP3mUTrtXQXvswIviPWYQcQbw3SaRkzcwLqRDFPDeouZ331JB3ih10743L1OGUV1r-ic7J33HznvV7U5pdfaGqS6iTNVC9Gi8Nu2M"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-sm p-3 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm">face</span>
+</div>
+</div>
+<h3 class="newsreader-display text-3xl text-on-surface mb-2">Dimitri Kostas</h3>
+<p class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4">Master of Beards</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    Renowned for his precision beard sculpting and ritualistic hot towel shaves. Every service is a masterclass in detail.
+                </p>
+</article>
+<!-- Barber Card 3 -->
+<article class="bg-surface-container p-8 border border-transparent hover:border-outline-variant/40 transition-all duration-500 group">
+<div class="aspect-[3/4] overflow-hidden mb-8 relative">
+<img alt="Marcus R. Stylist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Headshot of a smiling male barber in casual luxury attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWKBxzAfN7iXkb0zZTX03jmvxnWRUc0MkXfD5QxAYUmhsmOkMdCi5zfclgUCEulkU5NNJN1dmeeTvdnzWX9fPbM1zrGg-OpOKi6A5TtlswAQuy4X3fI5hcQOPuRGjCXpcAJNJenJOXxdcf14VzRmRWjLyTtYpCmDByZmJVmsQib7-hK5Nvcr72iKDASuXEGEJCMi7CAP5ltUsW4ybspanlZuK-Y21J_fXJ6wKg0vU7aAgHhz3-_Jt-AHmQh8bJvjFo3N-2FyCacFU"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-sm p-3 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm">brush</span>
+</div>
+</div>
+<h3 class="newsreader-display text-3xl text-on-surface mb-2">Marcus Reed</h3>
+<p class="text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-4">Styling Specialist</p>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    Expert in long-hair styling and natural movement. Marcus focuses on creating looks that evolve beautifully over time.
+                </p>
+</article>
+</section>
+<!-- Gallery / Process Section (Artistic Brutalism) -->
+<section class="mt-48">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container relative overflow-hidden group">
+<img alt="Barbershop Interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a luxury barbershop with leather chairs and gold mirrors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPfghwQHhA1AkWY1UJ9uxMT54dIWUX1kxEl_G8OZxvCdx5DlEK90UALp2xG6GCMEBknV5F7ozwLCrq-o2zdpFGNZSYv1inEhFd4LBTOZ11BM4TU7UjbtqiauizVOV4a9ZyCPqx_YXPryPmSFdj83C5HgNwPkOG1Ki8ogD_HmMngBpStkwGLxLJfxYQr3VAm8icHqrZP38zB-657mY_uKuB1VIRaChBkQJgHghvOzQU3joeJQ92SSAEzCo3x7ukoUp0gBOtM1Hx_A"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="bg-surface-container overflow-hidden group">
+<img alt="Precision Cut" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of barber scissors cutting dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOQc1vH9ZsQI9tGeb54IOJbMyVXjaiQNgsjUMe3rPgPV9Uvy1RWnGNYzJjrA7aRABKbTsUfF48XPMgqHvAP1e1nGos8oAsyLKNHerRhkvq98c9dkPamz5_wcfT1wYS9buqCvFfanLAUPmmUB0f-nptrOBPIzwGV72bQYep-kwRBR5lcB4hJHPjtU2odLwb8MBGC78EYjyTcSBwJ5OMCTUG4XNfCj5Kl_JDEnYV45q4LHvCiuiTKv4bhVwItJi9W_50k7uTLaZzhLA"/>
+</div>
+<div class="bg-surface-container overflow-hidden group">
+<img alt="Luxury Tools" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Gold plated barber razors and combs on a dark marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzwe_yLrx50mlJ6mmbQcHcDue7trzW9tfwbLxNsn3bp00Obzg-_RfVmGvaY4FWouzX-xc0Y9yV804LnoKVfpOCVT1_C_NEtS5xSkIyU1G2SirkAeSCdpFrwKW8uB9_nDQUK6X25080u9j6XS7TLcWK8vN55vrHzvpE_z4h6c3y5R6Nk2Ie6N9SoRzFCZEZ6PSo2S5uExtjyE9AwyAOUCM1T6P1S2EZe9BF0Gb1T4fSo5y6AtmQOgvlGAfvtGEUuYI9JOhGe7GDYOE"/>
+</div>
+<div class="md:col-span-2 bg-surface-container-high p-12 flex items-center justify-between">
+<div>
+<h4 class="newsreader-display text-4xl text-on-surface mb-4">BOOK THE EXPERIENCE</h4>
+<p class="font-body text-on-surface-variant max-w-sm">Reserve your appointment with our artisans and step into the world of The Sovereign.</p>
+</div>
+<button class="w-16 h-16 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full border-t border-[#4D4635]/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full">
+<div>
+<div class="text-[#F2CA50] font-black text-xl mb-8 font-headline tracking-widest uppercase">THE SOVEREIGN</div>
+<p class="font-['Manrope'] sans-serif text-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 leading-relaxed">
+                    Excellence in grooming. <br/> Tradition in precision.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="font-['Manrope'] sans-serif text-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500" href="#">Instagram</a>
+<a class="font-['Manrope'] sans-serif text-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500" href="#">Facebook</a>
+<a class="font-['Manrope'] sans-serif text-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] sans-serif text-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500" href="#">Terms of Service</a>
+</div>
+<div class="text-right flex flex-col justify-between">
+<div>
+<span class="block text-primary font-label text-xs tracking-widest uppercase mb-2">Location</span>
+<p class="text-on-surface-variant font-body">1221 Heritage Plaza, Suite 400<br/>Old Town District</p>
+</div>
+<div class="mt-8 md:mt-0 font-['Manrope'] sans-serif text-xs tracking-[0.2em] uppercase text-[#E2E2E2]/60">
+                    © 2024 THE SOVEREIGN BARBERSHOP. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

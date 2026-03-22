@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#131313",
+              "primary-container": "#d4af37",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "on-surface-variant": "#d0c5af",
+              "outline": "#99907c",
+              "on-secondary-container": "#c8b37d",
+              "on-primary": "#3c2f00",
+              "inverse-on-surface": "#303030",
+              "secondary-fixed": "#f7e1a6",
+              "primary-fixed-dim": "#e9c349",
+              "surface-bright": "#393939",
+              "on-secondary": "#3c2f05",
+              "tertiary-container": "#97b0ff",
+              "surface-variant": "#353535",
+              "on-background": "#e2e2e2",
+              "inverse-surface": "#e2e2e2",
+              "primary-fixed": "#ffe088",
+              "on-tertiary-container": "#254188",
+              "surface-container": "#1f1f1f",
+              "surface": "#131313",
+              "tertiary": "#bfcdff",
+              "surface-container-highest": "#353535",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-dim": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "error": "#ffb4ab",
+              "secondary-container": "#544519",
+              "on-secondary-fixed-variant": "#544519",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#e9c349",
+              "secondary-fixed-dim": "#dac58d",
+              "on-surface": "#e2e2e2",
+              "tertiary-fixed": "#dbe1ff",
+              "inverse-primary": "#735c00",
+              "on-tertiary-fixed": "#00174b",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary-fixed": "#241a00",
+              "secondary": "#dac58d",
+              "outline-variant": "#4d4635",
+              "primary": "#f2ca50",
+              "on-primary-container": "#554300",
+              "surface-container-low": "#1b1b1b",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-tertiary": "#082b72",
+              "on-primary-fixed-variant": "#574500",
+              "on-primary-fixed": "#241a00"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sharp-0 { border-radius: 0 !important; }
+        .tonal-glow-4-percent { box-shadow: 0 4px 30px rgba(226, 226, 226, 0.04); }
+        .gold-gradient { background: linear-gradient(45deg, #D4AF37, #F2CA50); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 sharp-0 bg-[#131313]/70 backdrop-blur-md flex justify-between items-center px-8 py-6 max-w-none tonal-glow-4-percent">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer" data-icon="menu">menu</span>
+<span class="text-2xl font-serif italic text-[#F2CA50] tracking-tighter">KINGDOM PLACE</span>
+</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#F2CA50] font-bold border-b border-[#F2CA50] transition-colors duration-300" href="#">GALLERY</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors duration-300" href="#">LOCATION</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2] hover:text-[#F2CA50] transition-colors duration-300" href="#">CONTACT</a>
+</div>
+<button class="gold-gradient text-on-primary font-sans text-label-sm tracking-[0.2em] uppercase font-bold py-3 px-8 sharp-0 active:scale-95 transition-transform">
+            BOOK NOW
+        </button>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Header -->
+<header class="px-8 md:px-16 mb-20 text-center">
+<span class="font-label text-label-sm tracking-[0.4em] uppercase text-primary mb-4 block">EXCELLENCE IN CRAFT</span>
+<h1 class="font-headline text-display-lg text-6xl md:text-8xl lg:text-9xl leading-none -tracking-widest">
+                GALLERY OF <br/>
+<span class="italic font-light">SOVEREIGNS</span>
+</h1>
+</header>
+<!-- Gallery Grid -->
+<section class="px-4 md:px-8 lg:px-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+<!-- Gallery Item 1 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20">
+<img alt="Classic Pompadour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Close up of classic pompadour haircut with sharp fade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAYg9dn7XKjdcbzMrycaIXDb0qbCvjpZ_f_y3AIcHRDi0TGJ_5iufROxz_e1t0tOiz4KOuEcC9yGoW1DYpy2rJ6-irYvjZOGdoI26fYlKlfjMAbJrHjCjfa7coo0JpREzwxqYGLI_u563G4i1QZZaaB7lWJj8WpieBwhjf-QRDD66sxFmE7BCBJmcnyOhC4YByx2pIASxZ2jyt_J80Xw7lUJcpMBX-r79ud9iKQ7oJPGeWLy8BL-xBmkAdj8Y2oYbu1jXZ4_Bqei4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">SIGNATURE CUT</p>
+<h3 class="font-headline text-2xl text-on-surface">Classic Pompadour</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            REQUEST <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20 md:mt-12 lg:mt-0">
+<img alt="Beard Sculpting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Professional beard sculpting with straight razor detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7bbGeysrgOKmaK2btD2qY2UMIwUfjAfAMcL5VyskabnZG8Vtbws534PH7I6-g3hQfn2GA6iL97ZYrTXDepb93cdCj05GuT0WKF165qVJ1S9d5X3uK-CJSMOr9QremoFJ44XcVxWvDM5-vUtpApr7LrKP6nlhPHpLYkUlo8CEfWmIU3WQrMpQu3jed3YZdzeLDsTqNuXpmbLD8CuweNn1ElUyUmUgCoqzNN43E0fit0xCCWDZ5NQ4SO0cwzibvrV0UJsiERp1y8MY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">PRECISION</p>
+<h3 class="font-headline text-2xl text-on-surface">Beard Sculpting</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            REQUEST <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20 lg:mt-24">
+<img alt="The Royal Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Luxurious vintage barbershop interior with leather chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDub8Bgy8t6aB8VwZB9R6M4hIPpVWD3fLio5g3uToBpjRARgJS5ize1XTmd5onvfhtOMp2rcTj8-rdg1pJGDOIgM06QDJSM72ImegBeHH0LFYwacHCPOFy46xDCBcNtzQkzA7Tf3KpQTpyI3XeohEiXDoxr_Ys0oGGsRmqKsE1qEd0Nt8akOi8ROaFD67h5dZ0Yz5xpQel4sSBFqH9yo9g31LlI4HqfzkT2qRldT0rcOZBkb3dBZDkryl8uT9cREmL1cOxaju0Egr8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">ATMOSPHERE</p>
+<h3 class="font-headline text-2xl text-on-surface">The Royal Suite</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            EXPLORE <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gallery Item 4 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20 md:-mt-12 lg:mt-0">
+<img alt="Executive Taper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Executive taper fade haircut on a male model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU0lgZ4P8io9h75-0CbzQUrcJSMYiHIaHEe-E-udMZDTWYbxIX4OgvQZEDUvhXq9ra6_VoxNBPXAnt2B8oedBuV8lxsU2XXIQcSrNtkXBaYiL50jOoq5Eebl1Jrgtqo_gNjEuDu2P3lxhgFFBJJSlhmaaNs5DHXKyeDJ8JKENM1xwPifa_7W415Zsbu_ctQQtJEHGZUyl-q4sDmBzVXKLRl3SJFxEnzb1-gDbI1_RYz2fkvDspHc5exaT4Hks3Y7bvNb283ZRtURs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">MODERN CLASSIC</p>
+<h3 class="font-headline text-2xl text-on-surface">Executive Taper</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            REQUEST <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gallery Item 5 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20 lg:mt-12">
+<img alt="Artisanal Shave" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Hot towel treatment for traditional artisanal shave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD91F1DHRh1urOTDm5iJWrtgx7PEnuPr4x1TpDOkleRc2gz3PMR_GaNoRjwCiivd85ms-YIEy4F7ANNsefX8Cnujkpw1WtbHOuFyrwkV0IC7-WxqKWs0-opxwcfOWpgO_9Mmili_2DAEdxkWHsL5o5dDrnArd5XGOouGib3VdCpUVUpgF3AP63_hFxY-M-s_a03xL5CZyNYHW5mufyW1uermrRagiesQ4ipqjLWMgekmayPTefROoqzzARPJ-kB6wBbqlXiTvFPhDQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">RITUAL</p>
+<h3 class="font-headline text-2xl text-on-surface">Artisanal Shave</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            REQUEST <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gallery Item 6 -->
+<div class="group relative aspect-[4/5] overflow-hidden border border-outline-variant/20 lg:-mt-12">
+<img alt="Sharp Lining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 desaturate-[0.5] group-hover:desaturate-0" data-alt="Detailed close up of hair lining and sharp edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjfGaHfDdzg6JVmzbeztMaSEy1QH5lcRgzCY5DNs8BbZdBJ24VbFTP7r_iPgVmwih8I9N9NrYp3GWOtlu_If83byQw4B1DxeuzSgsfVUs5ZIO5YgqD6owRPXq5zB00b1Mty58XE55t-SWzkq7lm6GS_rnPfGJ1dg2D3fhBlRnGNsK58z_cJgV2BnPaSi_wPGZKOFS8Td-zZbU1OfwGoBhATJqUJsGtIcIZB84OX8Cs1AeTbUZdFdVY4__1ejjNwccpIJz5h1Sosws"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<p class="font-label text-label-sm tracking-[0.2em] uppercase text-primary mb-2">DETAIL WORK</p>
+<h3 class="font-headline text-2xl text-on-surface">Sharp Lining</h3>
+</div>
+<a class="group/btn flex items-center gap-2 font-label text-label-sm tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                            REQUEST <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-40 mb-20 px-8 text-center bg-surface-container-low py-32 border-y border-outline-variant/10">
+<h2 class="font-headline text-5xl md:text-7xl mb-8 leading-tight tracking-tighter">
+                RESERVE YOUR <br/>
+<span class="italic">TRANSFORMATION</span>
+</h2>
+<p class="max-w-2xl mx-auto text-on-surface-variant font-body text-lg mb-12">
+                Join the ranks of the sovereigns. Every appointment is a dedicated hour of precision, craftsmanship, and unparalleled grooming excellence.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="gold-gradient text-on-primary font-sans text-label-md tracking-[0.3em] uppercase font-extrabold py-5 px-12 sharp-0 hover:scale-105 transition-transform">
+                    BOOK NOW
+                </button>
+<a class="text-primary font-sans text-label-sm tracking-[0.2em] uppercase border-b border-primary/40 hover:border-primary transition-all py-2" href="#">
+                    VIEW SERVICES MENU
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full sharp-0 border-t border-[#4D4635]/20 flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="text-xl font-serif text-[#F2CA50]">KINGDOM PLACE</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#F2CA50] underline underline-offset-8" href="#">GALLERY</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline transition-all" href="#">SERVICES</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline transition-all" href="#">LOCATION</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline transition-all" href="#">INSTAGRAM</a>
+<a class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline transition-all" href="#">CONTACT</a>
+</div>
+<div class="font-sans text-label-sm tracking-[0.2em] uppercase text-[#E2E2E2]/40">
+            © 2024 KINGDOM PLACE. SOVEREIGN MINIMALIST EST.
+        </div>
+</footer>
+</body></html>
