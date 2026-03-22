@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://[GITHUB_USERNAME].github.io/[REPO_NAME]",
+  "homepage": "https://ktodorov12.github.io/kingdom-place/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
