@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowLeft, ArrowRight } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
@@ -70,21 +70,21 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-10 items-center">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.to;
-            return (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`font-label text-xs tracking-[0.2em] uppercase transition-colors duration-300 cursor-pointer ${
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
+              className={({ isActive }) =>
+                `font-label text-xs tracking-[0.2em] uppercase transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "text-primary border-b border-primary pb-1"
+                    ? "text-primary border-b border-primary pb-1 text-shadow-gold"
                     : "text-on-surface-variant hover:text-primary"
-                }`}>
-                {link.label}
-              </Link>
-            );
-          })}
+                }`
+              }>
+              {link.label}
+            </NavLink>
+          ))}
         </div>
 
         {/* CTA + Mobile Toggle */}
@@ -149,16 +149,19 @@ export default function Navbar() {
                   transition={{ duration: 0.25, ease: "easeInOut" }}
                   className="flex flex-col items-center gap-8">
                   {navLinks.map((link) => (
-                    <Link
+                    <NavLink
                       key={link.to}
                       to={link.to}
-                      className={`font-headline text-3xl italic tracking-tight transition-colors cursor-pointer ${
-                        location.pathname === link.to
-                          ? "text-primary"
-                          : "text-on-surface hover:text-primary"
-                      }`}>
+                      end={link.to === "/"}
+                      className={({ isActive }) =>
+                        `font-headline text-3xl italic tracking-tight transition-colors cursor-pointer ${
+                          isActive
+                            ? "text-primary text-shadow-gold"
+                            : "text-on-surface hover:text-primary"
+                        }`
+                      }>
                       {link.label}
-                    </Link>
+                    </NavLink>
                   ))}
                   <button
                     onClick={() => setMenuView("booking")}
