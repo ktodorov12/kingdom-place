@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#ffe088",
+              "on-tertiary-fixed": "#00174b",
+              "on-primary": "#3c2f00",
+              "tertiary-container": "#97b0ff",
+              "surface-tint": "#e9c349",
+              "tertiary-fixed": "#dbe1ff",
+              "primary": "#f2ca50",
+              "inverse-on-surface": "#303030",
+              "secondary-container": "#544519",
+              "on-surface": "#e2e2e2",
+              "on-tertiary-container": "#254188",
+              "on-error": "#690005",
+              "on-tertiary": "#082b72",
+              "error-container": "#93000a",
+              "primary-container": "#d4af37",
+              "on-secondary": "#3c2f05",
+              "secondary-fixed": "#f7e1a6",
+              "on-secondary-fixed-variant": "#544519",
+              "on-background": "#e2e2e2",
+              "outline-variant": "#4d4635",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#1f1f1f",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-highest": "#353535",
+              "on-error-container": "#ffdad6",
+              "error": "#ffb4ab",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-container-low": "#1b1b1b",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-fixed-variant": "#574500",
+              "secondary": "#dac58d",
+              "on-primary-fixed": "#241a00",
+              "inverse-surface": "#e2e2e2",
+              "inverse-primary": "#735c00",
+              "tertiary": "#bfcdff",
+              "on-primary-container": "#554300",
+              "outline": "#99907c",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#27438a",
+              "surface-dim": "#131313",
+              "on-surface-variant": "#d0c5af",
+              "surface-variant": "#353535",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#393939",
+              "primary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#c8b37d"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(45deg, #D4AF37 0%, #F2CA50 100%);
+        }
+        .text-shadow-luxe {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl shadow-[0_4px_30px_rgba(226,226,226,0.04)] h-20 flex items-center justify-between px-6">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer" data-icon="menu">menu</span>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 text-center">
+<h1 class="text-2xl font-bold tracking-[0.2em] text-[#F2CA50] font-headline uppercase">KINGDOM PLACE</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Manrope'] text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors duration-300" href="#">Services</a>
+<a class="text-[#F2CA50] border-b-2 border-[#F2CA50] transition-colors duration-300" href="#">Our Team</a>
+<a class="text-[#E2E2E2] hover:text-[#F2CA50] transition-colors duration-300" href="#">Gallery</a>
+</nav>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer" data-icon="book_online">book_online</span>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-24 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-baseline gap-4 mb-4">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-primary">The Sovereign Standard</span>
+<div class="h-[1px] flex-grow bg-outline-variant/20 hidden md:block"></div>
+</div>
+<h2 class="font-headline text-6xl md:text-8xl text-primary tracking-[-0.02em] uppercase mb-6 leading-tight">
+                OUR ARTISANS
+            </h2>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light italic">
+                The masters of the blade and craft.
+            </p>
+</section>
+<!-- Artisans Vertical Stack -->
+<div class="space-y-32">
+<!-- Team Member 1 -->
+<article class="group relative grid grid-cols-1 md:grid-cols-12 gap-0 items-center">
+<div class="md:col-span-7 overflow-hidden bg-surface-container-low aspect-[4/5] md:aspect-[16/9]">
+<img alt="Мохамад Алаюби" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100" data-alt="Close up professional portrait of a master barber" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiMkwDbNFOE4Xw9Ti6jzZwnYg8VfAy5-kABDnUk_dRHblTAZXGVBQaOE41Nu39AcC4M1KMu-CB1TsHB8vy-0iCGb5zNLFqmHlrV6KUdwg37UJRQxNFlSJBdAcdALgu4jD2j0Lmg9yUWw37WDMGbJhBNbmukG4g_9s17sUljwM85Hs1fgdXFY5m6HDYZurCjYFrxIJWj2aTMkSexlWqwVHMJiJfMK8dLNvDrIW42sKjzkL8_buE3apdXBRy2zv2R7NFDpAlrHbQKA"/>
+</div>
+<div class="md:col-span-5 md:-ml-20 z-10 bg-surface-container-high p-8 md:p-16 border-l-4 border-primary shadow-2xl">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block">Master Artisan</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-none">Мохамад Алаюби</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Specialist in classic cuts and royal beard sculpting. A visionary who blends ancient technique with modern precision.
+                    </p>
+<div class="flex items-center gap-4">
+<button class="gold-gradient-bg px-8 py-3 text-on-primary font-label text-xs font-bold uppercase tracking-widest active:scale-95 duration-200">
+                            Book Session
+                        </button>
+<div class="h-px w-12 bg-outline-variant/40"></div>
+</div>
+</div>
+</article>
+<!-- Team Member 2 -->
+<article class="group relative grid grid-cols-1 md:grid-cols-12 gap-0 items-center">
+<div class="md:col-span-5 md:-mr-20 z-10 bg-surface-container-high p-8 md:p-16 border-r-4 border-primary shadow-2xl order-2 md:order-1">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block">Senior Barber</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-none">Alexander the Great</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Expert in modern fades and precision beard detailing. Known for an architectural approach to hair that defines the masculine silhouette.
+                    </p>
+<div class="flex items-center gap-4">
+<button class="gold-gradient-bg px-8 py-3 text-on-primary font-label text-xs font-bold uppercase tracking-widest active:scale-95 duration-200">
+                            Book Session
+                        </button>
+<div class="h-px w-12 bg-outline-variant/40"></div>
+</div>
+</div>
+<div class="md:col-span-7 overflow-hidden bg-surface-container-low aspect-[4/5] md:aspect-[16/9] order-1 md:order-2">
+<img alt="Alexander the Great" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100" data-alt="Professional barber focused on detailed hair cutting work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw--0Im_RSb7rPo_ex1XMAJrhV9ndGAOFZtiGROS1kj187T99gtTLjkgjvffXOZViezlNpRlF27uRLQ2UPPDPxZ-z_wQ7l8of0pf_qvbh4EqEeIrzVLy-lPauiittagDonrmVtadHQwSq5qgLzsgcJwuE30cXAEalq8ArAYzXn3jfkq2VO4K_-P40hNnNIAdaAdxqki-s2S7EiRCF_7cGmVMyCtlIVnszPTS_1UsRmtc_00ZUlf-RNT-XqHooiwuLsRcgfEjO3WbU"/>
+</div>
+</article>
+<!-- Team Member 3 -->
+<article class="group relative grid grid-cols-1 md:grid-cols-12 gap-0 items-center">
+<div class="md:col-span-7 overflow-hidden bg-surface-container-low aspect-[4/5] md:aspect-[16/9]">
+<img alt="Sovereign Stylist" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100" data-alt="Sophisticated barber portrait in a luxury dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPtNVa3ffyLnxbdcaDwc6nRikQLF-Uo1ybW0uppkNbykC-R85_KgI6Ku_PV36Hv6pS77tG9Q4fKvzO2ZxrefnkWv1ls2vRfoR4N6TWZk45zcYjThWNYfA61zlp9wdjXwea2ihRI6q_ZZV8vgCyCnM8e8_knUngPH41G-EcmpyA7vc4iCM7kKR37IFqKNoZjkBI4Ztv2gPq4OO2tRMTtW5RpHmMXJ4PpD1WbQEtqk_TbcI8PIlJwtgJRGAlxw2q0O3CNkPq_6sDdJY"/>
+</div>
+<div class="md:col-span-5 md:-ml-20 z-10 bg-surface-container-high p-8 md:p-16 border-l-4 border-primary shadow-2xl">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block">Artisan</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-none">Sovereign Stylist</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Master of traditional hot towel shaves and facial rituals. Turning a routine grooming task into a meditative sovereign experience.
+                    </p>
+<div class="flex items-center gap-4">
+<button class="gold-gradient-bg px-8 py-3 text-on-primary font-label text-xs font-bold uppercase tracking-widest active:scale-95 duration-200">
+                            Book Session
+                        </button>
+<div class="h-px w-12 bg-outline-variant/40"></div>
+</div>
+</div>
+</article>
+</div>
+<!-- CTA Section -->
+<section class="mt-48 text-center bg-surface-container-low py-24 px-8">
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface uppercase mb-8">Ready for your transformation?</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-8">
+<button class="gold-gradient-bg px-12 py-5 text-on-primary font-label text-sm font-bold uppercase tracking-[0.2em] transition-all hover:scale-105">
+                    Request an appointment
+                </button>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-primary border-b border-primary pb-1 hover:text-on-surface hover:border-on-surface transition-all" href="#">
+                    View full gallery
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-12 px-8 border-t border-[#4D4635]/20 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-[#F2CA50] font-bold font-headline text-xl tracking-[0.2em]">KINGDOM PLACE</span>
+<p class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#E2E2E2]/60">© 2024 KINGDOM PLACE. THE SOVEREIGN STANDARD.</p>
+</div>
+<nav class="flex gap-8">
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 ease-in-out" href="#">Services</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#F2CA50] hover:underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 ease-in-out" href="#">Our Team</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 ease-in-out" href="#">Gallery</a>
+<a class="font-['Manrope'] text-[10px] uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] hover:underline decoration-[#D4AF37] underline-offset-8 transition-all duration-500 ease-in-out" href="#">Privacy</a>
+</nav>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer text-xl">share</span>
+<span class="material-symbols-outlined text-[#F2CA50] cursor-pointer text-xl">mail</span>
+</div>
+</footer>
+</body></html>

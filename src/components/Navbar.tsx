@@ -9,8 +9,8 @@ const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m"
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/team", label: "Team" },
   { to: "/contact", label: "Contact" },
 ];

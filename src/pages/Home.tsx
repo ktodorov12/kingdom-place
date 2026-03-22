@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useBookingModal } from "../context/BookingModalContext";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
@@ -143,12 +144,14 @@ function HeroSection() {
             className="bg-gold-gradient px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-on-primary text-center text-sm shadow-[0_10px_40px_rgba(242,202,80,0.2)] cursor-pointer hover:brightness-110 transition-all duration-300">
             Book Now
           </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="border border-outline-variant/40 px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-primary hover:bg-surface-container-low cursor-pointer transition-all duration-300 text-sm">
-            View Gallery
-          </motion.button>
+          <Link to="/gallery">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="block border border-outline-variant/40 px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-primary hover:bg-surface-container-low cursor-pointer transition-all duration-300 text-sm text-center">
+              View Gallery
+            </motion.span>
+          </Link>
         </motion.div>
       </div>
 
@@ -335,6 +338,19 @@ function ServicesSection() {
               ))}
             </div>
           </div>
+
+          {/* Link to full services page */}
+          <Reveal delay={0.3}>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-2">
+              <span>Разгледай всички услуги</span>
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -377,7 +393,7 @@ function TeamSection() {
 
             <Reveal delay={0.3}>
               <h3 className="font-headline text-xl md:text-2xl italic text-primary mb-6 md:mb-8">
-                Master Barber & Founder
+                Master Barber
               </h3>
             </Reveal>
 
@@ -409,6 +425,18 @@ function TeamSection() {
                   </div>
                 </div>
               </div>
+            </Reveal>
+
+            <Reveal delay={0.6}>
+              <Link
+                to="/team"
+                className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-8">
+                <span>Вижте работата му</span>
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
             </Reveal>
           </div>
         </div>
