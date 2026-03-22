@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="bg"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container-low": "#1b1b1b",
+                "surface-container-high": "#2a2a2a",
+                "surface-container-highest": "#353535",
+                "surface-dim": "#131313",
+                "background": "#131313",
+                "on-background": "#e2e2e2",
+                "surface": "#131313",
+                "on-surface": "#e2e2e2",
+                "outline-variant": "#4d4635",
+                "primary": "#f2ca50",
+                "primary-container": "#d4af37",
+                "on-primary": "#3c2f00",
+                "on-primary-container": "#554300"
+              },
+              fontFamily: {
+                "headline": ["Newsreader", "serif"],
+                "body": ["Manrope", "sans-serif"],
+                "label": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient {
+            background: linear-gradient(45deg, #D4AF37, #F2CA50);
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 20px rgba(242, 202, 80, 0.3);
+        }
+        .dotted-leader {
+            border-bottom: 1px dotted #4d4635;
+            flex-grow: 1;
+            margin: 0 12px;
+            margin-bottom: 5px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md shadow-[0_4px_30px_rgba(226,226,226,0.04)] border-none">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-headline text-2xl font-light tracking-tighter text-primary">KINGDOM PLACE</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label uppercase tracking-widest text-xs text-primary font-bold border-b-2 border-primary pb-1" href="#">HOME</a>
+<a class="font-label uppercase tracking-widest text-xs text-white/60 hover:text-primary transition-colors" href="#services">SERVICES</a>
+<a class="font-label uppercase tracking-widest text-xs text-white/60 hover:text-primary transition-colors" href="#artisans">ARTISANS</a>
+<a class="font-label uppercase tracking-widest text-xs text-white/60 hover:text-primary transition-colors" href="#gallery">GALLERY</a>
+</nav>
+<button class="gold-gradient text-on-primary px-6 py-2 font-label font-bold text-xs tracking-widest uppercase transition-all duration-300 hover:opacity-90 active:scale-95">
+                BOOK NOW
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[795px] flex items-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Vintage barber pole" class="w-full h-full object-cover grayscale brightness-50" data-alt="Close up of a vintage rotating barber pole with classic red white and blue stripes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAerEe_MiOHnHZ_NTrjxQjJqD-YuRolLZgoz285WTrwtIm8OuBfJiuZPNkzPYImDsCTbcPN5I_hRzbCLw78PywDEf0vQj5Dror3Y0PVv2sOVnm4oB62WLHQ5jLJqra6kxtIyvGmEctrT1_M6f-SYJRziIyJBh9rgh0M80diKPWFTW8VXeehWDdUdS2GVX7IAszBd0NPbN6cBiP_wjKA7p7uU4b30SM-lOMLJv9KAAUaS5u7DCPtolhFsTHiik96fBsmSKTQLeQFmyY"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-12 md:px-24 w-full max-w-4xl">
+<p class="font-label text-primary uppercase tracking-[0.3em] text-xs mb-6">ESTABLISHED 2024</p>
+<h2 class="font-headline italic text-6xl md:text-8xl -tracking-tight mb-8 leading-tight">
+                    Влез като мъж, <br/>
+<span class="text-primary text-shadow-gold">излез като крал.</span>
+</h2>
+<div class="flex gap-6 items-center">
+<button class="gold-gradient text-on-primary px-10 py-5 font-label font-extrabold text-sm tracking-widest uppercase transition-all duration-300 hover:scale-105">
+                        BOOK AN APPOINTMENT
+                    </button>
+<div class="h-[1px] w-24 bg-outline-variant"></div>
+<span class="font-label text-xs tracking-widest text-white/40 uppercase">THE SOVEREIGN STANDARD</span>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-12 md:px-24 bg-surface flex flex-col md:flex-row gap-20 items-center">
+<div class="w-full md:w-1/2">
+<h3 class="font-headline italic text-4xl mb-8 text-primary">Усещането Kingdom</h3>
+<p class="font-body text-lg leading-relaxed text-white/80 max-w-xl">
+                    В Kingdom place не става въпрос просто за подстригване – това е изживяване, създадено за модерния джентълмен, който цени традицията и прецизността. Тук всеки детайл е от значение, а нашето майсторство превръща обикновената визита в ритуал на увереност и стил.
+                </p>
+<div class="mt-12 grid grid-cols-2 gap-8 border-t border-outline-variant pt-12">
+<div>
+<span class="font-headline text-3xl text-primary italic">10+</span>
+<p class="font-label text-xs tracking-widest text-white/40 uppercase mt-2">YEARS EXPERIENCE</p>
+</div>
+<div>
+<span class="font-headline text-3xl text-primary italic">100%</span>
+<p class="font-label text-xs tracking-widest text-white/40 uppercase mt-2">ROYAL SATISFACTION</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/5] bg-surface-container-high border border-outline-variant/20 p-4">
+<img alt="Premium barber tools" class="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 hover:grayscale-0" data-alt="Luxury barber shears and gold-plated clippers on a dark marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmXGHoDIE9KCXXqI8kdGeOOw3C-L5XPEHkM11pauI4YmmtVYCS7Pn7p9gjXU57hJAuEywpyEghKJStVNzFLLS-Wv9t0G476IEvNRft61bJWz06kcxxe4g-X4sdv8ahbBC7zB7D9mGv6jzgfFOJCbc_iFNcMChIhweL2vdlvOw9m8r1uM2Wj5gUnNbf6AXlyp5045G94YGHjDH7Y_XlaHJwe_t2Dpxn2vX1Bl4BcG2bFYMM5EUXlgwnTTNQAOyCIwy44OvQupWLfVc"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 border border-primary/20 -z-10"></div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 bg-surface-container-low px-12 md:px-24" id="services">
+<div class="mb-20 text-center">
+<span class="font-label text-primary uppercase tracking-[0.4em] text-[10px]">PRICELIST &amp; SERVICES</span>
+<h3 class="font-headline text-5xl italic mt-4">The Sovereign Menu</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
+<!-- Service Column 1 -->
+<div class="space-y-10">
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">Classic Royal Cut</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">45 BGN</span>
+</div>
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">Beard Sculpting &amp; Steam</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">30 BGN</span>
+</div>
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">The King's Package (Hair + Beard)</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">65 BGN</span>
+</div>
+</div>
+<!-- Service Column 2 -->
+<div class="space-y-10">
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">Traditional Hot Towel Shave</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">35 BGN</span>
+</div>
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">Royal Junior Cut (Under 12)</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">25 BGN</span>
+</div>
+<div class="flex items-end group">
+<span class="font-body text-lg group-hover:text-primary transition-colors">Face Rejuvenation Mask</span>
+<div class="dotted-leader"></div>
+<span class="font-body font-bold text-primary">20 BGN</span>
+</div>
+</div>
+</div>
+<div class="mt-20 flex justify-center">
+<button class="border border-outline-variant/30 text-primary px-12 py-4 font-label text-xs tracking-[0.3em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500">
+                    DOWNLOAD FULL PRICELIST (PDF)
+                </button>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-32 px-12 md:px-24 bg-surface" id="artisans">
+<div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+<div>
+<span class="font-label text-primary uppercase tracking-[0.4em] text-[10px]">MEET THE MASTER</span>
+<h3 class="font-headline text-5xl italic mt-4">Our Artisans</h3>
+</div>
+<p class="font-body text-white/40 max-w-sm text-right">
+                    Only the most skilled hands are permitted to wield the blades of Kingdom Place.
+                </p>
+</div>
+<div class="max-w-md mx-auto">
+<div class="relative group bg-surface-container-high overflow-hidden">
+<div class="aspect-[3/4]">
+<img alt="Master Barber" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" data-alt="Professional portrait of a master barber with tattoos and a sharp waistcoat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByUCRaWBjob-JWcXVM_tpWX-eagZV1IEGJEkMojzlYd2ybX__fpmROLTUE_b5R5VN8qMMdErb4ZnrEhtLWZKqgVmufeOdIgYEdRSAtQYPokWeMz0rar6f760qmVpfz94xII_RbzbWA5JCgro6piP3uVRiaC9xgR5PJE_3lPP_aHdMmM3HaXvgMxVY91Dcvg5utEIu-AeUPRRI4oHypjlU8neoqTU8ijiaLPEP0PESbz5-Oya3azu8i_enNbs8JFk6pS8f0qGczr14"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-primary text-[10px] tracking-[0.3em] uppercase mb-2">MASTER ARTISAN</span>
+<h4 class="font-headline text-3xl italic">Мохамад Алаюби</h4>
+<div class="h-1 w-0 group-hover:w-full bg-primary mt-4 transition-all duration-700"></div>
+<p class="font-body text-xs text-white/60 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                            Expert in classical scissoring and precision fades with over a decade of international experience.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Map/Location Section -->
+<section class="h-[500px] relative w-full overflow-hidden bg-surface-container-highest">
+<img alt="Location Map" class="w-full h-full object-cover opacity-30 grayscale brightness-50" data-alt="A stylized minimalist dark map of a city center with gold highlights" data-location="Sofia, Bulgaria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa82VCLbuefwVRFZ0zLr2pRJccEDDgcaOA66SXRSNLPXJT2KzWI2085uK2Z2-bsCm9YbmfyT_bAHhJi0-hqEdRL3wf-trOz9ytE2-AuT6gEjM8GvHEvaVbTlBX-B_4AB3uPE7POXYLgRaT3VADYV4ZxyzBP3sRhadkcY_qNHssJVv1nX1PpsXb9xXj66JOrhG2uirf6ye9bOhreFLoy_sjSw5PHx5RICUwMkaNrV94Wpy0Dg68RIo49BFjkL5Mp6cJyg3ROFVPpxw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#131313]/90 backdrop-blur-lg border border-primary/20 p-10 text-center max-w-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">location_on</span>
+<h4 class="font-headline text-2xl mb-2">Visit the Throne Room</h4>
+<p class="font-body text-sm text-white/60 tracking-wide">
+                    бул. „Княз Александър Дондуков“ 42, <br/>
+                    1000 София, Център
+                </p>
+<div class="mt-6 border-t border-outline-variant pt-6">
+<p class="font-label text-[10px] tracking-widest text-primary uppercase mb-2">WORKING HOURS</p>
+<p class="font-body text-sm">Tue - Sun: 09:00 - 21:00</p>
+<p class="font-body text-sm text-white/40">Monday: Closed</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1B1B1B] w-full py-12 px-10 border-t border-[#4D4635]/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start w-full">
+<div>
+<h5 class="font-headline text-xl text-primary mb-6">KINGDOM PLACE</h5>
+<p class="font-body text-xs text-white/40 leading-relaxed max-w-xs">
+                    The premium destination for men's grooming where every cut is a testament to the sovereign standard of masculinity.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label text-xs tracking-widest text-white/20 uppercase mb-2">NAVIGATION</p>
+<a class="font-label text-sm tracking-widest uppercase text-white/40 hover:text-primary hover:underline decoration-primary underline-offset-8 transition-all" href="#">SERVICES</a>
+<a class="font-label text-sm tracking-widest uppercase text-white/40 hover:text-primary hover:underline decoration-primary underline-offset-8 transition-all" href="#">ARTISANS</a>
+<a class="font-label text-sm tracking-widest uppercase text-white/40 hover:text-primary hover:underline decoration-primary underline-offset-8 transition-all" href="#">GALLERY</a>
+<a class="font-label text-sm tracking-widest uppercase text-white/40 hover:text-primary hover:underline decoration-primary underline-offset-8 transition-all" href="#">PRIVACY</a>
+</div>
+<div class="flex flex-col gap-6 items-end">
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+<p class="font-label text-[10px] tracking-widest text-white/40 text-right">
+                    © 2024 KINGDOM PLACE. <br/> THE SOVEREIGN STANDARD.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
