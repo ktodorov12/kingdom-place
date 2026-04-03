@@ -46,7 +46,14 @@ const teamImage =
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
 /* ─── Service price data (names resolved dynamically from translations) ─── */
-type ServiceKey = "hair" | "hairEyebrowsThread" | "hairEyebrowsRazor" | "hairBeard" | "hairBeardDye" | "hairBeardEyebrowsMask" | "hairBeardEyebrows";
+type ServiceKey =
+  | "hair"
+  | "hairEyebrowsThread"
+  | "hairEyebrowsRazor"
+  | "hairBeard"
+  | "hairBeardDye"
+  | "hairBeardEyebrowsMask"
+  | "hairBeardEyebrows";
 type BeardKey = "eyebrowsThread" | "beardDye" | "beard" | "blackMask" | "kidsHaircut";
 
 const hairdressingData: { key: ServiceKey; eur: string; bgn: string }[] = [

@@ -151,7 +151,9 @@ export default function Team() {
                     <span className="block text-primary font-label text-xs tracking-widest uppercase mb-2">
                       {t.team.experience}
                     </span>
-                    <span className="text-on-surface font-body">{t.team.experienceValue}</span>
+                    <span className="text-on-surface font-body">
+                      {t.team.experienceValue}
+                    </span>
                   </div>
                 </div>
               </Reveal>

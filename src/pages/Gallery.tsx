@@ -85,7 +85,9 @@ export default function Gallery() {
           <Reveal delay={0.1}>
             <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl leading-[0.9] -tracking-[0.04em] italic mb-8">
               {t.gallery.titleLine1} <br />
-              <span className="not-italic text-on-surface-variant">{t.gallery.titleLine2}</span>
+              <span className="not-italic text-on-surface-variant">
+                {t.gallery.titleLine2}
+              </span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
