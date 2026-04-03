@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
+import { useLanguage } from "../context/LanguageContext";
 
 const teamImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCHNuY4eS0cfJuNXyl8EJh-IczBf9gM1RLsXlKljWkkPEHM7n7e6g4_TLZu-WPKxKcOskkqRuXsRPNFOquSTqqhuXzLQVosyz_zq9s9iBjSkXmZ3FyKAS_nupA3xaslMWqjHDkYQ2YlioCkL6bCZkPF6vFa18-jiZHn9i71I2_gI56hgJ71GTEeIEWUq60vjk62YBZ8jUqv7NOZ8nWPnbsbbNJOPTqL1ej0a_-7oUHa-BEr0L1WyZhjz3HmjFIyDomz3NPM4CmN0G4";
@@ -64,6 +65,8 @@ function Reveal({
 }
 
 export default function Team() {
+  const { t } = useLanguage();
+
   return (
     <>
       {/* ═══ The Master Collective — Hero Header ═══ */}
@@ -73,20 +76,19 @@ export default function Team() {
             <div className="max-w-4xl">
               <Reveal>
                 <span className="text-primary font-label text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 block">
-                  Our Artisans
+                  {t.team.eyebrow}
                 </span>
               </Reveal>
               <Reveal delay={0.1}>
                 <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl text-on-surface leading-none -tracking-[0.02em]">
-                  THE MASTER <br />
-                  <span className="italic text-primary">COLLECTIVE</span>
+                  {t.team.titleLine1} <br />
+                  <span className="italic text-primary">{t.team.titleLine2}</span>
                 </h1>
               </Reveal>
             </div>
             <Reveal delay={0.2} className="md:w-1/3">
               <p className="text-on-surface-variant font-body text-base md:text-lg leading-relaxed border-l border-outline-variant pl-8">
-                Crafting excellence through precision and tradition. Meet the hands that
-                define the sovereign standard of grooming.
+                {t.team.intro}
               </p>
             </Reveal>
           </div>
@@ -113,28 +115,25 @@ export default function Team() {
             <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-12 lg:p-20 border-l-0 lg:border-l border-outline-variant/20">
               <Reveal delay={0.1}>
                 <span className="inline-block py-1 px-3 border border-primary text-primary font-label text-[10px] tracking-widest uppercase mb-6">
-                  Master Craftsman
+                  {t.team.badgeLabel}
                 </span>
               </Reveal>
 
               <Reveal delay={0.2}>
                 <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface mb-4 -tracking-[0.02em]">
-                  Мохамад Алаюби
+                  {t.team.name}
                 </h2>
               </Reveal>
 
               <Reveal delay={0.25}>
                 <p className="font-body text-xl text-primary italic mb-8">
-                  The Master Barber
+                  {t.team.role}
                 </p>
               </Reveal>
 
               <Reveal delay={0.3}>
                 <p className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
-                  С над 15 години опит в международни салони, Мохамад съчетава източната
-                  прецизност със съвременните европейски тенденции. Неговият подход е
-                  индивидуален към всяка черта на лицето, гарантирайки не просто
-                  подстригване, а пълна трансформация на стила.
+                  {t.team.bio}
                 </p>
               </Reveal>
 
@@ -142,17 +141,17 @@ export default function Team() {
                 <div className="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10 mb-10">
                   <div>
                     <span className="block text-primary font-label text-xs tracking-widest uppercase mb-2">
-                      Specialty
+                      {t.team.specialty}
                     </span>
                     <span className="text-on-surface font-body">
-                      Signature Scissor Cuts
+                      {t.team.specialtyValue}
                     </span>
                   </div>
                   <div>
                     <span className="block text-primary font-label text-xs tracking-widest uppercase mb-2">
-                      Experience
+                      {t.team.experience}
                     </span>
-                    <span className="text-on-surface font-body">15+ Years</span>
+                    <span className="text-on-surface font-body">{t.team.experienceValue}</span>
                   </div>
                 </div>
               </Reveal>
@@ -164,7 +163,7 @@ export default function Team() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gold-gradient px-8 py-3 font-label text-xs font-extrabold uppercase tracking-widest text-on-primary cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)]">
-                    Book Session
+                    {t.team.bookSession}
                   </a>
                   <a
                     href="https://www.instagram.com/kingdom_place_barbershop/"
@@ -173,7 +172,7 @@ export default function Team() {
                     className="border border-outline-variant/30 px-4 py-3 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all duration-300 cursor-pointer flex items-center gap-2">
                     <Instagram size={16} />
                     <span className="font-label text-xs tracking-[0.15em] uppercase">
-                      Follow
+                      {t.team.follow}
                     </span>
                   </a>
                 </div>
@@ -189,12 +188,12 @@ export default function Team() {
           <div className="text-center mb-16 md:mb-20">
             <Reveal>
               <span className="inline-block py-1.5 px-4 border border-primary text-primary font-label text-[10px] md:text-xs tracking-widest uppercase mb-6">
-                His Work
+                {t.team.portfolioEyebrow}
               </span>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                Неговото майсторство
+                {t.team.portfolioTitle}
               </h2>
             </Reveal>
           </div>
@@ -208,13 +207,13 @@ export default function Team() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-24 py-20 md:py-28 flex flex-col items-center text-center">
           <Reveal>
             <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl mb-8">
-              Ready for your <span className="text-primary italic">transformation?</span>
+              {t.team.ctaTitle}{" "}
+              <span className="text-primary italic">{t.team.ctaTitleHighlight}</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-body text-on-surface-variant max-w-xl mb-12 text-base md:text-lg">
-              Join the ranks of the sovereigns. Every appointment is a dedicated hour of
-              precision, craftsmanship, and unparalleled grooming excellence.
+              {t.team.ctaDescription}
             </p>
           </Reveal>
           <Reveal delay={0.2}>
@@ -224,12 +223,12 @@ export default function Team() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gold-gradient px-12 py-5 font-label font-extrabold text-xs tracking-widest uppercase text-on-primary cursor-pointer hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)] transition-all duration-300">
-                Request an Appointment
+                {t.team.ctaPrimary}
               </a>
               <Link
                 to="/gallery"
                 className="font-label text-xs uppercase tracking-[0.2em] text-primary border-b border-primary/40 hover:border-primary pb-1 transition-all py-4 px-8 cursor-pointer">
-                View Full Gallery
+                {t.team.ctaSecondary}
               </Link>
             </div>
           </Reveal>

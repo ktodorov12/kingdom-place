@@ -1,5 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import type { Dictionary } from "../locales/bg";
 
 /* ─── Scroll-reveal wrapper ─── */
 function Reveal({
@@ -41,107 +43,66 @@ const heroImage =
 const ctaImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuDBHtup05_SHrRk7_Dv9-KO2scFEYjHUuP5arNGQDkvmCZRFOwLHGSMdeXBJDQ6rSPh-oh1_nzR13MhXN4TaG1nGPy4VYmwu7umr6Qz5-5O_pdaxHhO4M94K_Cpnh4fQTHEi99FXlNAnus_PFur4MOigkqom8x86A_ZoKz9DCNv-tZ_yb0w6o2E8BQMNpKNk0cKy7ZJTB76o7mgfEN7N2JtH-gsdyCi9wbWkqy4TchFk8tLB4p7vg6PgWuD2aZsng3zZVv6ulcAcNU";
 
-/* ─── Official price list data with descriptions ─── */
+/* ─── Official price list data — names/descs resolved dynamically ─── */
+type ServiceKey = keyof Dictionary["serviceNames"];
+type ComboIncludesKey = keyof Dictionary["comboIncludes"];
+
 interface ServiceData {
-  name: string;
+  key: ServiceKey;
   eur: string;
   bgn: string;
-  desc: string;
-  tag?: string;
+  popular?: boolean;
 }
 
-const hairdressing: ServiceData[] = [
-  {
-    name: "Коса",
-    eur: "13 €",
-    bgn: "25,42 BGN",
-    desc: "Прецизно подстригване, измиване и стилизиране, съобразено с Вашата визия.",
-  },
-  {
-    name: "Коса + вежди с конец",
-    eur: "20 €",
-    bgn: "39,12 BGN",
-    desc: "Подстригване с оформяне на вежди чрез традиционна техника с конец.",
-    tag: "Популярен",
-  },
-  {
-    name: "Коса + вежди с бръснач",
-    eur: "16 €",
-    bgn: "31,29 BGN",
-    desc: "Подстригване и прецизно оформяне на вежди с класически бръснач.",
-  },
-  {
-    name: "Коса + брада",
-    eur: "20 €",
-    bgn: "39,12 BGN",
-    desc: "Пълно подстригване и оформяне на брадата за завършен, кралски вид.",
-    tag: "Популярен",
-  },
-  {
-    name: "Коса + брада + боядисване",
-    eur: "25 €",
-    bgn: "48,90 BGN",
-    desc: "Подстригване, оформяне на брада и професионално боядисване.",
-  },
-  {
-    name: "Коса + брада + вежди + маска",
-    eur: "30 €",
-    bgn: "58,67 BGN",
-    desc: "Пълният ритуал — подстригване, брада, вежди и почистваща маска за лице.",
-  },
-  {
-    name: "Коса + брада + вежди",
-    eur: "25 €",
-    bgn: "48,90 BGN",
-    desc: "Комплексна грижа — коса, брада и вежди за цялостна трансформация.",
-  },
+const hairdressingData: ServiceData[] = [
+  { key: "hair", eur: "13 €", bgn: "25,42 BGN" },
+  { key: "hairEyebrowsThread", eur: "20 €", bgn: "39,12 BGN", popular: true },
+  { key: "hairEyebrowsRazor", eur: "16 €", bgn: "31,29 BGN" },
+  { key: "hairBeard", eur: "20 €", bgn: "39,12 BGN", popular: true },
+  { key: "hairBeardDye", eur: "25 €", bgn: "48,90 BGN" },
+  { key: "hairBeardEyebrowsMask", eur: "30 €", bgn: "58,67 BGN" },
+  { key: "hairBeardEyebrows", eur: "25 €", bgn: "48,90 BGN" },
 ];
 
 interface ComboData {
-  name: string;
+  key: ServiceKey;
   eur: string;
   bgn: string;
-  desc: string;
-  includes: string[];
-  tag?: string;
+  includes: ComboIncludesKey[];
+  popular?: boolean;
 }
 
-const combos: ComboData[] = [
+const combosData: ComboData[] = [
   {
-    name: "Оформяне на вежди с конец",
+    key: "eyebrowsThread",
     eur: "7 €",
     bgn: "13,69 BGN",
-    desc: "Традиционна техника за перфектна линия на вежди.",
-    includes: ["Оформяне с конец", "Финална корекция"],
+    includes: ["threadShaping", "finalCorrection"],
   },
   {
-    name: "Брада + боядисване",
+    key: "beardDye",
     eur: "15 €",
     bgn: "29,34 BGN",
-    desc: "Оформяне на брада с професионално боядисване за плътен вид.",
-    includes: ["Оформяне на брада", "Боядисване"],
-    tag: "Популярен",
+    includes: ["beardShaping", "dyeing"],
+    popular: true,
   },
   {
-    name: "Брада",
+    key: "beard",
     eur: "10 €",
     bgn: "19,56 BGN",
-    desc: "Прецизно оформяне и контуриране на брадата с бръснач.",
-    includes: ["Оформяне с бръснач", "Стилизиране"],
+    includes: ["razorShaping", "styling"],
   },
   {
-    name: "Черна маска (уши и нос)",
+    key: "blackMask",
     eur: "5 €",
     bgn: "9,78 BGN",
-    desc: "Почистваща маска за пори в зоната на ушите и носа.",
-    includes: ["Почистване", "Маска"],
+    includes: ["cleansing", "mask"],
   },
   {
-    name: "Детско подстригване",
+    key: "kidsHaircut",
     eur: "10 €",
     bgn: "19,56 BGN",
-    desc: "Професионално подстригване за малки джентълмени до 12 години.",
-    includes: ["Подстригване", "Стилизиране"],
+    includes: ["haircut", "styling"],
   },
 ];
 
@@ -155,7 +116,14 @@ function ServiceItem({
   desc,
   tag,
   delay = 0,
-}: ServiceData & { delay?: number }) {
+}: {
+  name: string;
+  eur: string;
+  bgn: string;
+  desc: string;
+  tag?: string;
+  delay?: number;
+}) {
   return (
     <Reveal delay={delay}>
       <motion.div
@@ -195,6 +163,8 @@ function ServiceItem({
 
 /* ═══════════════ SERVICES PAGE ═══════════════ */
 export default function Services() {
+  const { t } = useLanguage();
+
   return (
     <>
       {/* ── HERO SECTION ── */}
@@ -208,7 +178,7 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-primary font-label text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 block">
-                Craftsmanship & Precision
+                {t.services.eyebrow}
               </motion.span>
 
               <motion.h1
@@ -216,9 +186,9 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="font-headline text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tighter uppercase mb-8">
-                Service
+                {t.services.titleLine1}
                 <br />
-                <span className="text-primary italic">Menu</span>
+                <span className="text-primary italic">{t.services.titleLine2}</span>
               </motion.h1>
 
               <motion.p
@@ -226,9 +196,7 @@ export default function Services() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.8 }}
                 className="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-lg">
-                Tailored grooming experiences for the modern gentleman. We combine
-                traditional techniques with contemporary aesthetics to ensure every visit
-                is a masterpiece of personal style.
+                {t.services.description}
               </motion.p>
             </div>
 
@@ -262,18 +230,26 @@ export default function Services() {
           <Reveal>
             <div className="flex items-baseline gap-6 mb-12 md:mb-16">
               <h2 className="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tighter">
-                Hairdressing
+                {t.services.hairdressing}
               </h2>
               <span className="text-outline font-label text-[10px] md:text-xs tracking-widest uppercase italic hidden sm:inline">
-                The Sovereign Cut
+                {t.services.hairdressingSub}
               </span>
               <div className="hidden sm:block flex-grow h-px bg-outline-variant/20" />
             </div>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/15">
-            {hairdressing.map((s, i) => (
-              <ServiceItem key={s.name} {...s} delay={i * 0.05} />
+            {hairdressingData.map((s, i) => (
+              <ServiceItem
+                key={s.key}
+                name={t.serviceNames[s.key]}
+                eur={s.eur}
+                bgn={s.bgn}
+                desc={t.serviceDescs[s.key]}
+                tag={s.popular ? t.services.popular : undefined}
+                delay={i * 0.05}
+              />
             ))}
           </div>
         </div>
@@ -285,32 +261,32 @@ export default function Services() {
           <Reveal>
             <div className="flex items-baseline gap-6 mb-12 md:mb-16">
               <h2 className="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tighter">
-                Beard & Extras
+                {t.services.beardExtras}
               </h2>
               <span className="text-outline font-label text-[10px] md:text-xs tracking-widest uppercase italic hidden sm:inline">
-                Refinement & Care
+                {t.services.beardExtrasSub}
               </span>
               <div className="hidden sm:block flex-grow h-px bg-outline-variant/20" />
             </div>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {combos.map((c, i) => (
-              <Reveal key={c.name} delay={i * 0.07}>
+            {combosData.map((c, i) => (
+              <Reveal key={c.key} delay={i * 0.07}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   className="group relative flex flex-col h-full p-6 md:p-8 bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-all duration-300">
                   {/* Tag */}
-                  {c.tag && (
+                  {c.popular && (
                     <span className="absolute top-0 right-0 bg-gold-gradient text-on-primary font-label text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1">
-                      {c.tag}
+                      {t.services.popular}
                     </span>
                   )}
 
                   {/* Header: name + price */}
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="font-headline text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors duration-300 leading-tight pr-4">
-                      {c.name}
+                      {t.serviceNames[c.key]}
                     </h3>
                     <div className="text-right shrink-0">
                       <span className="block text-primary font-black text-2xl md:text-3xl leading-none">
@@ -324,20 +300,20 @@ export default function Services() {
 
                   {/* Description */}
                   <p className="text-on-surface-variant text-sm font-light leading-relaxed mb-6">
-                    {c.desc}
+                    {t.serviceDescs[c.key]}
                   </p>
 
                   {/* Includes list */}
                   <div className="mt-auto pt-4 border-t border-outline-variant/15">
                     <span className="font-label text-[9px] tracking-[0.3em] uppercase text-outline mb-3 block">
-                      Включва
+                      {t.services.includes}
                     </span>
                     <div className="flex flex-wrap gap-2">
                       {c.includes.map((item) => (
                         <span
                           key={item}
                           className="text-[10px] font-label tracking-wider uppercase text-primary-container bg-surface-container-high px-3 py-1">
-                          {item}
+                          {t.comboIncludes[item]}
                         </span>
                       ))}
                     </div>
@@ -362,14 +338,13 @@ export default function Services() {
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
             <Reveal>
               <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter text-white mb-6 md:mb-8">
-                Ready for the Throne?
+                {t.services.ctaTitle}
               </h2>
             </Reveal>
 
             <Reveal delay={0.15}>
               <p className="text-on-surface text-base md:text-xl font-light leading-relaxed mb-10 md:mb-12 max-w-xl mx-auto">
-                Join the ranks of gentlemen who settle for nothing less than absolute
-                precision. Walk-ins are welcome, but bookings are preferred.
+                {t.services.ctaDescription}
               </p>
             </Reveal>
 
@@ -381,7 +356,7 @@ export default function Services() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gold-gradient px-12 md:px-16 py-5 md:py-6 font-label text-sm md:text-lg font-black uppercase tracking-[0.3em] text-on-primary shadow-2xl cursor-pointer hover:brightness-110 hover:shadow-[0_15px_50px_rgba(242,202,80,0.3)] transition-all duration-500">
-                Запази своя час
+                {t.services.ctaButton}
               </motion.a>
             </Reveal>
           </div>

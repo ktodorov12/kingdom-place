@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
+import { useLanguage } from "../context/LanguageContext";
 
 /* ── placeholder images (barbershop interior / work shots) ── */
 const galleryImages: GalleryImage[] = [
@@ -69,6 +70,8 @@ function Reveal({
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
 export default function Gallery() {
+  const { t } = useLanguage();
+
   return (
     <>
       {/* Hero */}
@@ -76,19 +79,18 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <span className="font-label text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary mb-4 block">
-              Visual Excellence
+              {t.gallery.eyebrow}
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl leading-[0.9] -tracking-[0.04em] italic mb-8">
-              The Master <br />
-              <span className="not-italic text-on-surface-variant">Gallery.</span>
+              {t.gallery.titleLine1} <br />
+              <span className="not-italic text-on-surface-variant">{t.gallery.titleLine2}</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="max-w-2xl text-on-surface-variant text-lg md:text-xl leading-relaxed">
-              A curated showcase of precision, craft, and the sovereign atmosphere of our
-              studio. Every frame captures the standard we uphold.
+              {t.gallery.description}
             </p>
           </Reveal>
         </div>
@@ -106,13 +108,13 @@ export default function Gallery() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-24 py-20 md:py-28 flex flex-col items-center text-center">
           <Reveal>
             <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl mb-8">
-              Ready for your <span className="text-primary italic">transformation?</span>
+              {t.gallery.ctaTitle}{" "}
+              <span className="text-primary italic">{t.gallery.ctaTitleHighlight}</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-body text-on-surface-variant max-w-xl mb-12 text-base md:text-lg">
-              Experience the zenith of male grooming. Book your session at Kingdom Place
-              today.
+              {t.gallery.ctaDescription}
             </p>
           </Reveal>
           <Reveal delay={0.2}>
@@ -122,12 +124,12 @@ export default function Gallery() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gold-gradient px-12 py-5 font-label font-extrabold text-xs tracking-widest uppercase text-on-primary cursor-pointer hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)] transition-all duration-300">
-                Secure Appointment
+                {t.gallery.ctaPrimary}
               </a>
               <Link
                 to="/services"
                 className="border border-outline-variant text-on-surface px-12 py-5 font-label font-bold text-xs tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
-                View Services
+                {t.gallery.ctaSecondary}
               </Link>
             </div>
           </Reveal>

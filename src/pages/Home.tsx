@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -44,23 +45,26 @@ const teamImage =
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
-/* ─── Service data (split EUR + BGN) ─── */
-const hairdressing = [
-  { name: "Коса", eur: "13 €", bgn: "25,42 BGN" },
-  { name: "Коса + вежди с конец", eur: "20 €", bgn: "39,12 BGN" },
-  { name: "Коса + вежди с бръснач", eur: "16 €", bgn: "31,29 BGN" },
-  { name: "Коса + брада", eur: "20 €", bgn: "39,12 BGN" },
-  { name: "Коса + брада + боядисване", eur: "25 €", bgn: "48,90 BGN" },
-  { name: "Коса + брада + вежди + маска", eur: "30 €", bgn: "58,67 BGN" },
-  { name: "Коса + брада + вежди", eur: "25 €", bgn: "48,90 BGN" },
+/* ─── Service price data (names resolved dynamically from translations) ─── */
+type ServiceKey = "hair" | "hairEyebrowsThread" | "hairEyebrowsRazor" | "hairBeard" | "hairBeardDye" | "hairBeardEyebrowsMask" | "hairBeardEyebrows";
+type BeardKey = "eyebrowsThread" | "beardDye" | "beard" | "blackMask" | "kidsHaircut";
+
+const hairdressingData: { key: ServiceKey; eur: string; bgn: string }[] = [
+  { key: "hair", eur: "13 €", bgn: "25,42 BGN" },
+  { key: "hairEyebrowsThread", eur: "20 €", bgn: "39,12 BGN" },
+  { key: "hairEyebrowsRazor", eur: "16 €", bgn: "31,29 BGN" },
+  { key: "hairBeard", eur: "20 €", bgn: "39,12 BGN" },
+  { key: "hairBeardDye", eur: "25 €", bgn: "48,90 BGN" },
+  { key: "hairBeardEyebrowsMask", eur: "30 €", bgn: "58,67 BGN" },
+  { key: "hairBeardEyebrows", eur: "25 €", bgn: "48,90 BGN" },
 ];
 
-const beardGrooming = [
-  { name: "Оформяне на вежди с конец", eur: "7 €", bgn: "13,69 BGN" },
-  { name: "Брада + боядисване", eur: "15 €", bgn: "29,34 BGN" },
-  { name: "Брада", eur: "10 €", bgn: "19,56 BGN" },
-  { name: "Черна маска (уши и нос)", eur: "5 €", bgn: "9,78 BGN" },
-  { name: "Детско подстригване", eur: "10 €", bgn: "19,56 BGN" },
+const beardGroomingData: { key: BeardKey; eur: string; bgn: string }[] = [
+  { key: "eyebrowsThread", eur: "7 €", bgn: "13,69 BGN" },
+  { key: "beardDye", eur: "15 €", bgn: "29,34 BGN" },
+  { key: "beard", eur: "10 €", bgn: "19,56 BGN" },
+  { key: "blackMask", eur: "5 €", bgn: "9,78 BGN" },
+  { key: "kidsHaircut", eur: "10 €", bgn: "19,56 BGN" },
 ];
 
 export default function Home() {
@@ -77,6 +81,8 @@ export default function Home() {
 
 /* ═══════════════ HERO SECTION ═══════════════ */
 function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden">
       {/* Mobile background image (behind content) */}
@@ -96,7 +102,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-primary font-label text-[10px] md:text-xs tracking-[0.4em] uppercase mb-6 block">
-          Premium Barbershop Experience
+          {t.hero.eyebrow}
         </motion.span>
 
         <motion.h1
@@ -104,19 +110,19 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tighter mb-6 md:mb-8">
-          Влез като
+          {t.hero.mottoLine1}
           <br />
-          мъж,
+          {t.hero.mottoLine2}
           <br className="md:hidden" />
           <span className="hidden md:inline"> </span>
-          излез като
+          {t.hero.mottoLine3}
           <br />
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="italic text-primary text-shadow-gold">
-            крал.
+            {t.hero.mottoHighlight}
           </motion.span>
         </motion.h1>
 
@@ -125,8 +131,7 @@ function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 1.3 }}
           className="text-on-surface-variant text-base md:text-lg max-w-md mb-10 md:mb-12 font-light leading-relaxed">
-          Преоткрийте класическото бръснарско изкуство в атмосфера на дискретен лукс и
-          професионализъм.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -141,14 +146,14 @@ function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gold-gradient px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-on-primary text-center text-sm shadow-[0_10px_40px_rgba(242,202,80,0.2)] cursor-pointer hover:brightness-110 transition-all duration-300">
-            Book Now
+            {t.hero.ctaPrimary}
           </motion.a>
           <Link to="/gallery">
             <motion.span
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="block border border-outline-variant/40 px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-primary hover:bg-surface-container-low cursor-pointer transition-all duration-300 text-sm text-center">
-              View Gallery
+              {t.hero.ctaSecondary}
             </motion.span>
           </Link>
         </motion.div>
@@ -194,6 +199,8 @@ function HeroSection() {
 
 /* ═══════════════ ABOUT SECTION ═══════════════ */
 function AboutSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-8 relative overflow-hidden bg-surface-container-low">
       <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -203,15 +210,13 @@ function AboutSection() {
 
         <Reveal delay={0.15}>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl italic text-white mb-8 md:mb-12">
-            The Sovereign Philosophy
+            {t.about.title}
           </h2>
         </Reveal>
 
         <Reveal delay={0.3}>
           <p className="font-body text-lg md:text-xl lg:text-2xl leading-relaxed text-on-surface/80 italic font-light">
-            "Kingdom Place не е просто място за подстригване. Това е Вашето лично убежище,
-            където детайлът е закон, а обслужването – традиция. Ние вярваме, че всеки мъж
-            заслужава корона, изваяна с прецизност и майсторство."
+            {t.about.quote}
           </p>
         </Reveal>
 
@@ -264,6 +269,8 @@ function ServiceItem({
 }
 
 function ServicesSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-24 bg-surface">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start max-w-7xl mx-auto">
@@ -271,26 +278,25 @@ function ServicesSection() {
         <div className="lg:col-span-4 lg:sticky lg:top-32">
           <Reveal>
             <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tighter mb-6 md:mb-8">
-              The Service
+              {t.servicesPreview.titleLine1}
               <br />
-              <span className="text-primary italic">Menu</span>
+              <span className="text-primary italic">{t.servicesPreview.titleLine2}</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.15}>
             <p className="text-on-surface-variant uppercase tracking-[0.2em] text-sm mb-6 md:mb-8">
-              Signature Grooming Rituals
+              {t.servicesPreview.subtitle}
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <div className="p-6 md:p-8 border-l-2 border-primary bg-surface-container-low">
               <p className="text-on-surface mb-4 text-sm md:text-base">
-                Every session includes a complementary premium drink and a scalp
-                consultation.
+                {t.servicesPreview.note}
               </p>
               <span className="text-primary font-bold text-sm">
-                Kingdom Place Exclusive
+                {t.servicesPreview.noteHighlight}
               </span>
             </div>
           </Reveal>
@@ -302,14 +308,14 @@ function ServicesSection() {
           <div>
             <Reveal>
               <h3 className="font-label text-[10px] md:text-xs tracking-[0.4em] uppercase text-primary mb-8 md:mb-12">
-                Hairdressing
+                {t.servicesPreview.hairdressing}
               </h3>
             </Reveal>
             <div className="space-y-0">
-              {hairdressing.map((s, i) => (
+              {hairdressingData.map((s, i) => (
                 <ServiceItem
-                  key={s.name}
-                  name={s.name}
+                  key={s.key}
+                  name={t.serviceNames[s.key]}
                   eur={s.eur}
                   bgn={s.bgn}
                   delay={i * 0.06}
@@ -322,14 +328,14 @@ function ServicesSection() {
           <div>
             <Reveal>
               <h3 className="font-label text-[10px] md:text-xs tracking-[0.4em] uppercase text-primary mb-8 md:mb-12">
-                Beard & Extras
+                {t.servicesPreview.beardExtras}
               </h3>
             </Reveal>
             <div className="space-y-0">
-              {beardGrooming.map((s, i) => (
+              {beardGroomingData.map((s, i) => (
                 <ServiceItem
-                  key={s.name}
-                  name={s.name}
+                  key={s.key}
+                  name={t.serviceNames[s.key]}
                   eur={s.eur}
                   bgn={s.bgn}
                   delay={i * 0.06}
@@ -343,7 +349,7 @@ function ServicesSection() {
             <Link
               to="/services"
               className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-2">
-              <span>Разгледай всички услуги</span>
+              <span>{t.servicesPreview.viewAll}</span>
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -358,6 +364,8 @@ function ServicesSection() {
 
 /* ═══════════════ TEAM SECTION ═══════════════ */
 function TeamSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low">
       <div className="max-w-7xl mx-auto">
@@ -380,28 +388,25 @@ function TeamSection() {
           <div className="w-full md:w-1/2">
             <Reveal delay={0.1}>
               <span className="text-primary font-label text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 md:mb-6 block">
-                The Craftsman
+                {t.teamPreview.eyebrow}
               </span>
             </Reveal>
 
             <Reveal delay={0.2}>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 md:mb-8">
-                Мохамад Алаюби
+                {t.teamPreview.name}
               </h2>
             </Reveal>
 
             <Reveal delay={0.3}>
               <h3 className="font-headline text-xl md:text-2xl italic text-primary mb-6 md:mb-8">
-                Master Barber
+                {t.teamPreview.role}
               </h3>
             </Reveal>
 
             <Reveal delay={0.4}>
               <p className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10 md:mb-12">
-                С над 15 години опит в международни салони, Мохамад съчетава източната
-                прецизност със съвременните европейски тенденции. Неговият подход е
-                индивидуален към всяка черта на лицето, гарантирайки не просто
-                подстригване, а пълна трансформация на стила.
+                {t.teamPreview.bio}
               </p>
             </Reveal>
 
@@ -412,7 +417,7 @@ function TeamSection() {
                     15+
                   </div>
                   <div className="text-on-surface-variant text-[10px] md:text-xs uppercase tracking-widest">
-                    Years Experience
+                    {t.teamPreview.yearsExp}
                   </div>
                 </div>
                 <div>
@@ -420,7 +425,7 @@ function TeamSection() {
                     5000+
                   </div>
                   <div className="text-on-surface-variant text-[10px] md:text-xs uppercase tracking-widest">
-                    Crowns Sculpted
+                    {t.teamPreview.crownsSculpted}
                   </div>
                 </div>
               </div>
@@ -430,7 +435,7 @@ function TeamSection() {
               <Link
                 to="/team"
                 className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-8">
-                <span>Вижте работата му</span>
+                <span>{t.teamPreview.viewWork}</span>
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -446,6 +451,7 @@ function TeamSection() {
 
 /* ═══════════════ CONTACT SECTION ═══════════════ */
 function ContactSection() {
+  const { t } = useLanguage();
   const GOOGLE_MAPS_URL =
     "https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%BE%D1%84%D0%B8%D1%8F,+%D1%83%D0%BB.+%D0%9F%D0%B8%D1%80%D0%BE%D1%82%D1%81%D0%BA%D0%B0+1";
 
@@ -456,7 +462,10 @@ function ContactSection() {
         <div>
           <Reveal>
             <h2 className="font-headline text-4xl md:text-5xl font-bold text-white mb-8 md:mb-12">
-              Visit the <span className="italic text-primary">Palace</span>
+              {t.contactPreview.title}{" "}
+              <span className="italic text-primary">
+                {t.contactPreview.titleHighlight}
+              </span>
             </h2>
           </Reveal>
 
@@ -466,14 +475,14 @@ function ContactSection() {
                 <MapPin size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
-                    Location
+                    {t.contactPreview.location}
                   </h4>
                   <a
                     href={GOOGLE_MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-on-surface-variant text-base md:text-lg hover:text-primary transition-colors duration-300">
-                    София, ул. Пиротска 1
+                    {t.contactPreview.address}
                   </a>
                 </div>
               </div>
@@ -484,15 +493,15 @@ function ContactSection() {
                 <Clock size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
-                    Hours
+                    {t.contactPreview.hours}
                   </h4>
                   <p className="text-on-surface-variant text-base md:text-lg">
-                    Вторник – Неделя
+                    {t.contactPreview.schedule}
                     <br />
-                    09:00 – 21:00
+                    {t.contactPreview.scheduleTime}
                   </p>
                   <p className="text-on-surface-variant/40 text-sm mt-2 italic">
-                    Понеделник: Почивен ден
+                    {t.contactPreview.closed}
                   </p>
                 </div>
               </div>
@@ -503,7 +512,7 @@ function ContactSection() {
                 <Phone size={28} className="text-primary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-white uppercase tracking-widest text-xs md:text-sm mb-2">
-                    Inquiries
+                    {t.contactPreview.inquiries}
                   </h4>
                   <a
                     href="tel:+359888123456"
@@ -518,7 +527,7 @@ function ContactSection() {
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:text-white transition-colors duration-300 group cursor-pointer mt-2">
-                <span>Повече информация</span>
+                <span>{t.contactPreview.moreInfo}</span>
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"

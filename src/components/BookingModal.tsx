@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ShieldCheck, Clock, ArrowRight } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { useBookingModal } from "../context/BookingModalContext";
+import { useLanguage } from "../context/LanguageContext";
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
 export default function BookingModal() {
   const { isOpen, closeModal } = useBookingModal();
+  const { t } = useLanguage();
 
   // Scroll lock — prevents background scroll on mobile and desktop
   useEffect(() => {
@@ -66,10 +68,10 @@ export default function BookingModal() {
               </div>
               <div className="text-center space-y-2">
                 <span className="font-label text-[10px] tracking-[0.3em] uppercase text-primary font-bold">
-                  Quick Scan
+                  {t.booking.quickScan}
                 </span>
                 <p className="font-label text-xs text-on-surface-variant leading-relaxed px-4">
-                  Scan to instantly access our secure booking portal via Studio24.
+                  {t.booking.scanDesc}
                 </p>
               </div>
             </div>
@@ -81,10 +83,10 @@ export default function BookingModal() {
                 <div className="flex justify-between items-start">
                   <div className="space-y-1">
                     <span className="font-label text-[11px] tracking-[0.4em] uppercase text-outline">
-                      Reservation Portal
+                      {t.booking.portalEyebrow}
                     </span>
                     <h2 className="font-headline text-4xl font-light italic text-primary text-shadow-gold leading-none">
-                      The Sovereign
+                      {t.booking.portalTitle}
                     </h2>
                   </div>
                   <button
@@ -99,11 +101,10 @@ export default function BookingModal() {
 
                 <div className="space-y-4">
                   <h3 className="font-headline text-2xl text-on-surface leading-tight">
-                    Secure your place at the throne.
+                    {t.booking.portalHeading}
                   </h3>
                   <p className="font-body text-on-surface-variant text-sm leading-relaxed">
-                    Experience the pinnacle of grooming. Our booking platform ensures a
-                    seamless transition from selection to the chair.
+                    {t.booking.portalDesc}
                   </p>
                 </div>
 
@@ -114,7 +115,7 @@ export default function BookingModal() {
                       <ShieldCheck size={20} />
                     </div>
                     <span className="font-label text-xs tracking-widest uppercase text-on-surface group-hover:text-primary transition-colors">
-                      Instant Confirmation
+                      {t.booking.instantConfirmation}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 group">
@@ -122,7 +123,7 @@ export default function BookingModal() {
                       <Clock size={20} />
                     </div>
                     <span className="font-label text-xs tracking-widest uppercase text-on-surface group-hover:text-primary transition-colors">
-                      Real-time Availability
+                      {t.booking.realTimeAvailability}
                     </span>
                   </div>
                 </div>
@@ -135,7 +136,7 @@ export default function BookingModal() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gold-gradient w-full py-5 px-8 flex items-center justify-between text-on-primary font-label text-sm font-black tracking-[0.2em] uppercase group hover:shadow-[0_0_30px_rgba(242,202,80,0.2)] transition-all duration-500 cursor-pointer">
-                  <span>Go to Studio24</span>
+                  <span>{t.booking.goToStudio24}</span>
                   <ArrowRight
                     size={20}
                     className="transition-transform duration-500 group-hover:translate-x-2"
@@ -144,7 +145,7 @@ export default function BookingModal() {
                 <button
                   onClick={closeModal}
                   className="w-full py-4 text-on-surface-variant font-label text-[10px] tracking-[0.3em] uppercase hover:text-primary transition-colors duration-300 cursor-pointer">
-                  Close
+                  {t.booking.close}
                 </button>
               </div>
             </div>
@@ -168,7 +169,7 @@ export default function BookingModal() {
                   <X size={24} />
                 </button>
                 <h1 className="font-headline text-lg uppercase tracking-tighter text-primary">
-                  Book Your Appointment
+                  {t.booking.mobileTitle}
                 </h1>
                 <div className="w-6" />
               </div>
@@ -184,8 +185,7 @@ export default function BookingModal() {
                         Kingdom Place
                       </h2>
                       <p className="font-body text-sm text-on-surface-variant max-w-sm mx-auto leading-relaxed">
-                        Scan the QR code below or click the button to continue to our
-                        booking platform, Studio24.
+                        {t.booking.mobileDesc}
                       </p>
                     </div>
 
@@ -211,7 +211,7 @@ export default function BookingModal() {
                     <div className="flex items-center space-x-2 text-primary-container">
                       <span className="h-px w-8 bg-primary-container/30" />
                       <span className="font-label text-[10px] tracking-[0.3em] uppercase font-bold">
-                        The Royal Standard
+                        {t.booking.portalTitle}
                       </span>
                       <span className="h-px w-8 bg-primary-container/30" />
                     </div>
@@ -229,7 +229,7 @@ export default function BookingModal() {
                 className="flex flex-col items-center justify-center bg-gold-gradient text-on-primary p-4 w-full h-full active:brightness-110 transition-all cursor-pointer">
                 <ArrowRight size={20} className="mb-1" />
                 <span className="font-label text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Go to Studio24
+                  {t.booking.goToStudio24}
                 </span>
               </a>
               <button
@@ -237,7 +237,7 @@ export default function BookingModal() {
                 className="flex flex-col items-center justify-center text-on-surface p-4 w-full h-full hover:bg-surface-container-low transition-all active:brightness-110 cursor-pointer">
                 <X size={20} className="mb-1" />
                 <span className="font-label text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Close
+                  {t.booking.close}
                 </span>
               </button>
             </nav>

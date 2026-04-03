@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarCheck } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
 export default function StickyBookCTA() {
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => {
@@ -31,7 +33,7 @@ export default function StickyBookCTA() {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-gold-gradient py-3.5 font-label text-sm font-extrabold uppercase tracking-widest text-on-primary text-center cursor-pointer hover:brightness-110 transition-all duration-300">
-              Book Now
+              {t.stickyCta.bookNow}
             </a>
           </motion.div>
 
@@ -45,7 +47,7 @@ export default function StickyBookCTA() {
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex fixed bottom-8 right-8 z-50 bg-gold-gradient w-14 h-14 items-center justify-center cursor-pointer shadow-[0_10px_30px_rgba(242,202,80,0.3)] hover:shadow-[0_14px_40px_rgba(242,202,80,0.45)] hover:brightness-110 transition-all duration-300"
-            aria-label="Book Now">
+            aria-label={t.stickyCta.bookNow}>
             <CalendarCheck size={22} className="text-on-primary" />
           </motion.a>
         </>

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { Share2, Instagram, CreditCard, Banknote } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-8 border-t border-outline-variant/20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
@@ -13,9 +16,9 @@ export default function Footer() {
             Kingdom Place
           </div>
           <p className="font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 leading-loose">
-            The Sovereign Minimalist.
+            {t.footer.tagline}
             <br />
-            Crafting legacies since 2026.
+            {t.footer.legacy}
           </p>
 
           {/* Payment methods */}
@@ -23,7 +26,7 @@ export default function Footer() {
             <CreditCard size={20} />
             <Banknote size={20} />
             <span className="text-[10px] tracking-[0.2em] uppercase">
-              Приемаме плащания в брой и с карта
+              {t.footer.payment}
             </span>
           </div>
         </div>
@@ -31,31 +34,31 @@ export default function Footer() {
         {/* Navigation */}
         <div className="space-y-4">
           <h4 className="text-primary font-bold text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
-            Navigation
+            {t.footer.navigation}
           </h4>
           <a
             href={STUDIO24_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer text-left">
-            Studio24 Booking
+            {t.footer.studio24Booking}
           </a>
           <Link
             to="/services"
             className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer">
-            Services
+            {t.nav.services}
           </Link>
           <Link
             to="/team"
             className="block font-body text-sm tracking-[0.2em] uppercase text-on-surface-variant/60 hover:text-primary transition-all cursor-pointer">
-            Team
+            {t.nav.team}
           </Link>
         </div>
 
         {/* Social & Copyright */}
         <div className="space-y-4">
           <h4 className="text-primary font-bold text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
-            Follow
+            {t.footer.follow}
           </h4>
           <div className="flex gap-4">
             <a
@@ -72,7 +75,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="pt-6 text-[10px] tracking-[0.3em] uppercase text-on-surface-variant/40">
-            © 2026 Kingdom Place. All Rights Reserved.
+            {t.footer.copyright}
           </p>
         </div>
       </div>
