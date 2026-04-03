@@ -376,6 +376,7 @@ function TeamSection() {
   return (
     <section className="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low">
       <div className="max-w-7xl mx-auto">
+        {/* ── Alayoubi — Primary Feature ── */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
           {/* Portrait */}
           <Reveal direction="left" className="w-full md:w-1/2">
@@ -451,6 +452,45 @@ function TeamSection() {
             </Reveal>
           </div>
         </div>
+
+        {/* ── Khalil — Secondary Compact Card ── */}
+        <Reveal delay={0.2}>
+          <Link
+            to="/team"
+            className="mt-20 md:mt-24 flex flex-col sm:flex-row items-center gap-6 sm:gap-10 bg-surface-container-high p-6 md:p-8 group cursor-pointer transition-all duration-500 hover:shadow-[0_0_40px_rgba(242,202,80,0.06)]">
+            <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 overflow-hidden">
+              <img
+                src={
+                  t.barbers.khalilName
+                    ? "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&q=80"
+                    : ""
+                }
+                alt={t.barbers.khalilName}
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="font-headline text-2xl md:text-3xl text-on-surface mb-2 -tracking-[0.02em]">
+                {t.barbers.khalilName}
+              </h3>
+              <p className="font-body text-sm text-primary italic mb-2">
+                {t.barbers.khalilRole}
+              </p>
+              <p className="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                {t.barbers.khalilBio}
+              </p>
+            </div>
+            <div className="shrink-0">
+              <span className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary group-hover:text-white transition-colors duration-300">
+                {t.teamPreview.meetTeam}
+                <ArrowRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </span>
+            </div>
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

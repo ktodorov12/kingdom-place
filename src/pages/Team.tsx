@@ -1,40 +1,9 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Instagram } from "lucide-react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
+import LightboxGallery from "../components/LightboxGallery";
 import { useLanguage } from "../context/LanguageContext";
-
-const teamImage =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCHNuY4eS0cfJuNXyl8EJh-IczBf9gM1RLsXlKljWkkPEHM7n7e6g4_TLZu-WPKxKcOskkqRuXsRPNFOquSTqqhuXzLQVosyz_zq9s9iBjSkXmZ3FyKAS_nupA3xaslMWqjHDkYQ2YlioCkL6bCZkPF6vFa18-jiZHn9i71I2_gI56hgJ71GTEeIEWUq60vjk62YBZ8jUqv7NOZ8nWPnbsbbNJOPTqL1ej0a_-7oUHa-BEr0L1WyZhjz3HmjFIyDomz3NPM4CmN0G4";
-
-/* ── portfolio images (haircut / style work) ── */
-const portfolioImages: GalleryImage[] = [
-  {
-    src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80",
-    alt: "Fade haircut",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
-    alt: "Classic taper",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80",
-    alt: "Beard sculpting",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80",
-    alt: "Precision line-up",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=800&q=80",
-    alt: "Textured crop",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1585747860019-8005b2f45a82?w=800&q=80",
-    alt: "Gentleman cut",
-  },
-];
+import barbersData, { type Barber } from "../data/barbersData";
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
@@ -66,6 +35,8 @@ function Reveal({
 
 export default function Team() {
   const { t } = useLanguage();
+  const [activeBarber, setActiveBarber] = useState<Barber>(barbersData[0]);
+  const inactiveBarbers = barbersData.filter((b) => b.id !== activeBarber.id);
 
   return (
     <>
@@ -95,56 +66,60 @@ export default function Team() {
         </div>
       </section>
 
-      {/* ═══ Master Barber Featured Section ═══ */}
+      {/* ═══ Active Barber Featured Section ═══ */}
       <section className="px-6 md:px-8 lg:px-24 pb-24 md:pb-32 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low">
-            {/* Portrait */}
-            <Reveal direction="left" className="lg:col-span-7">
-              <div className="relative h-[500px] md:h-[716px] overflow-hidden group">
-                <img
-                  src={teamImage}
-                  alt="Мохамад Алаюби — Master Barber"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeBarber.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low">
+              {/* Portrait */}
+              <div className="lg:col-span-7">
+                <div className="relative h-[500px] md:h-[716px] overflow-hidden group">
+                  <motion.img
+                    key={activeBarber.profileImage}
+                    src={activeBarber.profileImage}
+                    alt={t.barbers[activeBarber.nameKey]}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1.05 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60" />
+                </div>
               </div>
-            </Reveal>
 
-            {/* Bio panel */}
-            <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-12 lg:p-20 border-l-0 lg:border-l border-outline-variant/20">
-              <Reveal delay={0.1}>
-                <span className="inline-block py-1 px-3 border border-primary text-primary font-label text-[10px] tracking-widest uppercase mb-6">
-                  {t.team.badgeLabel}
-                </span>
-              </Reveal>
+              {/* Bio panel */}
+              <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-12 lg:p-20 border-l-0 lg:border-l border-outline-variant/20">
+                {activeBarber.isMaster && (
+                  <span className="inline-block py-1 px-3 border border-primary text-primary font-label text-[10px] tracking-widest uppercase mb-6 w-fit">
+                    {t.team.badgeLabel}
+                  </span>
+                )}
 
-              <Reveal delay={0.2}>
                 <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface mb-4 -tracking-[0.02em]">
-                  {t.team.name}
+                  {t.barbers[activeBarber.nameKey]}
                 </h2>
-              </Reveal>
 
-              <Reveal delay={0.25}>
                 <p className="font-body text-xl text-primary italic mb-8">
-                  {t.team.role}
+                  {t.barbers[activeBarber.roleKey]}
                 </p>
-              </Reveal>
 
-              <Reveal delay={0.3}>
                 <p className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
-                  {t.team.bio}
+                  {t.barbers[activeBarber.descKey]}
                 </p>
-              </Reveal>
 
-              <Reveal delay={0.4}>
                 <div className="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10 mb-10">
                   <div>
                     <span className="block text-primary font-label text-xs tracking-widest uppercase mb-2">
                       {t.team.specialty}
                     </span>
                     <span className="text-on-surface font-body">
-                      {t.team.specialtyValue}
+                      {t.barbers[activeBarber.specialtyKey]}
                     </span>
                   </div>
                   <div>
@@ -152,39 +127,25 @@ export default function Team() {
                       {t.team.experience}
                     </span>
                     <span className="text-on-surface font-body">
-                      {t.team.experienceValue}
+                      {t.barbers[activeBarber.experienceKey]}
                     </span>
                   </div>
                 </div>
-              </Reveal>
 
-              <Reveal delay={0.5}>
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href={STUDIO24_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gold-gradient px-8 py-3 font-label text-xs font-extrabold uppercase tracking-widest text-on-primary cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)]">
-                    {t.team.bookSession}
-                  </a>
-                  <a
-                    href="https://www.instagram.com/kingdom_place_barbershop/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-outline-variant/30 px-4 py-3 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-all duration-300 cursor-pointer flex items-center gap-2">
-                    <Instagram size={16} />
-                    <span className="font-label text-xs tracking-[0.15em] uppercase">
-                      {t.team.follow}
-                    </span>
-                  </a>
-                </div>
-              </Reveal>
-            </div>
-          </div>
+                <a
+                  href={STUDIO24_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gold-gradient px-8 py-3 font-label text-xs font-extrabold uppercase tracking-widest text-on-primary cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)] w-fit">
+                  {t.team.bookSession}
+                </a>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
-      {/* ═══ Portfolio Gallery ═══ */}
+      {/* ═══ Active Barber Portfolio Gallery ═══ */}
       <section className="py-24 md:py-32 px-6 md:px-8 lg:px-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
@@ -195,14 +156,72 @@ export default function Team() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                {t.team.portfolioTitle}
+                {t.team.hisCraftwork}
               </h2>
             </Reveal>
           </div>
 
-          <LightboxGallery images={portfolioImages} columns={3} />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeBarber.id + "-gallery"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}>
+              <LightboxGallery images={activeBarber.galleryImages} columns={3} />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
+
+      {/* ═══ Other Masters ═══ */}
+      {inactiveBarbers.length > 0 && (
+        <section className="py-24 md:py-32 px-6 md:px-8 lg:px-24 bg-surface">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16 md:mb-20">
+              <Reveal>
+                <span className="inline-block py-1.5 px-4 border border-primary text-primary font-label text-[10px] md:text-xs tracking-widest uppercase mb-6">
+                  {t.team.otherMasters}
+                </span>
+              </Reveal>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {inactiveBarbers.map((barber) => (
+                <motion.button
+                  key={barber.id}
+                  onClick={() => {
+                    setActiveBarber(barber);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="group text-left bg-surface-container-low overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(242,202,80,0.08)]"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}>
+                  <div className="relative h-[350px] md:h-[420px] overflow-hidden">
+                    <img
+                      src={barber.profileImage}
+                      alt={t.barbers[barber.nameKey]}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <span className="inline-block py-1 px-2 border border-primary/40 text-primary font-label text-[9px] tracking-widest uppercase mb-3">
+                        {t.barbers[barber.roleKey]}
+                      </span>
+                      <h3 className="font-headline text-2xl md:text-3xl text-on-surface mb-2 -tracking-[0.02em]">
+                        {t.barbers[barber.nameKey]}
+                      </h3>
+                      <p className="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                        {t.barbers[barber.descKey]}
+                      </p>
+                    </div>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ═══ CTA — Ready for your transformation? ═══ */}
       <section className="border-t border-outline-variant/30 bg-surface">

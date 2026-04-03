@@ -48,10 +48,11 @@ const en: Dictionary = {
     eyebrow: "The Craftsman",
     name: "Mohamad Alayoubi",
     role: "Master Barber",
-    bio: "With over 15 years of experience in international salons, Mohamad combines Eastern precision with contemporary European trends. His approach is tailored to every facial feature, guaranteeing not just a haircut, but a complete style transformation.",
+    bio: "With 15 years of experience. Guaranteeing not just a haircut, but complete enjoyment and satisfaction.",
     yearsExp: "Years Experience",
     crownsSculpted: "Crowns Sculpted",
     viewWork: "View his work",
+    meetTeam: "Meet the full team",
   },
 
   /* ─── Home — Contact preview ─── */
@@ -111,23 +112,36 @@ const en: Dictionary = {
     intro:
       "Crafting excellence through precision and tradition. Meet the hands that define the sovereign standard of grooming.",
     badgeLabel: "Master Craftsman",
-    name: "Mohamad Alayoubi",
-    role: "The Master Barber",
-    bio: "With over 15 years of experience in international salons, Mohamad combines Eastern precision with contemporary European trends. His approach is tailored to every facial feature, guaranteeing not just a haircut, but a complete style transformation.",
     specialty: "Specialty",
-    specialtyValue: "Signature Scissor Cuts",
     experience: "Experience",
-    experienceValue: "15+ Years",
     bookSession: "Book Session",
     follow: "Follow",
     portfolioEyebrow: "His Work",
     portfolioTitle: "His Craftsmanship",
+    otherMasters: "Other Barbers",
+    hisCraftwork: "His Master Craftwork",
     ctaTitle: "Ready for your",
     ctaTitleHighlight: "transformation?",
     ctaDescription:
       "Join the ranks of the sovereigns. Every appointment is a dedicated hour of precision, craftsmanship, and unparalleled grooming excellence.",
     ctaPrimary: "Request an Appointment",
     ctaSecondary: "View Full Gallery",
+  },
+
+  /* ─── Barbers ─── */
+  barbers: {
+    alayoubiName: "Mohamad Alayoubi",
+    alayoubiRole: "The Master Barber",
+    alayoubiBio:
+      "With 15 years of experience. Guaranteeing not just a haircut, but complete enjoyment and satisfaction.",
+    alayoubiSpecialty: "Signature Scissor Cuts",
+    alayoubiExperience: "15+ Years",
+    khalilName: "Mohamad Khalil",
+    khalilRole: "Master Barber",
+    khalilBio:
+      "A professional with an exceptional eye for detail, combining classic barbering traditions with modern trends for a flawless look.",
+    khalilSpecialty: "Classic Haircuts",
+    khalilExperience: "10+ Years",
   },
 
   /* ─── Gallery page ─── */
