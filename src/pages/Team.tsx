@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
-import { useBookingModal } from "../context/BookingModalContext";
 
 const teamImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCHNuY4eS0cfJuNXyl8EJh-IczBf9gM1RLsXlKljWkkPEHM7n7e6g4_TLZu-WPKxKcOskkqRuXsRPNFOquSTqqhuXzLQVosyz_zq9s9iBjSkXmZ3FyKAS_nupA3xaslMWqjHDkYQ2YlioCkL6bCZkPF6vFa18-jiZHn9i71I2_gI56hgJ71GTEeIEWUq60vjk62YBZ8jUqv7NOZ8nWPnbsbbNJOPTqL1ej0a_-7oUHa-BEr0L1WyZhjz3HmjFIyDomz3NPM4CmN0G4";
@@ -36,6 +35,8 @@ const portfolioImages: GalleryImage[] = [
   },
 ];
 
+const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
+
 function Reveal({
   children,
   delay = 0,
@@ -63,8 +64,6 @@ function Reveal({
 }
 
 export default function Team() {
-  const { openModal } = useBookingModal();
-
   return (
     <>
       {/* ═══ The Master Collective — Hero Header ═══ */}
@@ -160,11 +159,13 @@ export default function Team() {
 
               <Reveal delay={0.5}>
                 <div className="flex flex-wrap gap-4">
-                  <button
-                    onClick={openModal}
+                  <a
+                    href={STUDIO24_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-gold-gradient px-8 py-3 font-label text-xs font-extrabold uppercase tracking-widest text-on-primary cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)]">
                     Book Session
-                  </button>
+                  </a>
                   <a
                     href="https://www.instagram.com/kingdom_place_barbershop/"
                     target="_blank"
@@ -218,11 +219,13 @@ export default function Team() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button
-                onClick={openModal}
+              <a
+                href={STUDIO24_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gold-gradient px-12 py-5 font-label font-extrabold text-xs tracking-widest uppercase text-on-primary cursor-pointer hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)] transition-all duration-300">
                 Request an Appointment
-              </button>
+              </a>
               <Link
                 to="/gallery"
                 className="font-label text-xs uppercase tracking-[0.2em] text-primary border-b border-primary/40 hover:border-primary pb-1 transition-all py-4 px-8 cursor-pointer">

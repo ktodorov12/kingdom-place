@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, ArrowRight, ExternalLink } from "lucide-react";
-import { useBookingModal } from "../context/BookingModalContext";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -67,12 +66,12 @@ function isToday(dayName: string): boolean {
   return new Date().getDay() === dayMap[dayName];
 }
 
-/* ═══════════════════════════════════════════════════════════
-   Contact Page
-   ═══════════════════════════════════════════════════════════ */
-export default function Contact() {
-  const { openModal } = useBookingModal();
+const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
+/* ═══════════════════════════════════════════════════════
+   Contact Page
+   ═══════════════════════════════════════════════════════ */
+export default function Contact() {
   return (
     <div className="min-h-screen bg-surface">
       {/* ── Hero ── */}
@@ -225,15 +224,17 @@ export default function Contact() {
 
                 {/* Book CTA */}
                 <Reveal delay={0.5}>
-                  <button
-                    onClick={openModal}
+                  <a
+                    href={STUDIO24_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-10 w-full bg-gold-gradient py-5 font-label text-xs font-extrabold uppercase tracking-[0.3em] text-on-primary hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer">
                     <span>Book Your Appointment</span>
                     <ArrowRight
                       size={16}
                       className="transition-transform duration-300 group-hover:translate-x-2"
                     />
-                  </button>
+                  </a>
                 </Reveal>
               </div>
             </Reveal>

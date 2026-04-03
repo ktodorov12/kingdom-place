@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useBookingModal } from "../context/BookingModalContext";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -43,6 +42,8 @@ const heroImage =
 const teamImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCHNuY4eS0cfJuNXyl8EJh-IczBf9gM1RLsXlKljWkkPEHM7n7e6g4_TLZu-WPKxKcOskkqRuXsRPNFOquSTqqhuXzLQVosyz_zq9s9iBjSkXmZ3FyKAS_nupA3xaslMWqjHDkYQ2YlioCkL6bCZkPF6vFa18-jiZHn9i71I2_gI56hgJ71GTEeIEWUq60vjk62YBZ8jUqv7NOZ8nWPnbsbbNJOPTqL1ej0a_-7oUHa-BEr0L1WyZhjz3HmjFIyDomz3NPM4CmN0G4";
 
+const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
+
 /* ─── Service data (split EUR + BGN) ─── */
 const hairdressing = [
   { name: "Коса", eur: "13 €", bgn: "25,42 BGN" },
@@ -76,8 +77,6 @@ export default function Home() {
 
 /* ═══════════════ HERO SECTION ═══════════════ */
 function HeroSection() {
-  const { openModal } = useBookingModal();
-
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden">
       {/* Mobile background image (behind content) */}
@@ -135,13 +134,15 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.5 }}
           className="flex flex-col sm:flex-row gap-4 md:gap-6">
-          <motion.button
-            onClick={openModal}
+          <motion.a
+            href={STUDIO24_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gold-gradient px-10 md:px-12 py-4 md:py-5 font-label font-extrabold uppercase tracking-widest text-on-primary text-center text-sm shadow-[0_10px_40px_rgba(242,202,80,0.2)] cursor-pointer hover:brightness-110 transition-all duration-300">
             Book Now
-          </motion.button>
+          </motion.a>
           <Link to="/gallery">
             <motion.span
               whileHover={{ scale: 1.05 }}

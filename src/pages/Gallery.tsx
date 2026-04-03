@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
-import { useBookingModal } from "../context/BookingModalContext";
 
 /* ── placeholder images (barbershop interior / work shots) ── */
 const galleryImages: GalleryImage[] = [
@@ -67,9 +66,9 @@ function Reveal({
   );
 }
 
-export default function Gallery() {
-  const { openModal } = useBookingModal();
+const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
 
+export default function Gallery() {
   return (
     <>
       {/* Hero */}
@@ -118,11 +117,13 @@ export default function Gallery() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button
-                onClick={openModal}
+              <a
+                href={STUDIO24_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gold-gradient px-12 py-5 font-label font-extrabold text-xs tracking-widest uppercase text-on-primary cursor-pointer hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)] transition-all duration-300">
                 Secure Appointment
-              </button>
+              </a>
               <Link
                 to="/services"
                 className="border border-outline-variant text-on-surface px-12 py-5 font-label font-bold text-xs tracking-widest uppercase hover:bg-surface-container-high transition-all duration-300 cursor-pointer">

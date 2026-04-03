@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useBookingModal } from "../context/BookingModalContext";
 
 /* ─── Scroll-reveal wrapper ─── */
 function Reveal({
@@ -146,6 +145,8 @@ const combos: ComboData[] = [
   },
 ];
 
+const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
+
 /* ─── Hairdressing grid item ─── */
 function ServiceItem({
   name,
@@ -194,8 +195,6 @@ function ServiceItem({
 
 /* ═══════════════ SERVICES PAGE ═══════════════ */
 export default function Services() {
-  const { openModal } = useBookingModal();
-
   return (
     <>
       {/* ── HERO SECTION ── */}
@@ -375,13 +374,15 @@ export default function Services() {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <motion.button
-                onClick={openModal}
+              <motion.a
+                href={STUDIO24_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gold-gradient px-12 md:px-16 py-5 md:py-6 font-label text-sm md:text-lg font-black uppercase tracking-[0.3em] text-on-primary shadow-2xl cursor-pointer hover:brightness-110 hover:shadow-[0_15px_50px_rgba(242,202,80,0.3)] transition-all duration-500">
                 Запази своя час
-              </motion.button>
+              </motion.a>
             </Reveal>
           </div>
         </div>
