@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="bg"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#3c2f00",
+              "on-background": "#e2e2e2",
+              "surface-container-low": "#1b1b1b",
+              "error-container": "#93000a",
+              "surface-dim": "#131313",
+              "secondary-fixed": "#f7e1a6",
+              "primary-fixed": "#ffe088",
+              "on-primary-fixed": "#241a00",
+              "tertiary-container": "#97b0ff",
+              "inverse-surface": "#e2e2e2",
+              "surface-tint": "#e9c349",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-container": "#554300",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-fixed": "#dbe1ff",
+              "secondary-container": "#544519",
+              "outline-variant": "#4d4635",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#544519",
+              "on-tertiary-container": "#254188",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary": "#bfcdff",
+              "primary": "#f2ca50",
+              "surface-container-highest": "#353535",
+              "on-surface-variant": "#d0c5af",
+              "surface-container": "#1f1f1f",
+              "surface-bright": "#393939",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-variant": "#353535",
+              "secondary": "#dac58d",
+              "on-tertiary-fixed": "#00174b",
+              "surface-container-high": "#2a2a2a",
+              "background": "#131313",
+              "on-tertiary": "#082b72",
+              "error": "#ffb4ab",
+              "on-secondary": "#3c2f05",
+              "on-surface": "#e2e2e2",
+              "on-secondary-container": "#c8b37d",
+              "outline": "#99907c",
+              "primary-container": "#d4af37",
+              "inverse-on-surface": "#303030",
+              "inverse-primary": "#735c00",
+              "primary-fixed-dim": "#e9c349",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-hover-glow:hover {
+            box-shadow: 0 0 25px rgba(242, 202, 80, 0.15);
+            border-color: rgba(242, 202, 80, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md">
+<nav class="flex justify-between items-center px-6 md:px-12 py-6 w-full">
+<div class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#F2CA50]">KINGDOM PLACE</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-['Newsreader'] tracking-tight text-[#E2E2E2] hover:text-[#F2CA50] transition-all duration-300" href="#">About</a>
+<a class="font-['Newsreader'] tracking-tight text-[#E2E2E2] hover:text-[#F2CA50] transition-all duration-300" href="#">Services</a>
+<a class="font-['Newsreader'] tracking-tight text-[#E2E2E2] hover:text-[#F2CA50] transition-all duration-300" href="#">Team</a>
+<a class="font-['Newsreader'] tracking-tight text-[#E2E2E2] hover:text-[#F2CA50] transition-all duration-300" href="#">Contact</a>
+<a class="font-['Newsreader'] tracking-tight text-[#F2CA50] border-b border-[#F2CA50] pb-1 transition-all duration-300" href="#">Products</a>
+</div>
+<button class="bg-primary text-on-primary font-bold px-6 py-2 tracking-widest text-xs transition-all duration-200 scale-100 active:scale-95">BOOK NOW</button>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+<!-- Hero Header Section -->
+<section class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-background mb-4">Нашите продукти</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant uppercase tracking-widest font-light">Професионална грижа, достъпна за вас</p>
+</div>
+<!-- Brutalist Filter Dropdown -->
+<div class="relative group min-w-[240px]">
+<div class="flex items-center justify-between border border-outline-variant px-5 py-4 bg-surface-container-low cursor-pointer hover:border-primary transition-colors">
+<span class="font-label text-sm uppercase tracking-[0.2em]">Select Category</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="absolute top-full left-0 w-full bg-surface-container-high border-x border-b border-primary opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-40">
+<a class="block px-5 py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-colors" href="#">Hair</a>
+<a class="block px-5 py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-colors" href="#">Beard</a>
+<a class="block px-5 py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-colors" href="#">Styling</a>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Premium Styling Pomade" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Studio lit shot of a sleek black tin of hair pomade on a dark slate surface with dramatic gold rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtKpUR2UKj7nzOVjFjL5wgQhMG25kircIjRQxQ6sAVs_9EIy2DO_UFoqU4P6ObXH5a4sUb4lkQMNF64YGMB2QN1OCreHcqHjEWq6m_fzUyPbublqP_yrr3UhGuRwMFKQFx-6hbO8Bf_Vs8C4lKgqR3NtsmbaLspQVqBjICOrihvWaZj-4ynCuNpRTw0A1ljNgRUeBkn655uE-T_L2gA9QJQ1rIhDYeKMaYgNgQU5NWTX6VNNxawb_kUFbBJU7tQC1TjjCKUvNz058"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Matte Clay Pomade</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">High hold, low shine finish for textured, modern styles. Infused with natural minerals.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€24.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">46.99 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Beard Oil" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Close up of a dark amber glass bottle with a dropper, containing beard oil, standing on a dark wooden texture with golden backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALB-FHKxjsMNDNyufaQeSFShuepuPpjH1BO7vF4XzLhGsN2jI6Ev-fClrnDmpFXuRLkev0LbU3aglvJULyMf7Cod7iZI83DB2CE6IpbTpo8Ybl074kqFUWGpTr1WW0QWhP9yLzEy_FoIqRTdugOTfUSFmjZOwfdw1241jQ6FmlwYoPBS5sWpDKwxq5mzcLNLWaEKqqJAGwWMT0qy_x-nmU_dNsugl_gSI3CXDuQLmfA2oxKxKYlMScMYY5piaQI4eaaTx1Xargh_8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Sovereign Beard Oil</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Sandalwood and cedarwood blend. Softens coarse hair and hydrates the skin beneath.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€18.50</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">36.18 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Professional Scissors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Professional stainless steel hair cutting shears lying on a dark leather cloth, high contrast with sharp metallic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRizPMhbR1UaR0qAOvoL25KWaY6pHDIIcn31zY2PDJIjMHhCj9YB_msMxXrj3Ek5FC98FoyBSzaIIUPxNjR22LhTMOmWP8WOF8cO3CkcbfGgJ7E8Bg_lOaeEnfcQDJSSOFFl92uXjHmtiAPfpXs3imxgBI1QPXmIapy-x2WizLcVqDBD37LRqX8gViQt9fiNEUC1sh6FiFI16OP00tqCat7hfaNQscq5kcn2gJ6Hrpy08OF4faY13mmwciAugkoFOTdgQstBqiefM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Master Shears 6.5"</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Japanese stainless steel, hand-forged for surgical precision and ergonomic comfort.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€145.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">283.59 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Sea Salt Spray" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Minimalist dark spray bottle with a clean label, surrounded by deep shadows and a single beam of warm light hitting the nozzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW-A7KMiAVfonqF_mFMSivWu3upE3KIZ3VoMEncv8hKtn8lwDfMuwoQu8cPbxb3giCR3kb22oYUE1elgT6WpfYOsBcIGZn4qexl4mAOQ5w0897XhCWf5Xa6jS9v7b_BsQHhCyXK7j--LDsu5IDdEKcqS1LTXQmmckYvtHTGTjREfJaviTIFoYXx8rBlgGwG_pTD_WlnuIXLNNIPGMYtVcEDtUfth5vo3ZH1o8-dlvHIfuAOzOW3vym8qCSQDR4ExTSza2wp_ideAQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Atlantic Salt Spray</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Instant volume and effortless beach texture for all hair lengths and types.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€21.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">41.07 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Conditioning Shampoo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Elegant tall black bottle of shampoo on a wet black stone surface, soft water droplets reflecting warm golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNNDygMFJGOuvestybU32ZycRE_ddasxa_N983CqhwdAnDJZQwaRS_oLoYvMbMx9ZVOZhWNnw4rmG_-BltcfPnqq_GPVTtb-QyR6bvmiFqN-2AkmdhzrOlujVV_L4HEg-HE0Q7QkgZZ_JaCIBjE3EjGMFreVdIz66YXjKRgM37fKfXyBdRIwxY5bBBleeOey0YscMr-4wnzSHvJbNfDrj0u6swco3Ew2zmid-XXcOORK5N9n_250ZwnP6qtyypgvQVN8ga-2VelPM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Restorative Shampoo</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Sulfate-free formula with keratin and biotin to strengthen and revive dull hair.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€26.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">50.85 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Barber Brush" class="w-full h-full object-crop grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Traditional shaving brush with dark wooden handle and badger hair, studio lighting highlighting the texture of the bristles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEY5lUoQoMv5qG-KETKJ-7euBMYrDTluSEhEgmLDq8Ja5O-KEtrqyxWAHJJ2D_1lecNBjoyKcKU2mKa2NWd6jbiOmRJZbXuVNMjByIX7q0CTNp96SntmEqhj7oRVzSy7etBNSrSmjDhO18vw-0Z_SK0_O7nX42a1qQiQMZyJb6YlCbfFWDAKznyfwPSdHQ6wweGVhZI3RWvilEBiZ0yuCU5Pkb0qvIAXjQFfHz5Xb8y3DEf_cW-4fjYMAiwIQ1jaN_sR1F7DRMxXk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Royal Shave Brush</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Hand-assembled with genuine badger hair and a weighted ebony wood handle.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€55.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">107.57 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Styling Comb" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Luxury handcrafted acetate hair comb in tortoise shell pattern lying on a dark velvet background with subtle gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDZmBUVMDIlECEhBJRCCsYQooDMg_nhIgTwLpgEkXGdlFlv5ht-vtysaOXg4sFmTCpPIxzXKyzbHo_Tqb1g3rTBldnZVXBySdfvNcyozndS0xFfZTbLOE7q43P2P3tVZFYAM-TcAqlUAuRhANnHfPR40hgSMpGQOD7homqYByhGJWLIU4_1PJxMt3wqXrrxSeKCnBopx8idn8U_GHyWLnaqGt4k1RhP4xBrdbHmNX6vQtzrbemBRwbdrAWcXadNP8JwPMsMWP9H2g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Signature Fine Comb</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Saw-cut and hand-polished acetate. Rounded teeth for ultimate scalp comfort.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€15.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">29.34 BGN</span>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group border border-transparent card-hover-glow transition-all duration-500">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Moustache Wax" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Small vintage-style tin of moustache wax, opened to reveal the texture, placed on an antique leather surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApMzEP5uXeo_qVE1KcbIilIwlTvrXcLaL2uovdU3Qn0gkX77hxFZYV34NnDciAan9jnYGCy-9Uk3nxJodplv0lCKdoYXN1t-P9fMdWM5OhjIy4wthHRyZTWLTujVPWW_0XyyZEAp1AXdkQWHdpgWjL4cKPC7KUUqaDFsFxjZBXCKrPuVGbQoU6tKLtWzFTq8aMHOLCvJZyuPyGkaRZV2l7X0C_urIWRfXw6ulbXiIcp3ElcEqLzK7VCfFieXlUxmLL0iJA20l1_Ks"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="px-2">
+<h3 class="font-headline text-2xl font-bold mb-2">Sculpt Wax</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-2">Extra firm hold for precision shaping. Beeswax and coconut oil base.</p>
+<div class="flex items-baseline gap-4">
+<span class="font-label text-2xl font-bold text-primary">€12.00</span>
+<span class="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">23.47 BGN</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Footer/CTA section -->
+<section class="mt-24 pt-24 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-bold mb-6">Need expert advice?</h2>
+<p class="font-body text-lg text-on-surface-variant">Visit our studio to try these products in person. Our master barbers will guide you to the perfect grooming routine tailored for your unique style.</p>
+</div>
+<div class="flex flex-col gap-4 w-full md:w-auto">
+<button class="bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold px-12 py-5 tracking-widest text-sm transition-all duration-200 uppercase">Find Our Location</button>
+<button class="border border-outline-variant/30 text-primary font-bold px-12 py-5 tracking-widest text-sm transition-all hover:bg-primary/5 uppercase">Contact Support</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-16 border-t border-[#4D4635]/20">
+<div class="flex flex-col items-center gap-8 max-w-7xl mx-auto px-8">
+<div class="font-['Newsreader'] text-xl font-bold text-[#F2CA50]">KINGDOM PLACE</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-sm uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#F2CA50] transition-opacity" href="#">Careers</a>
+</div>
+<p class="font-['Manrope'] text-sm uppercase tracking-[0.2em] text-[#E2E2E2] text-center opacity-40">© 2024 KINGDOM PLACE. THE SOVEREIGN MINIMALIST.</p>
+</div>
+</footer>
+</body></html>

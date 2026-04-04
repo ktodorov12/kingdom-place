@@ -22,6 +22,7 @@ export default function Navbar() {
   const navLinks = [
     { to: "/", label: t.nav.home },
     { to: "/services", label: t.nav.services },
+    { to: "/products", label: t.nav.products },
     { to: "/gallery", label: t.nav.gallery },
     { to: "/team", label: t.nav.team },
     { to: "/contact", label: t.nav.contact },

@@ -6,6 +6,7 @@ const bg = {
     gallery: "Галерия",
     team: "Екип",
     contact: "Контакт",
+    products: "Продукти",
     bookNow: "Резервирай",
   },
 
@@ -237,6 +238,64 @@ const bg = {
     beard: "Прецизно оформяне и контуриране на брадата с бръснач.",
     blackMask: "Почистваща маска за пори в зоната на ушите и носа.",
     kidsHaircut: "Професионално подстригване за малки джентълмени до 12 години.",
+  },
+
+  /* ─── Products page ─── */
+  products: {
+    heroTitle: "Нашите продукти",
+    heroSubtitle: "Професионална грижа, достъпна за вас",
+    filterLabel: "Филтрирай по категория",
+    filterAll: "Всички",
+    categoryHair: "Грижа за коса",
+    categoryBeard: "Грижа за брада",
+    categoryStyling: "Стилизиране",
+    categoryTools: "Аксесоари",
+    details: "Детайли",
+    ctaTitle: "Нуждаете се от съвет?",
+    ctaDescription:
+      "Посетете нашето студио, за да изпробвате тези продукти. Нашите бръснари ще ви насочат към перфектната грижа за вашия стил.",
+    ctaPrimary: "Нашата локация",
+    ctaSecondary: "Свържете се с нас",
+    retailPrice: "Цена",
+  },
+
+  /* ─── Products — Featured (Home page) ─── */
+  featuredProducts: {
+    eyebrow: "Грижа за дома",
+    title: "Избрани продукти",
+    viewAll: "Виж всички продукти",
+  },
+
+  /* ─── Product names ─── */
+  productNames: {
+    matteClayPomade: "Матова глина помейд",
+    sovereignBeardOil: "Sovereign масло за брада",
+    masterShears: 'Майсторски ножици 6.5"',
+    atlanticSaltSpray: "Atlantic спрей с морска сол",
+    restorativeShampoo: "Възстановяващ шампоан",
+    royalShaveBrush: "Royal четка за бръснене",
+    signatureFineComb: "Signature фин гребен",
+    sculptWax: "Sculpt восък",
+  },
+
+  /* ─── Product descriptions ─── */
+  productDescs: {
+    matteClayPomadeDesc:
+      "Силна фиксация с естествен матов завършек за текстурирани, модерни визии. Обогатена с натурални минерали.",
+    sovereignBeardOilDesc:
+      "Луксозна смес от натурални масла за омекотяване на брадата и подхранване на кожата. Обогатена с нотки на сандалово дърво и кехлибар.",
+    masterShearsDesc:
+      "Японска неръждаема стомана, ръчно изкована за хирургическа прецизност и ергономичен комфорт.",
+    atlanticSaltSprayDesc:
+      "Мигновен обем и небрежна плажна текстура за всички дължини и типове коса.",
+    restorativeShampooDesc:
+      "Безсулфатна формула с кератин и биотин за укрепване и съживяване на тъмна коса.",
+    royalShaveBrushDesc:
+      "Ръчно изработена от истински косъм от язовец и балансирана дръжка от абанос.",
+    signatureFineCombDesc:
+      "Изрязан и ръчно полиран ацетат. Закръглени зъбци за максимален комфорт на скалпа.",
+    sculptWaxDesc:
+      "Екстра силна фиксация за прецизно оформяне. Основа от пчелен восък и кокосово масло.",
   },
 
   /* ─── Combo "includes" labels ─── */

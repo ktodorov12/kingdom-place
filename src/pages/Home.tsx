@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { MapPin, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
+import productsData from "../data/productsData";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -81,6 +82,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <TeamSection />
+      <FeaturedProductsSection />
       <ContactSection />
     </>
   );
@@ -489,6 +491,70 @@ function TeamSection() {
                 />
               </span>
             </div>
+          </Link>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════ FEATURED PRODUCTS SECTION ═══════════════ */
+function FeaturedProductsSection() {
+  const { t } = useLanguage();
+  const featured = productsData.slice(0, 3);
+
+  return (
+    <section className="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <Reveal className="mb-16">
+          <span className="font-label text-xs tracking-[0.3em] uppercase text-primary/80 block mb-4">
+            {t.featuredProducts.eyebrow}
+          </span>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface">
+            {t.featuredProducts.title}
+          </h2>
+        </Reveal>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {featured.map((product, i) => (
+            <Reveal key={product.id} delay={i * 0.1}>
+              <Link
+                to="/products"
+                className="group block border border-transparent hover:shadow-[0_0_25px_rgba(242,202,80,0.15)] hover:border-primary/50 transition-all duration-500">
+                <div className="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
+                  <img
+                    src={product.imagePath}
+                    alt={(t.productNames as Record<string, string>)[product.nameKey]}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="px-2 pb-4">
+                  <h3 className="font-headline text-2xl font-bold mb-2 text-on-surface group-hover:text-primary transition-colors">
+                    {(t.productNames as Record<string, string>)[product.nameKey]}
+                  </h3>
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-label text-2xl font-bold text-primary">
+                      €{product.priceEur.toFixed(2)}
+                    </span>
+                    <span className="font-label text-xs text-on-surface/60 uppercase tracking-tighter italic">
+                      {product.priceBgn.toFixed(2)} BGN
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <Reveal className="flex justify-center">
+          <Link
+            to="/products"
+            className="border border-outline-variant/30 text-primary font-label text-xs font-extrabold uppercase tracking-widest px-10 py-4 hover:bg-primary/5 transition-all duration-300">
+            {t.featuredProducts.viewAll}
           </Link>
         </Reveal>
       </div>

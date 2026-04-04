@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#353535",
+              "on-surface-variant": "#d0c5af",
+              "primary": "#f2ca50",
+              "on-tertiary-fixed": "#00174b",
+              "secondary": "#dac58d",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-variant": "#353535",
+              "surface-container": "#1f1f1f",
+              "surface-bright": "#393939",
+              "on-tertiary": "#082b72",
+              "error": "#ffb4ab",
+              "background": "#131313",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary": "#3c2f05",
+              "on-surface": "#e2e2e2",
+              "on-secondary-container": "#c8b37d",
+              "primary-container": "#d4af37",
+              "outline": "#99907c",
+              "primary-fixed-dim": "#e9c349",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#735c00",
+              "inverse-on-surface": "#303030",
+              "on-background": "#e2e2e2",
+              "on-primary": "#3c2f00",
+              "error-container": "#93000a",
+              "surface-container-low": "#1b1b1b",
+              "tertiary-container": "#97b0ff",
+              "on-primary-fixed": "#241a00",
+              "surface-dim": "#131313",
+              "secondary-fixed": "#f7e1a6",
+              "primary-fixed": "#ffe088",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-container": "#554300",
+              "surface-tint": "#e9c349",
+              "inverse-surface": "#e2e2e2",
+              "tertiary-fixed": "#dbe1ff",
+              "secondary-container": "#544519",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-primary-fixed-variant": "#574500",
+              "on-secondary-fixed-variant": "#544519",
+              "on-error": "#690005",
+              "outline-variant": "#4d4635",
+              "on-tertiary-container": "#254188",
+              "tertiary": "#bfcdff",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#241a00"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .brutalist-shadow {
+        box-shadow: 0 0 40px rgba(242, 202, 80, 0.08);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 2px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #131313;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #4d4635;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- Background Layer (Blurred Catalog State) -->
+<div class="fixed inset-0 z-0 grayscale opacity-40 blur-xl scale-110 pointer-events-none">
+<div class="grid grid-cols-2 gap-8 p-12 max-w-7xl mx-auto h-full overflow-hidden">
+<div class="bg-surface-container h-80 border border-outline-variant/20"></div>
+<div class="bg-surface-container h-80 border border-outline-variant/20"></div>
+<div class="bg-surface-container h-80 border border-outline-variant/20"></div>
+<div class="bg-surface-container h-80 border border-outline-variant/20"></div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-black/80 backdrop-blur-sm">
+<!-- Main Modal Container -->
+<article class="relative w-full max-w-5xl bg-surface border border-outline-variant/30 brutalist-shadow flex flex-col md:flex-row overflow-hidden max-h-[795px]">
+<!-- Close Button (Top Right Anchor) -->
+<button class="absolute top-6 right-6 z-[60] text-on-surface hover:text-primary transition-colors duration-300 group">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<!-- Product Image Section (Visual Anchor) -->
+<div class="relative w-full md:w-1/2 h-[353px] md:h-auto bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10"></div>
+<img alt="Sovereign Beard Oil bottle" class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="Premium dark amber glass dropper bottle of beard oil on a black reflective marble surface with golden accent lighting and dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7n8GT8obWGkM0pe_vAJg9X0dCjKu6DlehZXHDi6upoy66HQEw4WIKvJym6TNPJNJm69HGF7PFliQTPf_wxTSfLurElDBj4V7_BzHzhuwSx04AjnCyHhTJrR-P5O90TKIgE-PnIVhDzf2BMaE7KN9xjIOXMciAB6ksNHSz4qrNPT8pt0GRaBeuzbg6f9kjK-LkRFPUBtFOccc-5BqSHKpWuVoANPh3VffveJEhkEQ0r4MeqO3NcDkTrmw6tdhNBj_mMy5Lvzl5lSI"/>
+<!-- Brand Badge / Signature -->
+<div class="absolute bottom-8 left-8 z-20">
+<p class="font-headline italic text-primary text-xl tracking-wider opacity-60">The Sovereign Collection</p>
+</div>
+</div>
+<!-- Product Details Section -->
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface relative">
+<!-- Subtle Background Texture/Glow -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10"></div>
+<header class="mb-8">
+<p class="font-label text-xs uppercase tracking-[0.3em] text-outline mb-3">Sovereign Grooming Co.</p>
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight tracking-tight">
+                        Sovereign <br/>
+<span class="text-primary italic">Beard Oil</span>
+</h1>
+</header>
+<div class="space-y-6 mb-12 max-w-md">
+<p class="font-body text-lg leading-relaxed text-on-surface/80 font-light">
+                        A luxury blend of natural oils to soften the beard and nourish the skin. Infused with notes of <span class="text-secondary">sandalwood</span> and <span class="text-secondary">amber</span> for a regal scent.
+                    </p>
+<p class="font-body text-sm leading-relaxed text-on-surface/60 border-l border-primary/30 pl-4">
+                        Hand-pressed and aged in small batches to ensure molecular integrity and peak aromatic performance.
+                    </p>
+</div>
+<!-- Pricing Display -->
+<div class="flex items-baseline gap-4 pt-8 border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">MSRP</span>
+<span class="font-headline text-4xl text-primary font-bold tracking-tight">€24.00</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline mb-1 opacity-0">.</span>
+<span class="font-body text-sm text-on-surface/40 tracking-widest uppercase">46.94 BGN</span>
+</div>
+</div>
+<!-- Detail Metadata -->
+<div class="mt-12 grid grid-cols-2 gap-8">
+<div>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-2">Volume</span>
+<span class="block font-body text-sm text-on-surface">50ml / 1.7 fl.oz</span>
+</div>
+<div>
+<span class="block font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-2">Origin</span>
+<span class="block font-body text-sm text-on-surface">London, UK</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Mandatory TopAppBar (Suppressed based on Task Context: Modal Focus) -->
+<!-- However, providing for structural completeness if the modal was part of a view -->
+<nav class="fixed top-0 w-full z-10 px-6 py-4 flex justify-between items-center opacity-20 pointer-events-none">
+<div class="font-headline uppercase tracking-[0.2em] text-sm text-primary">PRODUTO</div>
+<div class="material-symbols-outlined text-on-surface">close</div>
+</nav>
+</body></html>

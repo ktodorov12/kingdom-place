@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="bg"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#3c2f00",
+              "on-background": "#e2e2e2",
+              "surface-container-low": "#1b1b1b",
+              "error-container": "#93000a",
+              "surface-dim": "#131313",
+              "secondary-fixed": "#f7e1a6",
+              "primary-fixed": "#ffe088",
+              "on-primary-fixed": "#241a00",
+              "tertiary-container": "#97b0ff",
+              "inverse-surface": "#e2e2e2",
+              "surface-tint": "#e9c349",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#dac58d",
+              "on-primary-container": "#554300",
+              "on-tertiary-fixed-variant": "#27438a",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-fixed": "#dbe1ff",
+              "secondary-container": "#544519",
+              "outline-variant": "#4d4635",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#544519",
+              "on-tertiary-container": "#254188",
+              "on-secondary-fixed": "#241a00",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary": "#bfcdff",
+              "primary": "#f2ca50",
+              "surface-container-highest": "#353535",
+              "on-surface-variant": "#d0c5af",
+              "surface-container": "#1f1f1f",
+              "surface-bright": "#393939",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "surface-variant": "#353535",
+              "secondary": "#dac58d",
+              "on-tertiary-fixed": "#00174b",
+              "surface-container-high": "#2a2a2a",
+              "background": "#131313",
+              "on-tertiary": "#082b72",
+              "error": "#ffb4ab",
+              "on-secondary": "#3c2f05",
+              "on-surface": "#e2e2e2",
+              "on-secondary-container": "#c8b37d",
+              "outline": "#99907c",
+              "primary-container": "#d4af37",
+              "inverse-on-surface": "#303030",
+              "inverse-primary": "#735c00",
+              "primary-fixed-dim": "#e9c349",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .dotted-leader {
+            border-bottom: 1px dotted #4d4635;
+            flex-grow: 1;
+            margin: 0 8px;
+            margin-bottom: 5px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md shadow-[0_4px_30px_rgba(226,226,226,0.04)] h-20 flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary scale-95 active:opacity-80 transition-all cursor-pointer">menu</span>
+<h1 class="font-headline font-bold text-primary tracking-tighter text-lg uppercase">KINGDOM PLACE</h1>
+</div>
+<span class="material-symbols-outlined text-[#E2E2E2] hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer">account_circle</span>
+</header>
+<main class="pt-24 pb-32 px-6">
+<!-- Hero Header -->
+<section class="mb-12">
+<h2 class="font-headline text-5xl font-bold text-on-surface tracking-tight mb-2">Нашите продукти</h2>
+<p class="font-body text-sm uppercase tracking-[0.2em] text-on-surface-variant opacity-80">Професионална грижа, достъпна за вас</p>
+</section>
+<!-- Brutalist Filter -->
+<section class="mb-12">
+<div class="relative group">
+<button class="w-full flex justify-between items-center bg-surface-container-low border-b border-outline-variant/30 py-4 px-2 hover:border-primary transition-colors">
+<span class="font-label text-xs uppercase tracking-widest font-bold">Филтрирай по категория</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+<!-- Simulation of active filter state -->
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-4 py-1 text-[10px] uppercase font-bold tracking-tighter border border-primary text-primary">Всички</span>
+<span class="px-4 py-1 text-[10px] uppercase font-bold tracking-tighter border border-outline-variant/30 text-on-surface-variant/50">Грижа за брада</span>
+<span class="px-4 py-1 text-[10px] uppercase font-bold tracking-tighter border border-outline-variant/30 text-on-surface-variant/50">Стилизиране</span>
+</div>
+</div>
+</section>
+<!-- Product Grid (1-column stack) -->
+<div class="space-y-16">
+<!-- Product Card 01 -->
+<article class="group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-lowest">
+<img alt="Premium beard oil bottle" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Studio-lit close-up of a premium amber glass beard oil bottle on a dark reflective surface with dramatic shadows and gold highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh8FcqZCga2RiQPxLROOoz6_O3BOTjpTb7Dhj3w8vsfCvPTOFNTyA_5wj3Bi2EAdGMuJIISaYhHUiQGuyNqKimN6OslwXo2R737wFiVjvm33EgaTJ3mOQAuVqlPOeq1ZwU1OlX98q03XjNDLBcN4VbVE_KDU6A9bWhAsKWZlDc5ItdVLtwYlHqIRiF6fSa3ctu65sbJI-P58rmqIJzXPq3PNR8GTKjCbP5XaYz8UfPcmJ-haxkjSe-GcB1san_AcFjGX92fwFh2Rc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-3xl italic tracking-tight text-on-surface group-hover:text-primary transition-colors">Sovereign Beard Oil</h3>
+<div class="text-right">
+<span class="block font-headline text-2xl text-primary">€24.00</span>
+<span class="block font-label text-[10px] text-on-surface-variant opacity-60">46.94 BGN</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-[85%]">
+                        Луксозна смес от натурални масла за омекотяване на брадата и подхранване на кожата. Обогатено с нотки на сандалово дърво и кехлибар.
+                    </p>
+<div class="pt-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary border-b border-primary/20 pb-1 cursor-not-allowed">Product Details</span>
+</div>
+</div>
+</article>
+<!-- Product Card 02 -->
+<article class="group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-lowest">
+<img alt="Matte hair pomade container" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Minimalist top-down view of a black matte pomade tin on a textured slate background with sharp directional light from the side" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9LoQZ6MQa5QVP8C3ykTfhQq1gJH5E4M9qHsBn7WfitZ-oRQA8pmT31YvRd2dNaZwshVzGez8BPt2C3DP9H5MJ8nFFghKJFlXEB4m4iptn7BHJbGFi_GBxOX4nLa1CeMO_RlHWJnkptKhA4HKMQM0ZfDhIlz4mkvCRka96_FTwytd5Ra8ogi7gATlWke68oyThomSispJhjnqi3S7nx--1nuMmoNBZ2z7EYw6tEyj1TAuEGnt9dKE40BhuGrXmjQSlhziFfBkBW5o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-3xl italic tracking-tight text-on-surface group-hover:text-primary transition-colors">Matte Clay Pomade</h3>
+<div class="text-right">
+<span class="block font-headline text-2xl text-primary">€18.00</span>
+<span class="block font-label text-[10px] text-on-surface-variant opacity-60">35.20 BGN</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-[85%]">
+                        Силна фиксация с естествен матов завършек. Перфектна за текстурирани визии, които издържат през целия ден.
+                    </p>
+<div class="pt-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary border-b border-primary/20 pb-1 cursor-not-allowed">Product Details</span>
+</div>
+</div>
+</article>
+<!-- Product Card 03 -->
+<article class="group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-lowest">
+<img alt="Barber grooming comb" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" data-alt="Handcrafted tortoiseshell comb lying on a dark wooden table with elegant lens flare and warm moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDukvn4evPrfJVH94mHz2FGJPqLADMjvGyVh5vQ0YqZLMPipHeaBO6a9xunhrJqIedqb3gOA_JK27CYErJ8ZhUKrYO2iRPrgwGNJpUcse2KXwh1o_XXJk5sDNOsJ2bSNwpuGuclndLfV9zPosS2U8V4COKisXPgeFmKRtCPjXd__9J67TM4dghJsxJ11rhybB0d7df3K8ZVRyBexywL3zg6wMfjq6kglhoTpIv37KxGrZif-Lh5XGRTaEmXey_gt578ysBX5Nn2PWU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-3xl italic tracking-tight text-on-surface group-hover:text-primary transition-colors">Artisan Comb Set</h3>
+<div class="text-right">
+<span class="block font-headline text-2xl text-primary">€35.00</span>
+<span class="block font-label text-[10px] text-on-surface-variant opacity-60">68.45 BGN</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-[85%]">
+                        Ръчно изработени гребени от ацетат, проектирани за комфорт и прецизност при ежедневно оформяне.
+                    </p>
+<div class="pt-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary border-b border-primary/20 pb-1 cursor-not-allowed">Product Details</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Footer -->
+<footer class="mt-24 py-12 border-t border-outline-variant/10 flex flex-col items-center space-y-4">
+<div class="font-headline italic text-primary text-xl">KINGDOM PLACE</div>
+<div class="flex space-x-6">
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/50 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/50 hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/50 hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<p class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/50">© MMXXIV KINGDOM PLACE. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 z-50 bg-[#131313]/70 backdrop-blur-md border-t border-[#4D4635]/20 flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] opacity-40 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] opacity-40 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Book</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] opacity-40 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#F2CA50] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Shop</span>
+</a>
+</nav>
+</body></html>

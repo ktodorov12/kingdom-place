@@ -8,6 +8,7 @@ const en: Dictionary = {
     gallery: "Gallery",
     team: "Team",
     contact: "Contact",
+    products: "Products",
     bookNow: "Book Now",
   },
 
@@ -239,6 +240,63 @@ const en: Dictionary = {
     beard: "Precise beard shaping and contouring with a straight razor.",
     blackMask: "Pore-cleansing mask for the ear and nose area.",
     kidsHaircut: "Professional haircut for little gentlemen up to 12 years old.",
+  },
+
+  /* ─── Products page ─── */
+  products: {
+    heroTitle: "Our Products",
+    heroSubtitle: "Professional care, available to you",
+    filterLabel: "Select Category",
+    filterAll: "All",
+    categoryHair: "Hair Care",
+    categoryBeard: "Beard Care",
+    categoryStyling: "Styling",
+    categoryTools: "Tools & Accessories",
+    details: "Details",
+    ctaTitle: "Need expert advice?",
+    ctaDescription:
+      "Visit our studio to try these products in person. Our master barbers will guide you to the perfect grooming routine tailored for your unique style.",
+    ctaPrimary: "Find Our Location",
+    ctaSecondary: "Contact Support",
+    retailPrice: "Retail Price",
+  },
+
+  /* ─── Products — Featured (Home page) ─── */
+  featuredProducts: {
+    eyebrow: "At-home care",
+    title: "Featured Products",
+    viewAll: "View All Products",
+  },
+
+  /* ─── Product names ─── */
+  productNames: {
+    matteClayPomade: "Matte Clay Pomade",
+    sovereignBeardOil: "Sovereign Beard Oil",
+    masterShears: 'Master Shears 6.5"',
+    atlanticSaltSpray: "Atlantic Salt Spray",
+    restorativeShampoo: "Restorative Shampoo",
+    royalShaveBrush: "Royal Shave Brush",
+    signatureFineComb: "Signature Fine Comb",
+    sculptWax: "Sculpt Wax",
+  },
+
+  /* ─── Product descriptions ─── */
+  productDescs: {
+    matteClayPomadeDesc:
+      "High hold, low shine finish for textured, modern styles. Infused with natural minerals.",
+    sovereignBeardOilDesc:
+      "A luxury blend of natural oils to soften the beard and nourish the skin. Infused with notes of sandalwood and amber.",
+    masterShearsDesc:
+      "Japanese stainless steel, hand-forged for surgical precision and ergonomic comfort.",
+    atlanticSaltSprayDesc:
+      "Instant volume and effortless beach texture for all hair lengths and types.",
+    restorativeShampooDesc:
+      "Sulfate-free formula with keratin and biotin to strengthen and revive dull hair.",
+    royalShaveBrushDesc:
+      "Hand-assembled with genuine badger hair and a weighted ebony wood handle.",
+    signatureFineCombDesc:
+      "Saw-cut and hand-polished acetate. Rounded teeth for ultimate scalp comfort.",
+    sculptWaxDesc: "Extra firm hold for precision shaping. Beeswax and coconut oil base.",
   },
 
   /* ─── Combo "includes" labels ─── */
