@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Share2, Instagram, CreditCard, Banknote } from "lucide-react";
+import { CreditCard, Banknote } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const STUDIO24_URL = "https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m";
@@ -55,25 +55,8 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Social & Copyright */}
+        {/* Copyright */}
         <div className="space-y-4">
-          <h4 className="text-primary font-bold text-xs tracking-[0.3em] uppercase mb-6 md:mb-8">
-            {t.footer.follow}
-          </h4>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="w-11 h-11 border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all cursor-pointer"
-              aria-label="Share">
-              <Share2 size={20} />
-            </a>
-            <a
-              href="#"
-              className="w-11 h-11 border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all cursor-pointer"
-              aria-label="Instagram">
-              <Instagram size={20} />
-            </a>
-          </div>
           <p className="pt-6 text-[10px] tracking-[0.3em] uppercase text-on-surface-variant/40">
             {t.footer.copyright}
           </p>

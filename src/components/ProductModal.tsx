@@ -15,12 +15,26 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   /* Scroll lock */
   useEffect(() => {
     if (product) {
+      const scrollY = window.scrollY;
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
     } else {
+      const top = document.body.style.top;
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
     }
     return () => {
+      const top = document.body.style.top;
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
     };
   }, [product]);
 
@@ -80,7 +94,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
             </div>
 
             {/* Product Details */}
-            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface relative overflow-y-auto">
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface relative overflow-hidden">
               {/* Subtle glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10" />
 

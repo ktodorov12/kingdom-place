@@ -31,13 +31,7 @@ function Reveal({
   );
 }
 
-const categories: (ProductCategory | "all")[] = [
-  "all",
-  "hair",
-  "beard",
-  "styling",
-  "tools",
-];
+const categories: (ProductCategory | "all")[] = ["all", "wax", "cologne", "cream"];
 
 export default function Products() {
   const { t } = useLanguage();
@@ -50,10 +44,9 @@ export default function Products() {
 
   const categoryLabels: Record<ProductCategory | "all", string> = {
     all: t.products.filterAll,
-    hair: t.products.categoryHair,
-    beard: t.products.categoryBeard,
-    styling: t.products.categoryStyling,
-    tools: t.products.categoryTools,
+    wax: t.products.categoryWax,
+    cologne: t.products.categoryCologne,
+    cream: t.products.categoryCream,
   };
 
   const filtered =
@@ -137,7 +130,7 @@ export default function Products() {
                   <img
                     src={product.imagePath}
                     alt={productNames[product.nameKey]}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 scale-100 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -174,16 +167,13 @@ export default function Products() {
               </p>
             </div>
             <div className="flex flex-col gap-4 w-full md:w-auto">
-              <Link
-                to="/contact"
+              <a
+                href="https://studio24.bg/m/kingdom-place-barber-s13504?m%3Fm&m"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gold-gradient text-on-primary font-bold px-12 py-5 tracking-widest text-sm uppercase text-center transition-all duration-300 hover:brightness-110 hover:shadow-[0_6px_24px_rgba(242,202,80,0.3)]">
                 {t.products.ctaPrimary}
-              </Link>
-              <Link
-                to="/contact"
-                className="border border-outline-variant/30 text-primary font-bold px-12 py-5 tracking-widest text-sm transition-all hover:bg-primary/5 uppercase text-center">
-                {t.products.ctaSecondary}
-              </Link>
+              </a>
             </div>
           </section>
         </Reveal>

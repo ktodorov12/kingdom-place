@@ -246,16 +246,14 @@ const bg = {
     heroSubtitle: "Професионална грижа, достъпна за вас",
     filterLabel: "Филтрирай по категория",
     filterAll: "Всички",
-    categoryHair: "Грижа за коса",
-    categoryBeard: "Грижа за брада",
-    categoryStyling: "Стилизиране",
-    categoryTools: "Аксесоари",
+    categoryWax: "Вакса за коса",
+    categoryCologne: "Одеколон",
+    categoryCream: "Крем след бръснене",
     details: "Детайли",
     ctaTitle: "Нуждаете се от съвет?",
     ctaDescription:
       "Посетете нашето студио, за да изпробвате тези продукти. Нашите бръснари ще ви насочат към перфектната грижа за вашия стил.",
-    ctaPrimary: "Нашата локация",
-    ctaSecondary: "Свържете се с нас",
+    ctaPrimary: "Резервирай",
     retailPrice: "Цена",
   },
 
@@ -268,34 +266,22 @@ const bg = {
 
   /* ─── Product names ─── */
   productNames: {
-    matteClayPomade: "Матова глина помейд",
-    sovereignBeardOil: "Sovereign масло за брада",
-    masterShears: 'Майсторски ножици 6.5"',
-    atlanticSaltSpray: "Atlantic спрей с морска сол",
-    restorativeShampoo: "Възстановяващ шампоан",
-    royalShaveBrush: "Royal четка за бръснене",
-    signatureFineComb: "Signature фин гребен",
-    sculptWax: "Sculpt восък",
+    redoneSpiderWax: "RedOne Spider Hair Wax 100ml – Passionate",
+    redoneVolcanicCologne: "RedOne Natural Cologne Volcanic 400ml",
+    redoneCobraAquaWax: "RedOne Cobra Aqua Hair Wax 150ml",
+    redoneAfterShaveCream: "Red One After Shave Cream 400ml",
   },
 
   /* ─── Product descriptions ─── */
   productDescs: {
-    matteClayPomadeDesc:
-      "Силна фиксация с естествен матов завършек за текстурирани, модерни визии. Обогатена с натурални минерали.",
-    sovereignBeardOilDesc:
-      "Луксозна смес от натурални масла за омекотяване на брадата и подхранване на кожата. Обогатена с нотки на сандалово дърво и кехлибар.",
-    masterShearsDesc:
-      "Японска неръждаема стомана, ръчно изкована за хирургическа прецизност и ергономичен комфорт.",
-    atlanticSaltSprayDesc:
-      "Мигновен обем и небрежна плажна текстура за всички дължини и типове коса.",
-    restorativeShampooDesc:
-      "Безсулфатна формула с кератин и биотин за укрепване и съживяване на тъмна коса.",
-    royalShaveBrushDesc:
-      "Ръчно изработена от истински косъм от язовец и балансирана дръжка от абанос.",
-    signatureFineCombDesc:
-      "Изрязан и ръчно полиран ацетат. Закръглени зъбци за максимален комфорт на скалпа.",
-    sculptWaxDesc:
-      "Екстра силна фиксация за прецизно оформяне. Основа от пчелен восък и кокосово масло.",
+    redoneSpiderWaxDesc:
+      "Гъвкава восъчна вакса с паяжинна текстура за креативно стилизиране. 100ml, Passionate издание.",
+    redoneVolcanicCologneDesc:
+      "Освежаващ одеколон за тяло с вулканична есенция. Освежава и успокоява кожата след грижа. 400ml.",
+    redoneCobraAquaWaxDesc:
+      "Водна вакса за коса с максимален контрол и дълготрайна фиксация. Професионално стилизиране. 150ml.",
+    redoneAfterShaveCreamDesc:
+      "Крем след бръснене за мъже с екстремна свежест. Успокоява, хидратира и охлажда кожата. 400ml.",
   },
 
   /* ─── Combo "includes" labels ─── */

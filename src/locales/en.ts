@@ -248,16 +248,14 @@ const en: Dictionary = {
     heroSubtitle: "Professional care, available to you",
     filterLabel: "Select Category",
     filterAll: "All",
-    categoryHair: "Hair Care",
-    categoryBeard: "Beard Care",
-    categoryStyling: "Styling",
-    categoryTools: "Tools & Accessories",
+    categoryWax: "Hair Wax",
+    categoryCologne: "Cologne",
+    categoryCream: "Shave Cream",
     details: "Details",
     ctaTitle: "Need expert advice?",
     ctaDescription:
       "Visit our studio to try these products in person. Our master barbers will guide you to the perfect grooming routine tailored for your unique style.",
-    ctaPrimary: "Find Our Location",
-    ctaSecondary: "Contact Support",
+    ctaPrimary: "Book Now",
     retailPrice: "Retail Price",
   },
 
@@ -270,33 +268,22 @@ const en: Dictionary = {
 
   /* ─── Product names ─── */
   productNames: {
-    matteClayPomade: "Matte Clay Pomade",
-    sovereignBeardOil: "Sovereign Beard Oil",
-    masterShears: 'Master Shears 6.5"',
-    atlanticSaltSpray: "Atlantic Salt Spray",
-    restorativeShampoo: "Restorative Shampoo",
-    royalShaveBrush: "Royal Shave Brush",
-    signatureFineComb: "Signature Fine Comb",
-    sculptWax: "Sculpt Wax",
+    redoneSpiderWax: "RedOne Spider Hair Wax 100ml – Passionate",
+    redoneVolcanicCologne: "RedOne Natural Cologne Volcanic 400ml",
+    redoneCobraAquaWax: "RedOne Cobra Aqua Hair Wax 150ml",
+    redoneAfterShaveCream: "Red One After Shave Cream 400ml",
   },
 
   /* ─── Product descriptions ─── */
   productDescs: {
-    matteClayPomadeDesc:
-      "High hold, low shine finish for textured, modern styles. Infused with natural minerals.",
-    sovereignBeardOilDesc:
-      "A luxury blend of natural oils to soften the beard and nourish the skin. Infused with notes of sandalwood and amber.",
-    masterShearsDesc:
-      "Japanese stainless steel, hand-forged for surgical precision and ergonomic comfort.",
-    atlanticSaltSprayDesc:
-      "Instant volume and effortless beach texture for all hair lengths and types.",
-    restorativeShampooDesc:
-      "Sulfate-free formula with keratin and biotin to strengthen and revive dull hair.",
-    royalShaveBrushDesc:
-      "Hand-assembled with genuine badger hair and a weighted ebony wood handle.",
-    signatureFineCombDesc:
-      "Saw-cut and hand-polished acetate. Rounded teeth for ultimate scalp comfort.",
-    sculptWaxDesc: "Extra firm hold for precision shaping. Beeswax and coconut oil base.",
+    redoneSpiderWaxDesc:
+      "Flexible fiber hair wax with spider web texture for creative styling. 100ml, Passionate edition.",
+    redoneVolcanicCologneDesc:
+      "Revitalizing cologne body splash with volcanic essence. Refreshes and soothes skin after grooming. 400ml.",
+    redoneCobraAquaWaxDesc:
+      "Maximum control aqua hair wax for a full force, long-lasting hold. Professional-grade styling. 150ml.",
+    redoneAfterShaveCreamDesc:
+      "Extreme face fresh after shave cream for men. Soothes, hydrates, and cools the skin post-shave. 400ml.",
   },
 
   /* ─── Combo "includes" labels ─── */

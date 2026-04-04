@@ -1,48 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import LightboxGallery, { type GalleryImage } from "../components/LightboxGallery";
+import LightboxGallery from "../components/LightboxGallery";
 import { useLanguage } from "../context/LanguageContext";
-
-/* ── placeholder images (barbershop interior / work shots) ── */
-const galleryImages: GalleryImage[] = [
-  {
-    src: "https://images.unsplash.com/photo-1585747860019-8005b2f45a82?w=800&q=80",
-    alt: "Kingdom Place interior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
-    alt: "Barber chair detail",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80",
-    alt: "Haircut in progress",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80",
-    alt: "Classic barbershop tools",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80",
-    alt: "Beard grooming",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80",
-    alt: "Barber at work",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=800&q=80",
-    alt: "Styled finish",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=800&q=80",
-    alt: "Premium grooming products",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1635273051427-7tried0a3e2c?w=800&q=80",
-    alt: "Salon atmosphere",
-  },
-];
+import { barbershopImages } from "../data/generatedGallery";
 
 function Reveal({
   children,
@@ -101,7 +62,7 @@ export default function Gallery() {
       {/* Gallery Grid */}
       <section className="px-6 md:px-8 lg:px-24 pb-24 md:pb-32 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <LightboxGallery images={galleryImages} columns={3} />
+          <LightboxGallery images={barbershopImages} columns={4} />
         </div>
       </section>
 

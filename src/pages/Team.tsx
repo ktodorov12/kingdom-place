@@ -168,7 +168,11 @@ export default function Team() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}>
-              <LightboxGallery images={activeBarber.galleryImages} columns={3} />
+              <LightboxGallery
+                images={activeBarber.galleryImages}
+                columns={4}
+                beforeAfterPairs={activeBarber.beforeAfterPairs}
+              />
             </motion.div>
           </AnimatePresence>
         </div>

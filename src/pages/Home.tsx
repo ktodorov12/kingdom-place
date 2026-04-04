@@ -1,9 +1,10 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MapPin, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import productsData from "../data/productsData";
+import productsData, { type Product } from "../data/productsData";
+import ProductModal from "../components/ProductModal";
 
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
@@ -99,9 +100,9 @@ function HeroSection() {
         <img
           src={heroImage}
           alt="Vintage barber pole outside a luxury barbershop"
-          className="w-full h-full object-cover opacity-30 grayscale"
+          className="w-full h-full object-cover opacity-50 grayscale brightness-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface/80 to-surface" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/70 via-surface/50 to-surface" />
       </div>
 
       {/* Content Side */}
@@ -502,6 +503,7 @@ function TeamSection() {
 function FeaturedProductsSection() {
   const { t } = useLanguage();
   const featured = productsData.slice(0, 3);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low">
@@ -520,14 +522,14 @@ function FeaturedProductsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {featured.map((product, i) => (
             <Reveal key={product.id} delay={i * 0.1}>
-              <Link
-                to="/products"
-                className="group block border border-transparent hover:shadow-[0_0_25px_rgba(242,202,80,0.15)] hover:border-primary/50 transition-all duration-500">
+              <button
+                onClick={() => setSelectedProduct(product)}
+                className="group block border border-transparent hover:shadow-[0_0_25px_rgba(242,202,80,0.15)] hover:border-primary/50 transition-all duration-500 text-left w-full cursor-pointer">
                 <div className="aspect-[4/5] bg-surface-container overflow-hidden mb-6 relative">
                   <img
                     src={product.imagePath}
                     alt={(t.productNames as Record<string, string>)[product.nameKey]}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 scale-100 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -544,7 +546,7 @@ function FeaturedProductsSection() {
                     </span>
                   </div>
                 </div>
-              </Link>
+              </button>
             </Reveal>
           ))}
         </div>
@@ -558,6 +560,8 @@ function FeaturedProductsSection() {
           </Link>
         </Reveal>
       </div>
+
+      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
     </section>
   );
 }
