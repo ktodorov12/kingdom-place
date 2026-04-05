@@ -108,7 +108,9 @@ export default function LightboxGallery({
   // Keyboard navigation + scroll lock
   useEffect(() => {
     if (activeIndex === null) return;
-    document.body.style.overflow = "hidden";
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -117,7 +119,8 @@ export default function LightboxGallery({
     };
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.paddingRight = "";
       window.removeEventListener("keydown", onKey);
     };
   }, [activeIndex, close, prev, next]);

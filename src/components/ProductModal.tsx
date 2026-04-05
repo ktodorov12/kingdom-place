@@ -15,27 +15,14 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   /* Scroll lock */
   useEffect(() => {
     if (product) {
-      const scrollY = window.scrollY;
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
-    } else {
-      const top = document.body.style.top;
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      return () => {
+        document.documentElement.style.overflow = "";
+        document.body.style.paddingRight = "";
+      };
     }
-    return () => {
-      const top = document.body.style.top;
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
-    };
   }, [product]);
 
   /* Close on Escape */
