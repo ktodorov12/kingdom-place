@@ -9,6 +9,7 @@ import Gallery from "./pages/Gallery";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="products" element={<Products />} />
               <Route path="team" element={<Team />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="privacy" element={<PrivacyPolicy />} />
             </Route>
           </Routes>
         </BrowserRouter>

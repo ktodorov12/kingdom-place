@@ -169,6 +169,7 @@ const en: Dictionary = {
     studio24Booking: "Studio24 Booking",
     follow: "Follow",
     copyright: "© 2026 Kingdom Place. All Rights Reserved.",
+    privacyPolicy: "Privacy Policy",
   },
 
   /* ─── Booking modal ─── */
@@ -302,6 +303,21 @@ const en: Dictionary = {
     cleansing: "Cleansing",
     mask: "Mask",
     haircut: "Haircut",
+  },
+
+  /* ─── Privacy Policy ─── */
+  privacy: {
+    title: "Privacy Policy",
+    intro:
+      "This website is for informational purposes only and does not actively collect personal data for marketing purposes.",
+    reservationsTitle: "Reservations",
+    reservations:
+      "When you click the booking button, you are redirected to the external platform Studio24, which has its own terms and privacy policy. We do not process your booking data on our site.",
+    cookiesTitle: "Cookies",
+    cookies:
+      "This site does not use tracking or marketing cookies. We only use Local Storage on your device to remember your selected language.",
+    logsTitle: "Server Logs",
+    logs: "The site is hosted on Vercel. As with any website, the hosting provider automatically records your IP address and basic technical information (browser type, access time) for short periods of time for security and prevention of attacks.",
   },
 };
 

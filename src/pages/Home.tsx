@@ -6,6 +6,8 @@ import { useLanguage } from "../context/LanguageContext";
 import productsData, { type Product } from "../data/productsData";
 import ProductModal from "../components/ProductModal";
 
+import khalilImg from "../../public/khalil.jpg";
+
 /* ─── Reusable scroll-reveal wrapper ─── */
 function Reveal({
   children,
@@ -463,11 +465,7 @@ function TeamSection() {
             className="mt-20 md:mt-24 flex flex-col sm:flex-row items-center gap-6 sm:gap-10 bg-surface-container-high p-6 md:p-8 group cursor-pointer transition-all duration-500 hover:shadow-[0_0_40px_rgba(242,202,80,0.06)]">
             <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 overflow-hidden">
               <img
-                src={
-                  t.barbers.khalilName
-                    ? "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&q=80"
-                    : ""
-                }
+                src={t.barbers.khalilName ? khalilImg : ""}
                 alt={t.barbers.khalilName}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
@@ -632,9 +630,9 @@ function ContactSection() {
                     {t.contactPreview.inquiries}
                   </h4>
                   <a
-                    href="tel:+359888123456"
+                    href="tel:+359893236974"
                     className="text-on-surface-variant text-base md:text-lg hover:text-primary transition-colors duration-300">
-                    +359 888 123 456
+                    +359 89 3236 974
                   </a>
                 </div>
               </div>

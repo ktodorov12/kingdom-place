@@ -127,9 +127,9 @@ export default function Contact() {
                       <div className="flex items-center gap-3">
                         <Phone size={18} className="text-primary shrink-0" />
                         <a
-                          href="tel:+359888123456"
+                          href="tel:+359893236974"
                           className="text-xl md:text-2xl font-body hover:text-primary transition-colors duration-300 cursor-pointer">
-                          +359 888 123 456
+                          +359 89 3236 974
                         </a>
                       </div>
                     </div>

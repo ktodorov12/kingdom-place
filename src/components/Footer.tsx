@@ -60,6 +60,11 @@ export default function Footer() {
           <p className="pt-6 text-[10px] tracking-[0.3em] uppercase text-on-surface-variant/40">
             {t.footer.copyright}
           </p>
+          <Link
+            to="/privacy"
+            className="block text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/80 hover:text-primary transition-all">
+            {t.footer.privacyPolicy}
+          </Link>
         </div>
       </div>
     </footer>
