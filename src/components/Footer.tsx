@@ -8,7 +8,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-8 border-t border-outline-variant/20">
+    <footer className="bg-surface-container-low w-full py-16 pb-28 md:py-20 md:pb-20 px-6 md:px-8 border-t border-outline-variant/20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
         {/* Brand */}
         <div>
