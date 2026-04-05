@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import productsData, { type Product, type ProductCategory } from "../data/productsData";
 import ProductModal from "../components/ProductModal";
@@ -31,7 +30,13 @@ function Reveal({
   );
 }
 
-const categories: (ProductCategory | "all")[] = ["all", "wax", "cologne", "cream"];
+const categories: (ProductCategory | "all")[] = [
+  "all",
+  "wax",
+  "cologne",
+  "cream",
+  "beards",
+];
 
 export default function Products() {
   const { t } = useLanguage();
@@ -47,6 +52,7 @@ export default function Products() {
     wax: t.products.categoryWax,
     cologne: t.products.categoryCologne,
     cream: t.products.categoryCream,
+    beards: t.products.categoryBeard,
   };
 
   const filtered =

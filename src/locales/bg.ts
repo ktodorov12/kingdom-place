@@ -249,6 +249,7 @@ const bg = {
     categoryWax: "Вакса за коса",
     categoryCologne: "Одеколон",
     categoryCream: "Крем след бръснене",
+    categoryBeard: "Грижа за брада",
     details: "Детайли",
     ctaTitle: "Нуждаете се от съвет?",
     ctaDescription:
@@ -270,6 +271,8 @@ const bg = {
     redoneVolcanicCologne: "RedOne Natural Cologne Volcanic 400ml",
     redoneCobraAquaWax: "RedOne Cobra Aqua Hair Wax 150ml",
     redoneAfterShaveCream: "Red One After Shave Cream 400ml",
+    redoneBeardAndMustacheArganeCareOil:
+      "RedOne Beard and Mustache Argan Care Oil – 50ml",
   },
 
   /* ─── Product descriptions ─── */
@@ -282,6 +285,8 @@ const bg = {
       "Водна вакса за коса с максимален контрол и дълготрайна фиксация. Професионално стилизиране. 150ml.",
     redoneAfterShaveCreamDesc:
       "Крем след бръснене за мъже с екстремна свежест. Успокоява, хидратира и охлажда кожата. 400ml.",
+    redoneBeardAndMustacheArganeCareOilDesc:
+      "Омекотява брадата и мустаците, укротява цъфтежа и придава блясък – ежедневна грижа с арганово масло, 50ml.",
   },
 
   /* ─── Combo "includes" labels ─── */

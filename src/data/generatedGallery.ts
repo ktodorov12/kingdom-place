@@ -20,6 +20,7 @@ export const barbershopImages: GalleryImage[] = [
 export const alayoubiGallery: GalleryImage[] = [
   { src: "/barbers/Alayoubi/0-02-05-089b7d331b5f9417466160f675edd6a7b9aa679039be405adc3cfa4b57d0caff_9a62d5468bc3eed8.jpg", alt: "Alayoubi — Barber work" },
   { src: "/barbers/Alayoubi/0-02-05-2ac8aa5b335301a80db4ac29ba7915104b578b1820fa6967530fe8f93a24e6f6_466c23a5b7e6f077.jpg", alt: "Alayoubi — Barber work" },
+  { src: "/barbers/Alayoubi/0-02-05-2f6f84336230d810206fac7eb744f2133a3fef4f39ed14d72f104cb16f0e1fa5_ae7e68a18081bd2e.jpg", alt: "Alayoubi — Barber work" },
   { src: "/barbers/Alayoubi/0-02-05-da005ad25859b91e5883288784c8f61194661ccc1b09c9ae2a8ebe42c321d6f3_c2666b6fd03aeb09.jpg", alt: "Alayoubi — Barber work" },
   { src: "/barbers/Alayoubi/1773850861.webp", alt: "Alayoubi — Barber work" },
   { src: "/barbers/Alayoubi/1773850870.webp", alt: "Alayoubi — Barber work" },

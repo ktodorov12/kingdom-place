@@ -251,6 +251,7 @@ const en: Dictionary = {
     categoryWax: "Hair Wax",
     categoryCologne: "Cologne",
     categoryCream: "Shave Cream",
+    categoryBeard: "Beard Care",
     details: "Details",
     ctaTitle: "Need expert advice?",
     ctaDescription:
@@ -272,6 +273,8 @@ const en: Dictionary = {
     redoneVolcanicCologne: "RedOne Natural Cologne Volcanic 400ml",
     redoneCobraAquaWax: "RedOne Cobra Aqua Hair Wax 150ml",
     redoneAfterShaveCream: "Red One After Shave Cream 400ml",
+    redoneBeardAndMustacheArganeCareOil:
+      "RedOne Beard and Mustache Argan Care Oil – 50ml",
   },
 
   /* ─── Product descriptions ─── */
@@ -284,6 +287,8 @@ const en: Dictionary = {
       "Maximum control aqua hair wax for a full force, long-lasting hold. Professional-grade styling. 150ml.",
     redoneAfterShaveCreamDesc:
       "Extreme face fresh after shave cream for men. Soothes, hydrates, and cools the skin post-shave. 400ml.",
+    redoneBeardAndMustacheArganeCareOilDesc:
+      "Softens beard and mustache, tames frizz & adds shine – daily argan care in 50ml.",
   },
 
   /* ─── Combo "includes" labels ─── */

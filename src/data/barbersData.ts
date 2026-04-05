@@ -1,6 +1,8 @@
 import type { GalleryImage } from "../components/LightboxGallery";
 import { barberGalleryMap, beforeAfterMap } from "./generatedGallery";
 
+import khalilPhoto from "../../public/khalil.jpg";
+
 export interface Barber {
   id: string;
   nameKey: "alayoubiName" | "khalilName";
@@ -39,8 +41,7 @@ const barbersData: Barber[] = [
     specialtyKey: "khalilSpecialty",
     experienceKey: "khalilExperience",
     isMaster: false,
-    profileImage:
-      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80",
+    profileImage: khalilPhoto,
     galleryImages: barberGalleryMap.khalil ?? [],
     beforeAfterPairs: beforeAfterMap.khalil ?? [],
   },

@@ -1,4 +1,4 @@
-export type ProductCategory = "wax" | "cologne" | "cream";
+export type ProductCategory = "wax" | "cologne" | "cream" | "beards";
 
 export interface Product {
   id: string;
@@ -16,8 +16,8 @@ const productsData: Product[] = [
     nameKey: "redoneSpiderWax",
     descKey: "redoneSpiderWaxDesc",
     categoryKey: "wax",
-    priceEur: 6.54,
-    priceBgn: 12.8,
+    priceEur: 7,
+    priceBgn: 13.69,
     imagePath:
       "/products/img/Вакса за коса RedOne Spider Hair Wax 100ml – Passionate.jpg",
   },
@@ -26,8 +26,8 @@ const productsData: Product[] = [
     nameKey: "redoneVolcanicCologne",
     descKey: "redoneVolcanicCologneDesc",
     categoryKey: "cologne",
-    priceEur: 5.73,
-    priceBgn: 11.2,
+    priceEur: 7,
+    priceBgn: 13.69,
     imagePath: "/products/img/Redone NATURAL COLOGNE VOLCANIC 400ml.jpg",
   },
   {
@@ -35,8 +35,8 @@ const productsData: Product[] = [
     nameKey: "redoneCobraAquaWax",
     descKey: "redoneCobraAquaWaxDesc",
     categoryKey: "wax",
-    priceEur: 4.35,
-    priceBgn: 8.5,
+    priceEur: 6,
+    priceBgn: 11.73,
     imagePath:
       "/products/img/Redone COBRA AQUA hair wax 150ml FULL FORCE maximum control.jpg",
   },
@@ -45,9 +45,18 @@ const productsData: Product[] = [
     nameKey: "redoneAfterShaveCream",
     descKey: "redoneAfterShaveCreamDesc",
     categoryKey: "cream",
-    priceEur: 6.44,
-    priceBgn: 12.6,
+    priceEur: 7,
+    priceBgn: 13.69,
     imagePath: "/products/img/Red One After Shave Cream - 400ml.png",
+  },
+  {
+    id: "redone-beard-care-oil",
+    nameKey: "redoneBeardAndMustacheArganeCareOil",
+    descKey: "redoneBeardAndMustacheArganeCareOilDesc",
+    categoryKey: "beards",
+    priceEur: 10,
+    priceBgn: 19.55,
+    imagePath: "/products/img/RedOne Beard and Mustache Argan Care Oil - 50ml.png",
   },
 ];
 
