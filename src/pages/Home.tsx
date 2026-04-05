@@ -630,9 +630,9 @@ function ContactSection() {
                     {t.contactPreview.inquiries}
                   </h4>
                   <a
-                    href="tel:+359893236974"
+                    href="tel:+359876433277"
                     className="text-on-surface-variant text-base md:text-lg hover:text-primary transition-colors duration-300">
-                    +359 89 3236 974
+                    +359 87 6433277
                   </a>
                 </div>
               </div>
